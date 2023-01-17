@@ -1,0 +1,59 @@
+@mixin check-control-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  padding-left: 35px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin input-check-control {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+@mixin input-checkmark($radio) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #eee;
+
+  @if $radio {
+  border-radius: 50%;
+}
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+}
+
+@mixin input-checkmark-background($radio: false) {
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+
+  @if $radio {
+    left: 4px;
+    top: 4px;
+    width: 4px;
+    height: 4px;
+    border: 3px solid white;
+    border-radius: 50%;
+  }
+}

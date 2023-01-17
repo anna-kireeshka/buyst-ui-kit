@@ -1,15 +1,20 @@
 import React from 'react';
 import { FC  } from 'react';
-import './Button.css'
-import '../index.css'
+import './Button.scss'
+import '../index.scss'
 import cx from "classnames";
 
 export interface MyButtonProps {
-    label: string,
-    disabled?: boolean,
-    outline?: boolean,
-    block?: boolean
-    variant: 'primary' | 'red' | 'yellow' | 'green' | 'violet'
+    children: React.ReactNode
+    disabled?: boolean;
+    outline?: boolean;
+    block?: boolean;
+    variant: 'primary' | 'red' | 'yellow' | 'green';
+    large?: boolean;
+    image?: {
+        source: string,
+        alt?: string,
+    };
     onClick?: () => void;
 }
 const Button: FC<MyButtonProps> =
@@ -18,27 +23,22 @@ const Button: FC<MyButtonProps> =
          disabled,
          outline,
          block,
+         large,
+         children,
          ...props
     }) => {
 
-    const btnClasses = cx(['my-button', {
-        'btn-primary': variant === 'primary',
-        'btn-red': variant === 'red',
-        'btn-yellow': variant === 'yellow',
-        'btn-green': variant === 'green',
-        'btn-violet': variant === 'violet',
+    const btnClasses = cx(['btn', {
+        [`btn-${variant}`]: variant,
         'btn-disabled': disabled,
-        'btn-outline-primary': variant === 'primary' && outline,
-        'btn-outline-yellow': variant === 'yellow' && outline,
-        'btn-outline-red': variant === 'red' && outline,
-        'btn-outline-green': variant === 'green' && outline,
-        'btn-outline-violet': variant === 'violet' && outline,
-        'my-button-large' : block
+        [`btn-outline-${variant}`]: variant && outline,
+        'btn-block': block,
+        'btn-large': large
     }])
 
     return (
         <button {...props} className={ btnClasses}>
-            { props.label }
+            { children }
         </button>
     )
 }

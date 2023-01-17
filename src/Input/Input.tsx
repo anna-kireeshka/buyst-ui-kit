@@ -1,41 +1,43 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { FC  } from 'react';
-import './Input.css'
-import '../index.css'
+import './Input.scss'
+import '../index.scss'
 import cx from "classnames";
 
 export interface MyInputProps {
-    block?: boolean,
-    placeholder?: string,
-    label?: string,
-    onChange?: () => void,
-    type: 'text' | 'phone' | 'email',
-    column?: boolean,
+    type: 'text' | 'password';
+    value: 'danger' | 'success' | '';
+    size?: 'lg' | 'md' | 'sm';
+    disabled?: boolean;
+    placeholder?: string;
+    label?: string;
+    column?: boolean;
+    onChange: () => {};
+    onBlur: () => {};
+    onFocus: () => {};
 }
 const Input: FC<MyInputProps> =
     ({
-         type,
          column,
-         block,
+         size,
+         type,
+         value,
+         disabled,
          ...props
      }) => {
 
-    const inputStyle = cx(['my-input'], {
-        'my-input-block': block,
-    })
-
-        const formStyle = cx( {
-            'my-input-column': column
+        const inputStyle = cx( {
+            [`input-${type}`]: type,
+            [`input-${value}`]: value,
+            [`input-${size}`]: size,
+            'input-disabled': disabled,
         })
 
         return (
-            <div className={formStyle} style={{margin: '1rem'}}>
-            <label className={'label'}> {props.label} </label>
-                <input type={'text'} {...props} className={inputStyle}/>
-
-            </div>
-
+                <label> {props.label}
+                <input type={type} {...props} className={inputStyle} />
+                </label>
         )
     }
 
-    export default Input;
+export default Input;

@@ -1,0 +1,24 @@
+@import '../styles/_variable.scss';
+@import '../styles/_mixin.scss';
+$base-color: #17a0ff;
+.container {
+ @include check-control-container;
+
+  .input-checkbox {
+    @include input-check-control
+  }
+
+  .input-checkbox:checked ~ .input-checkmark {
+    background: $base-color;
+  }
+  .input-checkbox:checked ~ .input-checkmark::after {
+    display: block;
+  }
+  .input-checkmark::after {
+    @include input-checkmark-background($radio: false)
+  }
+}
+
+.input-checkmark {
+  @include input-checkmark($radio: false);
+}

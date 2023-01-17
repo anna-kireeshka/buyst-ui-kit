@@ -3,20 +3,36 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import  Button from '../Button/Button';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
     title: 'Example/Button',
     component: Button,
-    // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
         backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof Button>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args}> Button </Button>;
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-    label: 'Button',
+export const Primary: ComponentStory<typeof Button> = (args) => <Button {...args}> Button </Button>;
+Primary.args = {
+    variant: 'primary'
 };
+export const Green: ComponentStory<typeof Button> = (args) => <Button {...args}> Button </Button>;
+    Green.args = {
+    variant: 'green'
+};
+export const Yellow: ComponentStory<typeof Button> = (args) => <Button {...args}> Button </Button>;
+Yellow.args = {
+    variant: 'yellow'
+};
+export const Red: ComponentStory<typeof Button> = (args) => <Button {...args}> Button </Button>;
+Red.args = {
+    variant: 'red'
+};
+
+export const Disabled: ComponentStory<typeof Button> = (args) => <Button {...args}> Button </Button>;
+Disabled.args = {
+    disabled: true,
+};
+
+export const Default = Template.bind({});

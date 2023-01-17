@@ -1,0 +1,79 @@
+@import '../styles/_variable.scss';
+.btn {
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0.3rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-large {
+  padding: 16px 24px;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background: $primary;
+  color:  #fff;
+
+  &:hover {
+    box-shadow: 0 3px 0 #5187d9;
+  }
+}
+.btn-outline-primary {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+  $primary border-box;
+  color: black;
+
+}
+.btn-yellow {
+  background: $yellow;
+  color:  #fff;
+  &:hover {
+    box-shadow: 0 3px 0 #CE7B1B;
+  }
+}
+.btn-outline-yellow {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+  $yellow border-box;
+  color: black;
+}
+.btn-red {
+  background: $red;
+  color:  #fff;
+  &:hover {
+    box-shadow: 0 3px 0 #af1e1e;
+  }
+}
+.btn-outline-red {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+  $red border-box;
+  color: black;
+}
+.btn-green {
+  background: $green;
+  color:  #fff;
+  &:hover {
+    box-shadow: 0 3px 0  #319FC2;
+  }
+}
+.btn-outline-green {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+  $green border-box;
+  color: black;
+}
+
+.btn-disabled {
+  background: $disabled;
+  color: #fff;
+  pointer-events: none;
+}
