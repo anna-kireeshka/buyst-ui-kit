@@ -6,31 +6,28 @@ import  Button from '../Button/Button';
 export default {
     title: 'Example/Button',
     component: Button,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args}> Button </Button>;
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args}> Button Default </Button>;
 
-export const Primary: ComponentStory<typeof Button> = (args) => <Button {...args}> Button </Button>;
+export const Primary: ComponentStory<typeof Button> = (args) => <Button {...args}> Primary Button </Button>;
 Primary.args = {
     variant: 'primary'
 };
-export const Green: ComponentStory<typeof Button> = (args) => <Button {...args}> Button </Button>;
-    Green.args = {
-    variant: 'green'
+export const Success: ComponentStory<typeof Button> = (args) => <Button {...args}> Success Button </Button>;
+Success.args = {
+    variant: 'success'
 };
-export const Yellow: ComponentStory<typeof Button> = (args) => <Button {...args}> Button </Button>;
-Yellow.args = {
-    variant: 'yellow'
+export const Warning: ComponentStory<typeof Button> = (args) => <Button {...args}> Warning Button </Button>;
+Warning.args = {
+    variant: 'warning'
 };
-export const Red: ComponentStory<typeof Button> = (args) => <Button {...args}> Button </Button>;
-Red.args = {
-    variant: 'red'
+export const Danger: ComponentStory<typeof Button> = (args) => <Button {...args}> Danger Button </Button>;
+Danger.args = {
+    variant: 'danger'
 };
 
-export const Disabled: ComponentStory<typeof Button> = (args) => <Button {...args}> Button </Button>;
+export const Disabled: ComponentStory<typeof Button> = (args) => <Button {...args}> Disabled Button </Button>;
 Disabled.args = {
     disabled: true,
 };

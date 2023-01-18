@@ -1,3 +1,4 @@
+@import './_variable.scss';
 @mixin check-control-container {
   display: block;
   position: relative;
@@ -56,4 +57,59 @@
     border: 3px solid white;
     border-radius: 50%;
   }
+}
+
+@mixin btnColor($color) {
+  color: #fff;
+   @if $color == 'primary' {
+    background: $primary;
+     &:hover {
+       background: $primary-hover;
+     }
+   } @else if $color == 'warning' {
+      background: $yellow;
+       &:hover {
+         background: $yellow-hover;
+       }
+   } @else if $color == 'success' {
+       background: $green;
+        &:hover {
+          background: $green-hover;
+       }
+   } @else if $color == 'danger' {
+        background: $red;
+       &:hover {
+       background: $red-hover;
+     }
+   }
+  &:active {
+    top: 2px;
+  }
+}
+
+@mixin btn-outline {
+  background: transparent;
+  box-shadow: none;
+
+  &:hover {
+    border: none;
+    box-shadow: $btn-box-shadow;
+    color: #fff;
+  }
+  &:hover .btn__loading--outline {
+    border: 2px solid #fff;
+    border-bottom-color: transparent;
+  };
+}
+
+@mixin round-loading-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

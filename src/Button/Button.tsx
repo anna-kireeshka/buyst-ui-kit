@@ -9,13 +9,13 @@ export interface MyButtonProps {
     disabled?: boolean;
     outline?: boolean;
     block?: boolean;
-    variant: 'primary' | 'red' | 'yellow' | 'green';
-    large?: boolean;
-    image?: {
-        source: string,
-        alt?: string,
-    };
+    rounded?: boolean;
+    loading?: boolean;
+    variant: 'primary' | 'danger' | 'warning' | 'success';
+    size?: 'small' | 'medium' | 'large';
     onClick?: () => void;
+
+
 }
 const Button: FC<MyButtonProps> =
     ({
@@ -23,8 +23,10 @@ const Button: FC<MyButtonProps> =
          disabled,
          outline,
          block,
-         large,
          children,
+         rounded,
+         size,
+         loading,
          ...props
     }) => {
 
@@ -32,13 +34,22 @@ const Button: FC<MyButtonProps> =
         [`btn-${variant}`]: variant,
         'btn-disabled': disabled,
         [`btn-outline-${variant}`]: variant && outline,
-        'btn-block': block,
-        'btn-large': large
+        'btn__block': block,
+        'btn__rounded': rounded,
+        [`btn__${size}`]: size,
     }])
+
+        const btnLoaderClass = cx([{
+            'btn__loading': loading,
+             'btn__loading--outline': loading,
+        }])
 
     return (
         <button {...props} className={ btnClasses}>
-            { children }
+            <span className={ loading ? 'btn-loading-label' : ''}> { children } </span>
+            <div className='btn__loading-container'>
+                <span className={ btnLoaderClass }/>
+            </div>
         </button>
     )
 }
