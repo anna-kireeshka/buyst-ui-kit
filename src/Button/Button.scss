@@ -1,0 +1,125 @@
+@import '../styles/_variable.scss';
+@import "../styles/mixin.scss";
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn {
+  position: relative;
+  min-width: 81px;
+  min-height: 36px;
+  padding: 6px 16px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0.3rem;
+  box-shadow: $btn-box-shadow;
+  color: #fff;
+
+  &__block {
+    min-width: 100%;
+  }
+
+  &__rounded {
+    border-radius: 30px;
+  }
+
+  &__small {
+    padding: 6px 12px;
+  }
+
+  &__medium {
+    padding: 6px 17px;
+  }
+
+  &__large {
+    padding: 6px 22px;
+  }
+  &__loading-container {
+    @include round-loading-container
+  }
+  &__loading {
+    width: 20px;
+    height: 20px;
+    transform: translate(50%, -50%);
+    border: 2px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    animation: rotation 1s linear infinite;
+  }
+}
+
+.btn-loading-label {
+  opacity: 0;
+}
+
+.btn-primary {
+  @include btnColor('primary')
+}
+
+.btn-outline-primary {
+  border: 2px solid $primary;
+  color: $primary;
+  @include btn-outline;
+  .btn__loading--outline {
+    border: 2px solid $primary;
+    border-bottom-color: transparent;
+  }
+}
+
+.btn-warning {
+  @include btnColor('warning')
+}
+
+.btn-outline-warning {
+  border: 2px solid $yellow;
+  color: $yellow;
+  @include btn-outline;
+  .btn__loading--outline {
+    border: 2px solid $yellow;
+    border-bottom-color: transparent;
+  }
+}
+
+.btn-danger {
+@include btnColor('danger');
+}
+
+.btn-outline-danger {
+  border: 2px solid $red;
+  color: $red;
+  @include btn-outline;
+
+  .btn__loading--outline {
+    border: 2px solid $red;
+    border-bottom-color: transparent;
+  }
+}
+
+.btn-success {
+  @include btnColor('success')
+}
+
+.btn-outline-success {
+  border: 2px solid $green;
+  color: $green;
+  @include btn-outline;
+
+  .btn__loading--outline {
+    border: 2px solid $green;
+    border-bottom-color: transparent;
+  }
+}
+
+.btn-disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}

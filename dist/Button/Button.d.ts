@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import './Button.css';
-import '../index.css';
+import './Button.scss';
+import '../index.scss';
 export interface MyButtonProps {
     label: string;
     disabled?: boolean;

@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import './Input.css';
-import '../index.css';
+import './Input.scss';
+import '../index.scss';
 export interface MyInputProps {
     block?: boolean;
     placeholder?: string;

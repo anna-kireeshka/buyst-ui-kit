@@ -1,0 +1,31 @@
+@import '../styles/_variable.scss';
+@import '../styles/_mixin.scss';
+.container {
+  @include check-control-container;
+
+  .input-radio {
+    @include input-check-control
+  }
+
+  .input-radio:checked ~ .input-radiomark {
+    background: $base-color;
+  }
+  .input-radio:checked ~ .input-radiomark::after {
+    display: block;
+  }
+  .input-radiomark::after {
+    @include input-checkmark-background;
+    left: 4px;
+    top: 4px;
+    width: 4px;
+    height: 4px;
+    border: 3px solid white;
+    border-radius: 50%;
+  }
+}
+
+.input-radiomark {
+  @include input-checkmark;
+  border-radius: 50%;
+
+}

@@ -1,16 +1,21 @@
 import React from 'react';
 import { FC  } from 'react';
-import './Button.css'
-import '../index.css'
+import './Button.scss'
+import '../index.scss'
 import cx from "classnames";
 
 export interface MyButtonProps {
-    label: string,
-    disabled?: boolean,
-    outline?: boolean,
-    block?: boolean
-    variant: 'primary' | 'red' | 'yellow' | 'green' | 'violet'
+    children: React.ReactNode
+    disabled?: boolean;
+    outline?: boolean;
+    block?: boolean;
+    rounded?: boolean;
+    loading?: boolean;
+    variant: 'primary' | 'danger' | 'warning' | 'success';
+    size?: 'small' | 'medium' | 'large';
     onClick?: () => void;
+
+
 }
 const Button: FC<MyButtonProps> =
     ({
@@ -18,27 +23,33 @@ const Button: FC<MyButtonProps> =
          disabled,
          outline,
          block,
+         children,
+         rounded,
+         size,
+         loading,
          ...props
     }) => {
 
-    const btnClasses = cx(['my-button', {
-        'btn-primary': variant === 'primary',
-        'btn-red': variant === 'red',
-        'btn-yellow': variant === 'yellow',
-        'btn-green': variant === 'green',
-        'btn-violet': variant === 'violet',
+    const btnClasses = cx(['btn', {
+        [`btn-${variant}`]: variant,
         'btn-disabled': disabled,
-        'btn-outline-primary': variant === 'primary' && outline,
-        'btn-outline-yellow': variant === 'yellow' && outline,
-        'btn-outline-red': variant === 'red' && outline,
-        'btn-outline-green': variant === 'green' && outline,
-        'btn-outline-violet': variant === 'violet' && outline,
-        'my-button-large' : block
+        [`btn-outline-${variant}`]: variant && outline,
+        'btn__block': block,
+        'btn__rounded': rounded,
+        [`btn__${size}`]: size,
     }])
+
+        const btnLoaderClass = cx([{
+            'btn__loading': loading,
+             'btn__loading--outline': loading,
+        }])
 
     return (
         <button {...props} className={ btnClasses}>
-            { props.label }
+            <span className={ loading ? 'btn-loading-label' : ''}> { children } </span>
+            <div className='btn__loading-container'>
+                <span className={ btnLoaderClass }/>
+            </div>
         </button>
     )
 }
