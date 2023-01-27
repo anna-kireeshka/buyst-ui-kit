@@ -19,17 +19,13 @@
   width: 0;
 }
 
-@mixin input-checkmark($radio) {
+@mixin input-checkmark {
   position: absolute;
   top: 0;
   left: 0;
   height: 18px;
   width: 18px;
-  background-color: #eee;
-
-  @if $radio {
-  border-radius: 50%;
-}
+  background-color: #d3d2d2;
 
   &::after {
     content: "";
@@ -38,7 +34,7 @@
   }
 }
 
-@mixin input-checkmark-background($radio: false) {
+@mixin input-checkmark-background {
   left: 5px;
   top: 2px;
   width: 4px;
@@ -48,15 +44,6 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-
-  @if $radio {
-    left: 4px;
-    top: 4px;
-    width: 4px;
-    height: 4px;
-    border: 3px solid white;
-    border-radius: 50%;
-  }
 }
 
 @mixin btnColor($color) {

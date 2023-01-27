@@ -19,8 +19,8 @@ const Radio: FC<MyInputProps> =
 
         return (
             <label className='container'> {props.label }
-                <input type='radio' {...props} className={'input-checkbox'}/>
-                <span className={'input-checkmark'}/>
+                <input type='radio' {...props} className={'input-radio'}/>
+                <span className={'input-radiomark'}/>
             </label>
         )
     }

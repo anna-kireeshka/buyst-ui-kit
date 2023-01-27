@@ -1,11 +1,22 @@
 @import '../styles/_variable.scss';
 @import '../styles/_mixin.scss';
-$base-color: #17a0ff;
+
+@keyframes click-wave {
+  0% {
+    opacity: .25;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
 .container {
  @include check-control-container;
 
   .input-checkbox {
-    @include input-check-control
+    @include input-check-control;
   }
 
   .input-checkbox:checked ~ .input-checkmark {
@@ -15,10 +26,10 @@ $base-color: #17a0ff;
     display: block;
   }
   .input-checkmark::after {
-    @include input-checkmark-background($radio: false)
+    @include input-checkmark-background;
   }
 }
 
 .input-checkmark {
-  @include input-checkmark($radio: false);
+  @include input-checkmark;
 }
