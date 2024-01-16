@@ -1,13 +1,16 @@
-import { FC } from 'react';
-import './Button.scss';
-import '../index.scss';
+import { FC, ReactNode } from 'react';
+type Color = 'green' | 'gray' | 'orange' | 'red' | 'primary';
 export interface MyButtonProps {
-    label: string;
-    disabled?: boolean;
+    children: ReactNode;
+    loading?: boolean;
+    size?: 'small' | 'medium';
+    theme: Color;
+    transparent?: boolean;
+    fullWidth?: boolean;
+    onClickHandle?: () => void;
+    withIcon?: boolean;
     outline?: boolean;
-    block?: boolean;
-    variant: 'primary' | 'red' | 'yellow' | 'green' | 'violet';
-    onClick?: () => void;
+    disabled?: boolean;
 }
 declare const Button: FC<MyButtonProps>;
 export default Button;
