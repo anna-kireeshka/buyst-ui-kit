@@ -20,7 +20,7 @@
   }
 
   .input-checkbox:checked ~ .input-checkmark {
-    background: $base-color;
+    background: var(--green500);
   }
   .input-checkbox:checked ~ .input-checkmark::after {
     display: block;

@@ -1,0 +1,35 @@
+@import '../styles/_variable.scss';
+@mixin inputStyle {
+  width: 100%;
+  background-color: var(--gray100);
+  padding: 0.7rem 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+
+
+}
+
+.input {
+  &[type="number"], &[type="password"] {
+    @include inputStyle;
+  }
+  @include inputStyle;
+  &-success {
+    border: 1px solid var(--green500);
+  }
+  &-danger {
+    border: 1px solid var(--berry1);
+  }
+
+  &-disabled {
+    background: rgba(208, 219, 224, 0.25);
+    pointer-events: none;
+  }
+
+  &-outlined {
+    background-color: transparent;
+    border: 1px solid var(--gray300);
+  }
+}

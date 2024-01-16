@@ -8,7 +8,7 @@
   }
 
   .input-radio:checked ~ .input-radiomark {
-    background: $base-color;
+    background: var(--green500)
   }
   .input-radio:checked ~ .input-radiomark::after {
     display: block;

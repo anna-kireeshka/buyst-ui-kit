@@ -1,53 +1,64 @@
 import React from 'react';
-import { FC  } from 'react';
-import './Button.scss'
-import '../index.scss'
+import { FC, ReactNode  } from 'react';
+import styles from './Button.module.scss'
+// import '../index.scss'
 import cx from "classnames";
+type Color =
+    'green'
+    | 'gray'
+    | 'orange'
+    | 'red'
+    | 'primary'
 
 export interface MyButtonProps {
-    children: React.ReactNode
-    disabled?: boolean;
-    outline?: boolean;
-    block?: boolean;
-    rounded?: boolean;
+    children: ReactNode;
     loading?: boolean;
-    variant: 'primary' | 'danger' | 'warning' | 'success';
-    size?: 'small' | 'medium' | 'large';
-    onClick?: () => void;
+    size?: 'small' | 'medium';
+    theme: Color;
+    transparent?: boolean,
+    fullWidth?: boolean;
+    onClickHandle?: () => void;
+    withIcon?: boolean;
+    outline?: boolean;
+    disabled?: boolean;
 
 
 }
 const Button: FC<MyButtonProps> =
     ({
-         variant,
-         disabled,
-         outline,
-         block,
+         theme = 'green',
+         disabled = false,
+         outline = false,
+         fullWidth = false,
          children,
-         rounded,
-         size,
-         loading,
+         size = 'small',
+         loading = false,
+         transparent = false,
+         withIcon,
          ...props
     }) => {
 
-    const btnClasses = cx(['btn', {
-        [`btn-${variant}`]: variant,
-        'btn-disabled': disabled,
-        [`btn-outline-${variant}`]: variant && outline,
-        'btn__block': block,
-        'btn__rounded': rounded,
-        [`btn__${size}`]: size,
-    }])
+        const classes = cx(
+            styles[`btn`],
+            styles[`btn-${theme}`],
+            {
+                [styles[`btn-${theme}--fullWidth`]]: fullWidth,
+                [styles[`btn-${theme}--transparent`]]: transparent,
+                [styles[`btn-${size}`]]: size,
+                [styles[`${theme}-withIcon`]]: withIcon,
+                [styles[`btn-${theme}--outline`]]: outline,
+                [styles[`btn-disabled`]]: disabled
+            }
+        )
 
         const btnLoaderClass = cx([{
-            'btn__loading': loading,
-             'btn__loading--outline': loading,
+            [styles[`btn-loading`]]: loading,
         }])
 
     return (
-        <button {...props} className={ btnClasses}>
-            <span className={ loading ? 'btn-loading-label' : ''}> { children } </span>
-            <div className='btn__loading-container'>
+        <button {...props} className={ classes}>
+            <span className={ loading ? `${styles.btnLoadingLabel}` : ''}> { children } </span>
+            <div className={styles.btnLoadingContainer}>
                 <span className={ btnLoaderClass }/>
             </div>
         </button>

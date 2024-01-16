@@ -25,7 +25,7 @@
   left: 0;
   height: 18px;
   width: 18px;
-  background-color: #d3d2d2;
+  background-color: var(--gray100);
 
   &::after {
     content: "";
@@ -46,47 +46,59 @@
   transform: rotate(45deg);
 }
 
-@mixin btnColor($color) {
+@mixin baseBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px;
+  width: 100%;
+  min-height: 36px;
+  padding:  0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
   color: #fff;
-   @if $color == 'primary' {
-    background: $primary;
-     &:hover {
-       background: $primary-hover;
-     }
-   } @else if $color == 'warning' {
-      background: $yellow;
-       &:hover {
-         background: $yellow-hover;
-       }
-   } @else if $color == 'success' {
-       background: $green;
-        &:hover {
-          background: $green-hover;
-       }
-   } @else if $color == 'danger' {
-        background: $red;
-       &:hover {
-       background: $red-hover;
-     }
-   }
-  &:active {
-    top: 2px;
+  gap: 1rem;
+}
+@mixin btnColor($color, $hoverColor) {
+  color: #fff;
+  background: $color;
+
+  &:hover {
+    background: $hoverColor;
+  }
+
+  & > span, & > path {
+    color: #fff;
+    fill: #fff;
   }
 }
 
-@mixin btn-outline {
+@mixin btnOutline($color, $hoverColor) {
   background: transparent;
-  box-shadow: none;
-
+  color: $color;
+  border: 2px solid $color;
   &:hover {
-    border: none;
-    box-shadow: $btn-box-shadow;
-    color: #fff;
+    color: $hoverColor;
+    border: 2px solid $hoverColor;
+    background: transparent;
   }
-  &:hover .btn__loading--outline {
-    border: 2px solid #fff;
-    border-bottom-color: transparent;
-  };
+  & > span, & > path {
+    color: $color;
+    fill: $color;
+  }
+}
+
+@mixin btnTransparent($color, $hoverColor) {
+  background: transparent;
+  border: none;
+  color: $color;
+  fill: $color;
+  &:hover {
+    color: $hoverColor;
+    background: transparent;
+  }
 }
 
 @mixin round-loading-container {

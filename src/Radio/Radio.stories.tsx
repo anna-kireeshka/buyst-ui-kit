@@ -1,15 +1,15 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Checkbox from '../Checkbox/Checkbox';
+import Radio from './Radio';
 
 export default {
-    title: 'Example/Checkbox',
-    component: Checkbox,
+    title: 'Example/Radio',
+    component: Radio,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof Checkbox>;
+} as ComponentMeta<typeof Radio>;
 
-const Template: ComponentStory<typeof Checkbox> = (args) => <Checkbox {...args} />;
+const Template: ComponentStory<typeof Radio> = (args) => <Radio {...args} />;
 export const Default = Template.bind({});

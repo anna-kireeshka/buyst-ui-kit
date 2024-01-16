@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Range from '../Range/Range';
+import Range from './Range';
 
 export default {
     title: 'Example/Range',

@@ -1,43 +1,54 @@
-import React, {useState} from 'react';
-import { FC  } from 'react';
-import './Input.scss'
-import '../index.scss'
-import cx from "classnames";
+import React, { KeyboardEvent } from 'react'
+import { FC } from 'react'
+import styles from './Input.module.scss'
+import cx from 'classnames'
 
 export interface MyInputProps {
-    type: 'text' | 'password';
-    value: 'danger' | 'success' | '';
-    size?: 'lg' | 'md' | 'sm';
-    disabled?: boolean;
-    placeholder?: string;
-    label?: string;
-    column?: boolean;
-    onChange: () => {};
-    onBlur: () => {};
-    onFocus: () => {};
+   type: 'text' | 'password' | 'number'
+   state: 'default' | 'danger' | 'success' | 'disabled' | 'outlined'
+   placeholder?: string
+   label?: string
+   min?: number
+   max?: number
+   value: string | number
+   onKeyDown: () => void
+   onChange: () => void
+   onBlur: () => void
+   onFocus: () => void
 }
-const Input: FC<MyInputProps> =
-    ({
-         column,
-         size,
-         type,
-         value,
-         disabled,
-         ...props
-     }) => {
+const Input: FC<MyInputProps> = ({
+   type,
+   label = '',
+   state = 'default',
+   value,
+   onKeyDown,
+   ...props
+}) => {
+   const handleInputKeyup = (ev: KeyboardEvent<HTMLInputElement>) => {
+      const code = ev.code.toLowerCase()
+      if (type === 'number') {
+         if (code.includes('key')) {
+            ev.preventDefault()
+         }
+      }
+   }
 
-        const inputStyle = cx( {
-            [`input-${type}`]: type,
-            [`input-${value}`]: value,
-            [`input-${size}`]: size,
-            'input-disabled': disabled,
-        })
+   const inputStyle = cx(styles['input'], {
+      [styles[`input-${state}`]]: state,
+   })
 
-        return (
-                <label> {props.label}
-                <input type={type} {...props} className={inputStyle} />
-                </label>
-        )
-    }
+   return (
+      <label>
+         {label}
+         <input
+            type={type}
+            value={value}
+            {...props}
+            className={inputStyle}
+            onKeyDown={(ev) => handleInputKeyup(ev)}
+         />
+      </label>
+   )
+}
 
-export default Input;
+export default Input

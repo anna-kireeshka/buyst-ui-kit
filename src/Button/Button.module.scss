@@ -1,0 +1,89 @@
+@import "../styles/mixin.scss";
+
+$themeColours: (
+        base: (
+                "green": var(--green500),
+                "orange": var(--orange3),
+                "red": var(--berry3),
+                "primary": var(--blue3),
+                "gray": var(--gray200),
+        ),
+        hovered: (
+                "green-hover": var(--green600),
+                "orange-hover": var(--orange1),
+                "red-hover": var(--berry2),
+                "primary-hover": var(--blue2),
+                "gray-hover": var(--gray400),
+        )
+);
+
+
+@mixin setThemeBtn {
+  @each $color, $value in map-get($themeColours, base) {
+    $hoverColor: map-get(map-get($themeColours, hovered), #{$color + "-hover"});
+
+    &-#{$color} {
+      @include btnColor($value, $hoverColor);
+      &--outline {
+        @include btnOutline($value, $hoverColor);
+      }
+      &--transparent {
+        @include btnTransparent($value, $hoverColor);
+      }
+    }
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn {
+  @include baseBtn;
+  position: relative;
+
+  &-fullWidth {
+    width: 100%;
+    max-width: 100%;
+  }
+  &-withIcon {
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-small {
+   font-size: 0.9rem;
+  }
+
+  &-medium {
+    font-size: 1.1rem;
+    width: 230px;
+  }
+  &-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &LoadingContainer {
+    @include round-loading-container
+  }
+  &LoadingLabel {
+    opacity: 0;
+  }
+  &-loading {
+    width: 20px;
+    height: 20px;
+    transform: translate(50%, -50%);
+    border: 2px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    animation: rotation 1s linear infinite;
+  }
+
+  @include setThemeBtn;
+}
