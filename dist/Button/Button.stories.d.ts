@@ -1,13 +1,12 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn } from '@storybook/react';
 import Button from './Button';
-declare const _default: ComponentMeta<React.FC<import("./Button").MyButtonProps>>;
+declare const _default: import("@storybook/types").StoryAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, import("./Button").MyButtonProps, Partial<import("./Button").MyButtonProps>>;
 export default _default;
-type StoryButton = ComponentStory<typeof Button>;
+type StoryButton = StoryFn<typeof Button>;
 export declare const Green: StoryButton;
 export declare const Red: StoryButton;
 export declare const Orange: StoryButton;
 export declare const Primary: StoryButton;
 export declare const Gray: StoryButton;
 export declare const Disabled: StoryButton;
-export declare const Default: StoryButton;
+export declare const Default: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("./Button").MyButtonProps>;

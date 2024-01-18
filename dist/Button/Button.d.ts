@@ -7,7 +7,6 @@ export interface MyButtonProps {
     theme: Color;
     transparent?: boolean;
     fullWidth?: boolean;
-    onClickHandle?: () => void;
     withIcon?: boolean;
     outline?: boolean;
     disabled?: boolean;
