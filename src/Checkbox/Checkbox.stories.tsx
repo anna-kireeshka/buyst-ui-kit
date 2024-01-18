@@ -1,15 +1,15 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react'
+import { StoryObj, StoryFn } from '@storybook/react'
 
-import Checkbox from './Checkbox';
+import Checkbox from './Checkbox'
 
 export default {
-    title: 'Example/Checkbox',
-    component: Checkbox,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof Checkbox>;
+   title: 'Atomic Design/Atom/Checkbox',
+   component: Checkbox,
+   argTypes: {
+      backgroundColor: { control: 'color' },
+   },
+} as StoryObj<typeof Checkbox>
 
-const Template: ComponentStory<typeof Checkbox> = (args) => <Checkbox {...args} />;
-export const Default = Template.bind({});
+const Template: StoryFn<typeof Checkbox> = (args) => <Checkbox {...args} />
+export const Default = Template.bind({})

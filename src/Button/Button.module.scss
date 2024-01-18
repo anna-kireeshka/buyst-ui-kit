@@ -47,21 +47,21 @@ $themeColours: (
   @include baseBtn;
   position: relative;
 
-  &-fullWidth {
+  &--fullWidth {
     width: 100%;
-    max-width: 100%;
+    min-width: 100%;
   }
   &-withIcon {
     justify-content: space-between;
     align-items: center;
   }
   &-small {
-   font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   &-medium {
     font-size: 1.1rem;
-    width: 230px;
+    padding: .7rem .9rem;
   }
   &-disabled {
     opacity: 0.5;

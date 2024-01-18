@@ -4,7 +4,7 @@ import { StoryFn, StoryObj } from '@storybook/react'
 import Button from './Button'
 
 export default {
-   title: 'Example/Button',
+   title: 'Atomic Design/Atom/Button',
    component: Button,
 } as StoryObj<typeof Button>
 
@@ -12,11 +12,15 @@ type StoryButton = StoryFn<typeof Button>
 
 const Template: StoryButton = (args) => <Button {...args}> Button Default </Button>
 
-export const Green: StoryButton = (args) => <Button {...args}> Green Button </Button>
+export const Green: StoryButton = (args) => (
+   <div style={{ width: '500px', height: '500px', backgroundColor: '#eee' }}>
+      <Button {...args}> registration </Button>
+   </div>
+)
 Green.args = {
    theme: 'green',
 }
-export const Red: StoryButton = (args) => <Button {...args}> Red Button </Button>
+export const Red: StoryButton = (args) => <Button {...args}> login </Button>
 Red.args = {
    theme: 'red',
 }

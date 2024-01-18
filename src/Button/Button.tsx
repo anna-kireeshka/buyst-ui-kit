@@ -29,7 +29,7 @@ const Button: FC<MyButtonProps> = ({
    ...props
 }) => {
    const classes = cx(styles[`btn`], styles[`btn-${theme}`], {
-      [styles[`btn-${theme}--fullWidth`]]: fullWidth,
+      [styles[`btn--fullWidth`]]: fullWidth,
       [styles[`btn-${theme}--transparent`]]: transparent,
       [styles[`btn-${size}`]]: size,
       [styles[`${theme}-withIcon`]]: withIcon,
