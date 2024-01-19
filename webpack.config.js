@@ -13,9 +13,6 @@ module.exports = {
    resolve: {
       extensions: ['.ts', '.tsx'],
    },
-   externals: {
-      react: 'react',
-   },
    plugins: [
       new MiniCssExtractPlugin({
          filename: '[name].css',
