@@ -1,4 +1,5 @@
 const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
    mode: 'production',
@@ -8,7 +9,6 @@ module.exports = {
       path: path.resolve(__dirname, 'dist'),
       libraryTarget: 'umd',
       clean: true,
-      globalObject: 'this',
    },
    resolve: {
       extensions: ['.ts', '.tsx'],
@@ -16,6 +16,11 @@ module.exports = {
    externals: {
       react: 'react',
    },
+   plugins: [
+      new MiniCssExtractPlugin({
+         filename: '[name].css',
+      }),
+   ],
    module: {
       rules: [
          {
@@ -24,7 +29,7 @@ module.exports = {
          },
          {
             test: /\.scss$/,
-            use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'sass-loader' }],
+            use: [MiniCssExtractPlugin.loader, { loader: 'css-loader' }, { loader: 'sass-loader' }],
          },
 
          {
@@ -33,5 +38,19 @@ module.exports = {
             exclude: /node_modules/,
          },
       ],
+   },
+   externals: {
+      react: {
+         commonjs: 'react',
+         commonjs2: 'react',
+         amd: 'react',
+         root: 'React',
+      },
+      'react-dom': {
+         commonjs: 'react-dom',
+         commonjs2: 'react-dom',
+         amd: 'react-dom',
+         root: 'ReactDOM',
+      },
    },
 }
