@@ -1,0 +1,647 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green50: #E9F8EE;
+  --green100: #D4F1DF;
+  --green200: #B0E6C5;
+  --green300: #77D499;
+  --green400: #57CA82;
+  --green500: #2DBE64;
+  --green600: #20A151;
+  --green700: #198E48;
+  --green800: #106E41;
+  --green900: #055A31;
+  --white: #fff;
+  --gray50: #F8F8FA;
+  --gray100: #F0F0F4;
+  --gray200: #E3E3E8;
+  --gray300: #D3D4D8;
+  --gray400: #BCBCC3;
+  --gray500: #94959B;
+  --gray600: #75767D;
+  --gray700: #4A4A4E;
+  --gray800: #333;
+  --gray900: #212328;
+  --berry1: #d80944;
+  --berry2: #DF2858;
+  --berry3: #EB426E;
+  --berry4: #F4678C;
+  --berry5: #F88FAB;
+  --berry6: #FBA3BA;
+  --berry7: #ffd5e1;
+  --berry8: #FFEAF0;
+  --blue1: #1b2fea;
+  --blue2: #0982E5;
+  --blue3: #2F9BF2;
+  --blue4: #54B3FF;
+  --blue5: #80C1FF;
+  --blue6: #A6D5FF;
+  --blue7: #CCE9FF;
+  --purple1: #572382;
+  --purple2: #6C309E;
+  --purple3: #764DB4;
+  --purple4: #9477E6;
+  --purple5: #C8B3FF;
+  --purple6: #D4C6FF;
+  --purple7: #E1D9FF;
+  --purple8: #721445;
+  --purple9: #8A2D5C;
+  --purple10: #A04975;
+  --purple11: #CF7EA5;
+  --purple12: #FFB3D6;
+  --purple13: #FFC6E2;
+  --purple14: #FFD9ED;
+  --orange1: #ff6a00;
+  --orange2: #fb7b20;
+  --orange3: #fba233;
+  --orange4: #ffbb56;
+  --orange5: #ffcc84;
+  --orange6: #ffe2be;
+  --orange7: #ffe8cb;
+  --main-text-light: #767a80;
+  --brand-violet-light: #ebebef;
+  --text-violet: #2DBE64;
+  --primary-color: #2DBE64;
+  --card-box-shadow: 1px 1px 17px 1px #b2b5be;
+  --card-border-radius: 0.3rem;
+  --brand-grey: #d7d7da;
+  --brand-yellow: #ecb266;
+  --brand-light-grey: #dadbde;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}@keyframes click-wave {
+  0% {
+    opacity: 0.25;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 1rem;
+  padding-left: 25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container .input-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.container .input-checkbox:checked ~ .input-checkmark {
+  background: var(--green500);
+}
+.container .input-checkbox:checked ~ .input-checkmark::after {
+  display: block;
+}
+.container .input-checkmark::after {
+  left: 50%;
+  top: 50%;
+  width: 7px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.input-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.3rem;
+  width: 1.3rem;
+  background-color: var(--gray200);
+}
+.input-checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 1rem;
+  padding-left: 25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container .input-radio {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.container .input-radio:checked ~ .input-radiomark {
+  background: var(--green500);
+}
+.container .input-radio:checked ~ .input-radiomark::after {
+  display: block;
+}
+.container .input-radiomark::after {
+  left: 50%;
+  top: 50%;
+  width: 7px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 4px;
+  height: 4px;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+.input-radiomark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.3rem;
+  width: 1.3rem;
+  background-color: var(--gray200);
+  border-radius: 50%;
+}
+.input-radiomark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}.btn {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0.1rem;
+}
+.btn-green {
+  background: transparent;
+  border: none;
+  color: var(--green800);
+  fill: var(--green800);
+}
+.btn-green:hover {
+  color: var(--green100);
+  background: transparent;
+}
+.btn-green span, .btn-green path {
+  color: var(--green800);
+  fill: var(--green800);
+}
+.btn-green:hover {
+  color: var(--green800);
+  background-color: var(--green100);
+}
+.btn-orange {
+  background: transparent;
+  border: none;
+  color: var(--orange1);
+  fill: var(--orange1);
+}
+.btn-orange:hover {
+  color: var(--orange6);
+  background: transparent;
+}
+.btn-orange span, .btn-orange path {
+  color: var(--orange1);
+  fill: var(--orange1);
+}
+.btn-orange:hover {
+  color: var(--orange1);
+  background-color: var(--orange6);
+}
+.btn-red {
+  background: transparent;
+  border: none;
+  color: var(--berry3);
+  fill: var(--berry3);
+}
+.btn-red:hover {
+  color: var(--berry8);
+  background: transparent;
+}
+.btn-red span, .btn-red path {
+  color: var(--berry3);
+  fill: var(--berry3);
+}
+.btn-red:hover {
+  color: var(--berry3);
+  background-color: var(--berry8);
+}
+.btn-primary {
+  background: transparent;
+  border: none;
+  color: var(--blue3);
+  fill: var(--blue3);
+}
+.btn-primary:hover {
+  color: var(--blue7);
+  background: transparent;
+}
+.btn-primary span, .btn-primary path {
+  color: var(--blue3);
+  fill: var(--blue3);
+}
+.btn-primary:hover {
+  color: var(--blue3);
+  background-color: var(--blue7);
+}
+.btn-gray {
+  background: transparent;
+  border: none;
+  color: var(--gray500);
+  fill: var(--gray500);
+}
+.btn-gray:hover {
+  color: var(--gray100);
+  background: transparent;
+}
+.btn-gray span, .btn-gray path {
+  color: var(--gray500);
+  fill: var(--gray500);
+}
+.btn-gray:hover {
+  color: var(--gray500);
+  background-color: var(--gray100);
+}
+.btn-sm {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+.btn-sm span, .btn-sm svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  font-size: 1.4rem;
+}
+.btn-lg {
+  width: 2rem;
+  height: 2rem;
+}
+.btn-lg span, .btn-lg svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  font-size: 1.6rem;
+}.input {
+  width: 100%;
+  background-color: var(--gray100);
+  padding: 0.7rem 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+}
+.input[type=number], .input[type=password] {
+  width: 100%;
+  background-color: var(--gray100);
+  padding: 0.7rem 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+}
+.input-success {
+  border: 1px solid var(--green500);
+}
+.input-danger {
+  border: 1px solid var(--berry1);
+}
+.input-disabled {
+  background: rgba(208, 219, 224, 0.25);
+  pointer-events: none;
+}
+.input-outlined {
+  background-color: transparent;
+  border: 1px solid var(--gray300);
+}@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px;
+  min-height: 36px;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #fff;
+  gap: 1rem;
+  position: relative;
+}
+.btn--fullWidth {
+  width: 100%;
+  min-width: 100%;
+}
+.btn-withIcon {
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-small {
+  font-size: 1rem;
+}
+.btn-medium {
+  font-size: 1.1rem;
+  padding: 0.7rem 0.9rem;
+}
+.btn-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.btnLoadingContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnLoadingLabel {
+  opacity: 0;
+}
+.btn-loading {
+  width: 20px;
+  height: 20px;
+  transform: translate(50%, -50%);
+  border: 2px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: rotation 1s linear infinite;
+}
+.btn-green {
+  color: #fff;
+  background: var(--green500);
+}
+.btn-green:hover {
+  background: var(--green600);
+}
+.btn-green > span, .btn-green > path {
+  color: #fff;
+  fill: #fff;
+}
+.btn-green--outline {
+  background: transparent;
+  color: var(--green500);
+  border: 2px solid var(--green500);
+}
+.btn-green--outline:hover {
+  color: var(--green600);
+  border: 2px solid var(--green600);
+  background: transparent;
+}
+.btn-green--outline > span, .btn-green--outline > path {
+  color: var(--green500);
+  fill: var(--green500);
+}
+.btn-green--transparent {
+  background: transparent;
+  border: none;
+  color: var(--green500);
+  fill: var(--green500);
+}
+.btn-green--transparent:hover {
+  color: var(--green600);
+  background: transparent;
+}
+.btn-orange {
+  color: #fff;
+  background: var(--orange3);
+}
+.btn-orange:hover {
+  background: var(--orange1);
+}
+.btn-orange > span, .btn-orange > path {
+  color: #fff;
+  fill: #fff;
+}
+.btn-orange--outline {
+  background: transparent;
+  color: var(--orange3);
+  border: 2px solid var(--orange3);
+}
+.btn-orange--outline:hover {
+  color: var(--orange1);
+  border: 2px solid var(--orange1);
+  background: transparent;
+}
+.btn-orange--outline > span, .btn-orange--outline > path {
+  color: var(--orange3);
+  fill: var(--orange3);
+}
+.btn-orange--transparent {
+  background: transparent;
+  border: none;
+  color: var(--orange3);
+  fill: var(--orange3);
+}
+.btn-orange--transparent:hover {
+  color: var(--orange1);
+  background: transparent;
+}
+.btn-red {
+  color: #fff;
+  background: var(--berry3);
+}
+.btn-red:hover {
+  background: var(--berry2);
+}
+.btn-red > span, .btn-red > path {
+  color: #fff;
+  fill: #fff;
+}
+.btn-red--outline {
+  background: transparent;
+  color: var(--berry3);
+  border: 2px solid var(--berry3);
+}
+.btn-red--outline:hover {
+  color: var(--berry2);
+  border: 2px solid var(--berry2);
+  background: transparent;
+}
+.btn-red--outline > span, .btn-red--outline > path {
+  color: var(--berry3);
+  fill: var(--berry3);
+}
+.btn-red--transparent {
+  background: transparent;
+  border: none;
+  color: var(--berry3);
+  fill: var(--berry3);
+}
+.btn-red--transparent:hover {
+  color: var(--berry2);
+  background: transparent;
+}
+.btn-primary {
+  color: #fff;
+  background: var(--blue3);
+}
+.btn-primary:hover {
+  background: var(--blue2);
+}
+.btn-primary > span, .btn-primary > path {
+  color: #fff;
+  fill: #fff;
+}
+.btn-primary--outline {
+  background: transparent;
+  color: var(--blue3);
+  border: 2px solid var(--blue3);
+}
+.btn-primary--outline:hover {
+  color: var(--blue2);
+  border: 2px solid var(--blue2);
+  background: transparent;
+}
+.btn-primary--outline > span, .btn-primary--outline > path {
+  color: var(--blue3);
+  fill: var(--blue3);
+}
+.btn-primary--transparent {
+  background: transparent;
+  border: none;
+  color: var(--blue3);
+  fill: var(--blue3);
+}
+.btn-primary--transparent:hover {
+  color: var(--blue2);
+  background: transparent;
+}
+.btn-gray {
+  color: #fff;
+  background: var(--gray200);
+}
+.btn-gray:hover {
+  background: var(--gray400);
+}
+.btn-gray > span, .btn-gray > path {
+  color: #fff;
+  fill: #fff;
+}
+.btn-gray--outline {
+  background: transparent;
+  color: var(--gray200);
+  border: 2px solid var(--gray200);
+}
+.btn-gray--outline:hover {
+  color: var(--gray400);
+  border: 2px solid var(--gray400);
+  background: transparent;
+}
+.btn-gray--outline > span, .btn-gray--outline > path {
+  color: var(--gray200);
+  fill: var(--gray200);
+}
+.btn-gray--transparent {
+  background: transparent;
+  border: none;
+  color: var(--gray200);
+  fill: var(--gray200);
+}
+.btn-gray--transparent:hover {
+  color: var(--gray400);
+  background: transparent;
+}.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px;
+  min-height: 36px;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #fff;
+  gap: 1rem;
+  justify-content: space-between;
+  min-width: 150px;
+  width: 100%;
+  gap: 1rem;
+}
+.btn-instagram {
+  color: #fff;
+  background: #e1306c;
+}
+.btn-instagram:hover {
+  background: #ea417a;
+}
+.btn-instagram > span, .btn-instagram > path {
+  color: #fff;
+  fill: #fff;
+}
+.btn-whatsapp {
+  color: #fff;
+  background: var(--orange3);
+}
+.btn-whatsapp:hover {
+  background: #05cc06;
+}
+.btn-whatsapp > span, .btn-whatsapp > path {
+  color: #fff;
+  fill: #fff;
+}
+.btn-facebook {
+  color: #fff;
+  background: #00af01;
+}
+.btn-facebook:hover {
+  background: #44619b;
+}
+.btn-facebook > span, .btn-facebook > path {
+  color: #fff;
+  fill: #fff;
+}
+.btn-telegram {
+  color: #fff;
+  background: #0088cc;
+}
+.btn-telegram:hover {
+  background: #22a5e6;
+}
+.btn-telegram > span, .btn-telegram > path {
+  color: #fff;
+  fill: #fff;
+}
+.btn path {
+  fill: #fff;
+}
