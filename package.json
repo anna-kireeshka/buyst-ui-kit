@@ -2,7 +2,7 @@
   "name": "cute-react-ui-kit",
   "version": "1.0.8",
   "description": "",
-  "main": "buyst-ui-kit.js",
+  "main": "/dist/index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
