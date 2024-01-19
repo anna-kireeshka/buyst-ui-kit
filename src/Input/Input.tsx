@@ -11,19 +11,8 @@ export interface MyInputProps {
    min?: number
    max?: number
    value: string | number
-   onKeyDown: () => void
-   onChange: () => void
-   onBlur: () => void
-   onFocus: () => void
 }
-const Input: FC<MyInputProps> = ({
-   type,
-   label = '',
-   state = 'default',
-   value,
-   onKeyDown,
-   ...props
-}) => {
+const Input: FC<MyInputProps> = ({ type, label = '', state = 'default', value, ...props }) => {
    const handleInputKeyup = (ev: KeyboardEvent<HTMLInputElement>) => {
       const code = ev.code.toLowerCase()
       if (type === 'number') {

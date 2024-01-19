@@ -5,7 +5,7 @@ module.exports = {
    mode: 'production',
    entry: './src/index.ts',
    output: {
-      filename: 'index.js',
+      filename: '[name].[contenthash].js',
       path: path.resolve(__dirname, 'dist'),
       libraryTarget: 'umd',
       clean: true,
@@ -41,13 +41,13 @@ module.exports = {
       react: {
          commonjs: 'react',
          commonjs2: 'react',
-         amd: 'react',
+         amd: 'React',
          root: 'React',
       },
       'react-dom': {
          commonjs: 'react-dom',
          commonjs2: 'react-dom',
-         amd: 'react-dom',
+         amd: 'ReactDOM',
          root: 'ReactDOM',
       },
    },
