@@ -2,7 +2,7 @@
   "name": "buyst-ui-kit",
   "version": "1.0.8",
   "description": "",
-  "main": "/dist/index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
