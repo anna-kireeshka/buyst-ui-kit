@@ -9,6 +9,7 @@ module.exports = {
       path: path.resolve(__dirname, 'dist'),
       libraryTarget: 'umd',
       clean: true,
+      globalObject: 'this',
    },
    resolve: {
       extensions: ['.ts', '.tsx'],
