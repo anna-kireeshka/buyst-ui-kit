@@ -1,7 +1,7 @@
 @import '../styles/_variable.scss';
 @mixin inputStyle {
   width: 100%;
-  background-color: var(--gray100);
+  background-color: var(--gray150);
   padding: 0.7rem 0.5rem;
   font-size: 1rem;
   border: none;
@@ -11,6 +11,9 @@
 
 }
 
+.label {
+  width: 100%;
+}
 .input {
   &[type="number"], &[type="password"] {
     @include inputStyle;

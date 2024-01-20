@@ -31,12 +31,12 @@ const Input: FC<MyInputProps> = (
    })
 
    return (
-      <label>
+      <label className={styles.label}>
          {label}
          <input
             {...props}
             type={type}
-            value={value}
+            defaultValue={value}
             className={inputStyle}
             onKeyDown={(ev) => handleInputKeyup(ev)}
             style={!borderRadius && { borderRadius: 0 }}
