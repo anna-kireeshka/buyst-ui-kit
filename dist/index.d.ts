@@ -56,27 +56,30 @@ interface MyButtonProps {
 }
 declare const ButtonSocialNetwork: FC<MyButtonProps>;
 
-interface Props {
-    categoryList: {
-        id: number;
-        name: string;
-        icon: string;
-        uri: string;
-    }[];
-    subCategoriesList: {
-        secondLevelCategories: [
-            {
+interface CategoryList {
+    id: number;
+    name: string;
+    icon: string;
+    uri: string;
+}
+interface SubCategoryList {
+    secondLevelCategories: [
+        {
+            id: number;
+            name: string;
+            uri: string;
+            thirdLevelCategories: {
                 id: number;
                 name: string;
                 uri: string;
-                thirdLevelCategories: {
-                    id: number;
-                    name: string;
-                    uri: string;
-                }[];
-            }
-        ];
-    }[];
+            }[];
+        }
+    ];
+}
+
+interface Props {
+    categoryList: CategoryList[];
+    subCategoriesList: SubCategoryList[];
 }
 declare const CategoryDropDownDesktop: FC<Props>;
 
