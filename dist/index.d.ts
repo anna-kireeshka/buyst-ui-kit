@@ -23,6 +23,7 @@ interface MyInputProps$2 {
     max?: number;
     value: string | number;
     borderRadius: boolean;
+    onChange: () => void;
 }
 declare const Input: FC<MyInputProps$2>;
 

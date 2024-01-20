@@ -12,9 +12,10 @@ export interface MyInputProps {
    max?: number
    value: string | number
    borderRadius: boolean
+   onChange: () => void
 }
 const Input: FC<MyInputProps> = (
-   { type, label = '', state = 'default', value, borderRadius = true },
+   { type, label = '', state = 'default', value, borderRadius = true, onChange },
    props
 ) => {
    const handleInputKeyup = (ev: KeyboardEvent<HTMLInputElement>) => {
@@ -36,10 +37,11 @@ const Input: FC<MyInputProps> = (
          <input
             {...props}
             type={type}
-            defaultValue={value}
+            value={value}
             className={inputStyle}
             onKeyDown={(ev) => handleInputKeyup(ev)}
             style={!borderRadius && { borderRadius: 0 }}
+            onChange={onChange}
          />
       </label>
    )
