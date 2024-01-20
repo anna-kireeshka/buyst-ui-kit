@@ -40,13 +40,13 @@ interface MyInputProps {
 }
 declare const Radio: FC<MyInputProps>;
 
-interface Props {
+interface Props$1 {
     theme: 'green' | 'gray' | 'orange' | 'red';
     size: 'xs' | 'sm' | 'lg';
     fill?: boolean;
     children: ReactNode;
 }
-declare const ButtonIcon: FC<Props>;
+declare const ButtonIcon: FC<Props$1>;
 
 type Color = 'whatsapp' | 'facebook' | 'telegram' | 'instagram';
 interface MyButtonProps {
@@ -56,4 +56,28 @@ interface MyButtonProps {
 }
 declare const ButtonSocialNetwork: FC<MyButtonProps>;
 
-export { Button, ButtonIcon, ButtonSocialNetwork, Checkbox, Input, Radio };
+interface Props {
+    categoryList: {
+        id: number;
+        name: string;
+        icon: string;
+        uri: string;
+    }[];
+    subCategoriesList: {
+        secondLevelCategories: [
+            {
+                id: number;
+                name: string;
+                uri: string;
+                thirdLevelCategories: {
+                    id: number;
+                    name: string;
+                    uri: string;
+                }[];
+            }
+        ];
+    }[];
+}
+declare const CategoryDropDownDesktop: FC<Props>;
+
+export { Button, ButtonIcon, ButtonSocialNetwork, CategoryDropDownDesktop, Checkbox, Input, Radio };

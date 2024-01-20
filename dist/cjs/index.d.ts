@@ -4,4 +4,5 @@ import Checkbox from './Checkbox/Checkbox';
 import Radio from './Radio/Radio';
 import ButtonIcon from './ButtonIcon/ButtonIcon';
 import ButtonSocialNetwork from './ButtonSocialNetwork/ButtonSocialNetwork';
-export { Button, Input, Checkbox, Radio, ButtonIcon, ButtonSocialNetwork };
+import CategoryDropDownDesktop from './Atom/CategoryDropDownDesktop/CategoryDropDownDesktop';
+export { Button, Input, Checkbox, Radio, ButtonIcon, ButtonSocialNetwork, CategoryDropDownDesktop };
