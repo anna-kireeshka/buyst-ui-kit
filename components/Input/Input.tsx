@@ -12,7 +12,7 @@ export interface MyInputProps {
    max?: number
    value: string | number
 }
-const Input: FC<MyInputProps> = ({ type, label = '', state = 'default', value, ...props }) => {
+const Input: FC<MyInputProps> = ({ type, label = '', state = 'default', value }, props) => {
    const handleInputKeyup = (ev: KeyboardEvent<HTMLInputElement>) => {
       const code = ev.code.toLowerCase()
       if (type === 'number') {
@@ -30,9 +30,9 @@ const Input: FC<MyInputProps> = ({ type, label = '', state = 'default', value, .
       <label>
          {label}
          <input
+            {...props}
             type={type}
             value={value}
-            {...props}
             className={inputStyle}
             onKeyDown={(ev) => handleInputKeyup(ev)}
          />

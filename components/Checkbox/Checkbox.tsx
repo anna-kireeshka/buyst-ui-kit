@@ -8,13 +8,12 @@ export interface MyInputProps {
    defaultChecked?: boolean
    label?: string
 }
-const Checkbox: FC<MyInputProps> = ({ disabled, ...props }) => {
+const Checkbox: FC<MyInputProps> = (props) => {
    return (
       <label className="container">
-         {' '}
-         {props.label}
          <input type="checkbox" {...props} className={'input-checkbox'} />
          <span className={'input-checkmark'} />
+         {props.label}
       </label>
    )
 }

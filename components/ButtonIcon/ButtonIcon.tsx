@@ -10,7 +10,7 @@ export interface Props {
    children: ReactNode
 }
 
-const ButtonIcon: FC<Props> = ({ theme, size, fill = false, children, ...props }) => {
+const ButtonIcon: FC<Props> = ({ theme, size, fill = false, children }, props) => {
    const classes = cn(styles[`btn`], styles[`btn-${theme}`], {
       [styles[`btn-${size}`]]: size,
       [styles[`btn-fill`]]: fill,

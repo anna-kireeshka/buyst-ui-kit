@@ -8,13 +8,12 @@ export interface MyInputProps {
    defaultChecked?: boolean
    label?: string
 }
-const Radio: FC<MyInputProps> = ({ disabled, ...props }) => {
+const Radio: FC<MyInputProps> = ({ disabled }, props) => {
    return (
       <label className="container">
-         {' '}
-         {props.label}
          <input type="radio" {...props} className={'input-radio'} />
          <span className={'input-radiomark'} />
+         {props.label}
       </label>
    )
 }
