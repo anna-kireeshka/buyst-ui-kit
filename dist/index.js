@@ -3155,7 +3155,7 @@ const kn = ({ categoryList: i, subCategoriesList: e }) => {
     query: "(min-width: 1024px)"
   });
   let f;
-  return u ? f = /* @__PURE__ */ M(
+  return console.log(u, "isDesktopOrLaptop"), u ? f = /* @__PURE__ */ M(
     On,
     {
       categoryList: i,

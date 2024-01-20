@@ -11,7 +11,6 @@ export interface Props {
    label: string
    value: string
    onChange: (e: ChangeEvent<HTMLInputElement>) => void
-   isDesktop: boolean
    openCategoryList: boolean
    onClick: () => void
    categoryList: CategoryList[]
@@ -29,6 +28,7 @@ const CategoryListTemplate: FC<PropsCategoryList> = ({ categoryList, subCategori
    })
    let node: ReactNode
 
+   console.log(isDesktopOrLaptop, 'isDesktopOrLaptop')
    if (isDesktopOrLaptop) {
       node = (
          <CategoryDropDownDesktop

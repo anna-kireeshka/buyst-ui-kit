@@ -4,7 +4,6 @@ export interface Props {
     label: string;
     value: string;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-    isDesktop: boolean;
     openCategoryList: boolean;
     onClick: () => void;
     categoryList: CategoryList[];
