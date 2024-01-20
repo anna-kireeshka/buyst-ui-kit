@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, ChangeEvent } from 'react';
 
 type Color$1 = 'green' | 'gray' | 'orange' | 'red' | 'primary';
 interface MyButtonProps$1 {
@@ -78,9 +78,15 @@ interface SubCategoryList {
 }
 
 interface Props {
+    label: string;
+    value: string;
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    isDesktop: boolean;
+    openCategoryList: boolean;
+    onClick: () => void;
     categoryList: CategoryList[];
     subCategoriesList: SubCategoryList[];
 }
-declare const CategoryDropDownDesktop: FC<Props>;
+declare const InputSearch: FC<Props>;
 
-export { Button, ButtonIcon, ButtonSocialNetwork, CategoryDropDownDesktop, Checkbox, Input, Radio };
+export { Button, ButtonIcon, ButtonSocialNetwork, Checkbox, Input, InputSearch, Radio };

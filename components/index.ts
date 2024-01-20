@@ -4,6 +4,6 @@ import Checkbox from './Checkbox/Checkbox'
 import Radio from './Radio/Radio'
 import ButtonIcon from './ButtonIcon/ButtonIcon'
 import ButtonSocialNetwork from './ButtonSocialNetwork/ButtonSocialNetwork'
-import CategoryDropDownDesktop from './Atom/CategoryDropDownDesktop/CategoryDropDownDesktop'
+import InputSearch from './Organism/InputSearch/InputSearch'
 
-export { Button, Input, Checkbox, Radio, ButtonIcon, ButtonSocialNetwork, CategoryDropDownDesktop }
+export { Button, Input, Checkbox, Radio, ButtonIcon, ButtonSocialNetwork, InputSearch }
