@@ -7,6 +7,7 @@ export interface MyInputProps {
     min?: number;
     max?: number;
     value: string | number;
+    borderRadius: boolean;
 }
 declare const Input: FC<MyInputProps>;
 export default Input;

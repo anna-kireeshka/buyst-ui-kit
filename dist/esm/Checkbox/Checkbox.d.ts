@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import './Checkbox.scss';
 import '../index.scss';
 export interface MyInputProps {
     disabled?: boolean;

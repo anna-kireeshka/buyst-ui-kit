@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import './Radio.scss';
 import '../index.scss';
 export interface MyInputProps {
     disabled?: boolean;

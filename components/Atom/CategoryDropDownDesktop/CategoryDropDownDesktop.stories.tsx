@@ -51,5 +51,4 @@ CategoryDropDownDesktopTemplate.args = {
       { id: 2, name: 'name', icon: '/icon', uri: 'string' },
       { id: 3, name: 'name', icon: '/icon', uri: 'string' },
    ],
-   activeCategory: 'name',
 }

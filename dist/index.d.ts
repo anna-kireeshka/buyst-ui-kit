@@ -22,6 +22,7 @@ interface MyInputProps$2 {
     min?: number;
     max?: number;
     value: string | number;
+    borderRadius: boolean;
 }
 declare const Input: FC<MyInputProps$2>;
 

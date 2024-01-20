@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import Link from 'next/link'
 import { ArrowRightIcon } from '../../svg-sprite/common'
 import styles from './CategoryDropDownDesctop.module.scss'
@@ -24,16 +24,10 @@ export interface Props {
          }
       ]
    }[]
-   onMouseOver: () => void
-   activeCategory: string
 }
 
-const CategoryDropDownDesktop: FC<Props> = ({
-   categoryList,
-   subCategoriesList,
-   onMouseOver,
-   activeCategory,
-}) => {
+const CategoryDropDownDesktop: FC<Props> = ({ categoryList, subCategoriesList }) => {
+   const [activeCategory, setActiveCategory] = useState('')
    return (
       <div className={styles.categories}>
          <div className={styles.categoriesContainer}>
@@ -43,7 +37,7 @@ const CategoryDropDownDesktop: FC<Props> = ({
                      <li
                         key={el.id}
                         className={styles.categoriesMainListItem}
-                        onMouseOver={onMouseOver}
+                        onMouseOver={() => setActiveCategory(el.name)}
                      >
                         <Link href={el.uri} className={styles.categoriesLink}>
                            {el.name}
