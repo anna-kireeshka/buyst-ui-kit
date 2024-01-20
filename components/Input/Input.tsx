@@ -11,8 +11,12 @@ export interface MyInputProps {
    min?: number
    max?: number
    value: string | number
+   borderRadius: boolean
 }
-const Input: FC<MyInputProps> = ({ type, label = '', state = 'default', value }, props) => {
+const Input: FC<MyInputProps> = (
+   { type, label = '', state = 'default', value, borderRadius = true },
+   props
+) => {
    const handleInputKeyup = (ev: KeyboardEvent<HTMLInputElement>) => {
       const code = ev.code.toLowerCase()
       if (type === 'number') {
@@ -35,6 +39,7 @@ const Input: FC<MyInputProps> = ({ type, label = '', state = 'default', value },
             value={value}
             className={inputStyle}
             onKeyDown={(ev) => handleInputKeyup(ev)}
+            style={!borderRadius && { borderRadius: 0 }}
          />
       </label>
    )

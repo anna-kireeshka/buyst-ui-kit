@@ -1,6 +1,6 @@
 import React from 'react'
 import { FC } from 'react'
-import './Radio.scss'
+import styles from './Radio.module.scss'
 import '../index.scss'
 
 export interface MyInputProps {
@@ -10,9 +10,9 @@ export interface MyInputProps {
 }
 const Radio: FC<MyInputProps> = ({ disabled }, props) => {
    return (
-      <label className="container">
-         <input type="radio" {...props} className={'input-radio'} />
-         <span className={'input-radiomark'} />
+      <label className={styles.container}>
+         <input type="radio" {...props} className={styles.radio} />
+         <span className={styles.radioMark} />
          {props.label}
       </label>
    )

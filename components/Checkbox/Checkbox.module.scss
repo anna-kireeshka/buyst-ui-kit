@@ -1,0 +1,34 @@
+@import '../styles/_variable.scss';
+@import '../styles/_mixin.scss';
+
+@keyframes click-wave {
+  0% {
+    opacity: .25;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.container {
+ @include check-control-container;
+}
+.checkbox {
+  @include input-check-control;
+}
+
+.checkbox:checked ~ .checkmark {
+  background: var(--green500);
+}
+.checkbox:checked ~ .checkmark::after {
+  display: block;
+}
+.checkmark::after {
+  @include input-checkmark-background;
+}
+
+.checkmark {
+  @include input-checkmark;
+}
