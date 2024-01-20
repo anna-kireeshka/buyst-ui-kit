@@ -13,7 +13,6 @@ export interface Props {
 export interface PropsCategoryList {
     categoryList: CategoryList[];
     subCategoriesList: SubCategoryList[];
-    isDesktop: boolean;
 }
 declare const InputSearch: FC<Props>;
 export default InputSearch;
