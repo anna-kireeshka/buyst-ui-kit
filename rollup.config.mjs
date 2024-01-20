@@ -7,6 +7,7 @@ import postcss from 'rollup-plugin-postcss';
 import terser from '@rollup/plugin-terser';
 import autoprefixer from 'autoprefixer'
 import packageJson from './package.json' assert { type: 'json' };
+import analyze from 'rollup-plugin-analyzer'
 
 export default [
     {
@@ -16,20 +17,29 @@ export default [
                 file: packageJson.main,
                 format: 'cjs',
                 sourcemap: true,
+                clean: true,
             },
             {
                 file: packageJson.module,
                 format: 'esm',
                 sourcemap: true,
+                clean: true,
             },
         ],
         plugins: [
+            analyze({summaryOnly: true}),
             peerDepsExternal(),
             resolve(),
             commonjs(),
             terser(),
             typescript({ tsconfig: './tsconfig.json', exclude: ['**/*.test.tsx', '**/*.test.ts', '**/*.stories.ts'] }),
-            postcss({ extensions: ['.sass', '.scss'], extract: false, use: ['sass'], modules: true, sourceMap: true, }),
+            postcss({
+                extensions: ['.sass', '.scss'],
+                extract: true,
+                use: ['sass'],
+                modules: true,
+                sourceMap: true,
+            }),
             autoprefixer,
         ],
     },
