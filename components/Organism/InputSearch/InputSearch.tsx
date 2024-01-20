@@ -4,6 +4,8 @@ import { CategoryIcon, CloseIcon, SearchIcon } from '../../svg-sprite/common'
 import styles from './InputSearch.module.scss'
 import CategoryDropDownDesktop from '../../Atom/CategoryDropDownDesktop/CategoryDropDownDesktop'
 import { CategoryList, SubCategoryList } from '../../types/types'
+import CategoryDropDownMobile from '../../Atom/CategoryDropDownMobile/CategoryDropDownMobile'
+import { useMediaQuery } from 'react-responsive'
 
 export interface Props {
    label: string
@@ -19,17 +21,15 @@ export interface Props {
 export interface PropsCategoryList {
    categoryList: CategoryList[]
    subCategoriesList: SubCategoryList[]
-   isDesktop: boolean
 }
 
-const CategoryListTemplate: FC<PropsCategoryList> = ({
-   isDesktop,
-   categoryList,
-   subCategoriesList,
-}) => {
+const CategoryListTemplate: FC<PropsCategoryList> = ({ categoryList, subCategoriesList }) => {
+   const isDesktopOrLaptop = useMediaQuery({
+      query: '(min-width: 1024px)',
+   })
    let node: ReactNode
 
-   if (isDesktop) {
+   if (isDesktopOrLaptop) {
       node = (
          <CategoryDropDownDesktop
             categoryList={categoryList}
@@ -37,21 +37,12 @@ const CategoryListTemplate: FC<PropsCategoryList> = ({
          />
       )
    } else {
-      node = null
+      node = <CategoryDropDownMobile categoryList={categoryList} />
    }
    return node
 }
 const InputSearch: FC<Props> = (
-   {
-      label,
-      value,
-      onChange,
-      isDesktop,
-      openCategoryList,
-      onClick,
-      subCategoriesList,
-      categoryList,
-   },
+   { label, value, onChange, openCategoryList, onClick, subCategoriesList, categoryList },
    props
 ) => {
    return (
@@ -63,7 +54,6 @@ const InputSearch: FC<Props> = (
             <CategoryListTemplate
                categoryList={categoryList}
                subCategoriesList={subCategoriesList}
-               isDesktop={isDesktop}
             />
          )}
          <div className={styles.searchWrapper}>

@@ -4,14 +4,14 @@ import { StoryObj, StoryFn } from '@storybook/react'
 import CategoryDropDownDesktop from './CategoryDropDownDesktop'
 
 export default {
-   title: 'Atomic Design/Atom/CategoryDropDownDesktop',
+   title: 'Atomic Design/Atom/CategoryDropDownMobile',
    component: CategoryDropDownDesktop,
 } as StoryObj<typeof CategoryDropDownDesktop>
 
 export const CategoryDropDownDesktopTemplate: StoryFn<typeof CategoryDropDownDesktop> = (args) => {
    const [value, setValue] = useState('')
    return (
-      <div style={{ width: '1000px', position: 'relative' }}>
+      <div>
          <CategoryDropDownDesktop {...args}></CategoryDropDownDesktop>
       </div>
    )

@@ -8,6 +8,20 @@ export const ArrowRightIcon = () => (
       ></path>
    </svg>
 )
+
+export const ArrowIconDown = () => (
+   <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      enableBackground="new 0 0 512 512"
+      version="1.1"
+      viewBox="0 0 512 512"
+      xmlSpace="preserve"
+   >
+      <path d="M396.6 160L416 180.7 256 352 96 180.7 115.3 160 256 310.5z"></path>
+   </svg>
+)
 export const SearchIcon = () => (
    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
       <path

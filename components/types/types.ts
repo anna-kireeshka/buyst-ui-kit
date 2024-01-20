@@ -3,18 +3,26 @@ export interface CategoryList {
    name: string
    icon: string
    uri: string
-}
-export interface SubCategoryList {
-   secondLevelCategories: [
-      {
+   secondLevelCategories?: {
+      id: number
+      name: string
+      uri: string
+      thirdLevelCategories: {
          id: number
          name: string
          uri: string
-         thirdLevelCategories: {
-            id: number
-            name: string
-            uri: string
-         }[]
-      }
-   ]
+      }[]
+   }[]
+}
+export interface SubCategoryList {
+   secondLevelCategories: {
+      id: number
+      name: string
+      uri: string
+      thirdLevelCategories: {
+         id: number
+         name: string
+         uri: string
+      }[]
+   }[]
 }
