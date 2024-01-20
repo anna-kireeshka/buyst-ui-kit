@@ -2,28 +2,11 @@ import React, { FC, useState } from 'react'
 import Link from 'next/link'
 import { ArrowRightIcon } from '../../svg-sprite/common'
 import styles from './CategoryDropDownDesctop.module.scss'
+import { CategoryList, SubCategoryList } from '../../types/types'
 
 export interface Props {
-   categoryList: {
-      id: number
-      name: string
-      icon: string
-      uri: string
-   }[]
-   subCategoriesList: {
-      secondLevelCategories: [
-         {
-            id: number
-            name: string
-            uri: string
-            thirdLevelCategories: {
-               id: number
-               name: string
-               uri: string
-            }[]
-         }
-      ]
-   }[]
+   categoryList: CategoryList[]
+   subCategoriesList: SubCategoryList[]
 }
 
 const CategoryDropDownDesktop: FC<Props> = ({ categoryList, subCategoriesList }) => {
