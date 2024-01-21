@@ -13,7 +13,6 @@ export interface Props {
    openCategoryList: boolean
    onClick: () => void
    placeholder: string
-   borderRadius: boolean
 }
 
 export interface PropsCategoryList {
@@ -36,13 +35,12 @@ const CategoryListTemplate: FC<PropsCategoryList> = ({ isOpen }) => {
    return node
 }
 const InputSearch: FC<Props> = ({
-   label,
-   value,
+   label = '',
+   value = '',
    onChange,
-   openCategoryList,
+   openCategoryList = false,
    onClick,
    placeholder = '',
-   borderRadius,
    ...props
 }) => {
    return (
@@ -55,8 +53,8 @@ const InputSearch: FC<Props> = ({
             <Input
                type={'text'}
                label={label}
-               state={'default'}
-               borderRadius={borderRadius}
+               state={''}
+               borderRadius={false}
                value={value}
                onChange={onChange}
                placeholder={placeholder}

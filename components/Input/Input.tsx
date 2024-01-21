@@ -1,11 +1,11 @@
 import React, { ChangeEvent, KeyboardEvent } from 'react'
 import { FC } from 'react'
 import styles from './Input.module.scss'
-import cx from 'classnames'
+import cn from 'classnames'
 
 export interface MyInputProps {
    type: 'text' | 'password' | 'number'
-   state: 'default' | 'danger' | 'success' | 'disabled' | 'outlined'
+   state: string | 'default' | 'danger' | 'success' | 'disabled' | 'outlined'
    placeholder?: string
    label?: string
    min?: number
@@ -15,10 +15,10 @@ export interface MyInputProps {
    onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 const Input: FC<MyInputProps> = ({
-   type,
+   type = 'text',
    label = '',
-   state = 'default',
-   value,
+   state = '',
+   value = '',
    borderRadius = true,
    onChange,
    placeholder = '',
@@ -33,8 +33,9 @@ const Input: FC<MyInputProps> = ({
       }
    }
 
-   const inputStyle = cx(styles[`input-${state}`], {
-      [styles[`input-withoutBorder`]]: !borderRadius,
+   const classes = cn(styles['input'], {
+      [styles[`input-${state}`]]: state !== '',
+      [styles.inputWithoutBorder]: !borderRadius,
    })
 
    return (
@@ -43,7 +44,9 @@ const Input: FC<MyInputProps> = ({
          <input
             type={type}
             value={value}
-            className={inputStyle}
+            className={styles.input`${styles.input}-${state} ${
+               !borderRadius && styles.inputWithoutBorder
+            }`}
             onKeyDown={(ev) => handleInputKeyup(ev)}
             onChange={onChange}
             placeholder={placeholder}

@@ -16,16 +16,19 @@
   height: 100%;
 }
 .input {
+  @include inputStyle;
+
   &[type="number"], &[type="password"] {
     @include inputStyle;
     &::placeholder {
       color: var(--gray700)
     }
   }
-  @include inputStyle;
+
   &-success {
     border: 1px solid var(--green500);
   }
+
   &-danger {
     border: 1px solid var(--berry1);
   }
@@ -39,7 +42,8 @@
     background-color: transparent;
     border: 1px solid var(--gray300);
   }
-  &-withoutBorder {
+
+  &WithoutBorder {
     border-radius: 0;
   }
 }
