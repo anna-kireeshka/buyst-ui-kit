@@ -13,6 +13,7 @@ export interface Props {
    openCategoryList: boolean
    onClick: () => void
    placeholder: string
+   borderRadius: boolean
 }
 
 export interface PropsCategoryList {
@@ -41,6 +42,7 @@ const InputSearch: FC<Props> = ({
    openCategoryList,
    onClick,
    placeholder = '',
+   borderRadius,
    ...props
 }) => {
    return (
@@ -54,7 +56,7 @@ const InputSearch: FC<Props> = ({
                type={'text'}
                label={label}
                state={'default'}
-               borderRadius={false}
+               borderRadius={borderRadius}
                value={value}
                onChange={onChange}
                placeholder={placeholder}

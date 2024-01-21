@@ -3143,7 +3143,8 @@ const Nn = ({ isOpen: i }) => {
   openCategoryList: d,
   onClick: o,
   placeholder: a = "",
-  ...f
+  borderRadius: f,
+  ...r
 }) => /* @__PURE__ */ G("div", { className: Pe.search, children: [
   /* @__PURE__ */ C("button", { className: Pe.categoryBtn, onClick: o, children: d ? /* @__PURE__ */ C(jr, {}) : /* @__PURE__ */ C(Mr, {}) }),
   /* @__PURE__ */ C(Nn, { isOpen: d }),
@@ -3153,11 +3154,11 @@ const Nn = ({ isOpen: i }) => {
       type: "text",
       label: i,
       state: "default",
-      borderRadius: !1,
+      borderRadius: f,
       value: e,
       onChange: c,
       placeholder: a,
-      ...f
+      ...r
     }
   ) }),
   /* @__PURE__ */ C("button", { className: Pe.searchBtn, children: /* @__PURE__ */ C(Cr, {}) })

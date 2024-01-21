@@ -6,6 +6,7 @@ export interface Props {
     openCategoryList: boolean;
     onClick: () => void;
     placeholder: string;
+    borderRadius: boolean;
 }
 export interface PropsCategoryList {
     isOpen: boolean;
