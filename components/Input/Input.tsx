@@ -38,8 +38,6 @@ const Input: FC<MyInputProps> = ({
       [styles[`input-withoutBorder`]]: !borderRadius,
    })
 
-   const borderStyle = () => (!borderRadius ? { borderRadius: 0 } : null)
-
    return (
       <label className={styles.label}>
          {label}
