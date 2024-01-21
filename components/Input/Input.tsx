@@ -33,8 +33,7 @@ const Input: FC<MyInputProps> = ({
       }
    }
 
-   const inputStyle = cx(styles['input'], {
-      [styles[`input-${state}`]]: state,
+   const inputStyle = cx(styles[`input-${state}`], {
       [styles[`input-withoutBorder`]]: !borderRadius,
    })
 

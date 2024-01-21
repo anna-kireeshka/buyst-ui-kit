@@ -26,7 +26,7 @@ const Button: FC<MyButtonProps> = (
       size = 'small',
       loading = false,
       transparent = false,
-      withIcon,
+      withIcon = false,
    },
    props
 ) => {
@@ -34,7 +34,7 @@ const Button: FC<MyButtonProps> = (
       [styles[`btn--fullWidth`]]: fullWidth,
       [styles[`btn-${theme}--transparent`]]: transparent,
       [styles[`btn-${size}`]]: size,
-      [styles[`${theme}-withIcon`]]: withIcon === true,
+      [styles[`${theme}-withIcon`]]: withIcon,
       [styles[`btn-${theme}--outline`]]: outline,
       [styles[`btn-disabled`]]: disabled,
    })
