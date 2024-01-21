@@ -124,7 +124,7 @@ const me = /* @__PURE__ */ Vt(dr), $n = ({
         value: d,
         className: e,
         onKeyDown: (n) => r(n),
-        style: { borderRadius: !o && 0 },
+        style: { borderRadius: !o && "0px" },
         onChange: a
       }
     )
@@ -3126,7 +3126,7 @@ const Nn = () => {
   return console.log(i, "isDesktopOrLaptop"), i ? /* @__PURE__ */ C(wn, {}) : /* @__PURE__ */ C(xn, {});
 }, Qn = ({ label: i, value: t, onChange: c, openCategoryList: d, onClick: o }, a) => /* @__PURE__ */ G("div", { className: be.search, children: [
   /* @__PURE__ */ C("button", { className: be.categoryBtn, onClick: o, children: d ? /* @__PURE__ */ C(Sr, {}) : /* @__PURE__ */ C(Mr, {}) }),
-  d && /* @__PURE__ */ C(Nn, {}),
+  /* @__PURE__ */ C(Nn, {}),
   /* @__PURE__ */ C("div", { className: be.searchWrapper, children: /* @__PURE__ */ C(
     _r,
     {

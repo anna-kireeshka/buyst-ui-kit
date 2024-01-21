@@ -34,7 +34,8 @@ const InputSearch: FC<Props> = ({ label, value, onChange, openCategoryList, onCl
          <button className={styles.categoryBtn} onClick={onClick}>
             {openCategoryList ? <CloseIcon /> : <CategoryIcon />}
          </button>
-         {openCategoryList && <CategoryListTemplate />}
+         {/*{openCategoryList && <CategoryListTemplate />}*/}
+         <CategoryListTemplate />
          <div className={styles.searchWrapper}>
             <Input
                {...props}

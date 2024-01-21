@@ -40,7 +40,7 @@ const Input: FC<MyInputProps> = (
             value={value}
             className={inputStyle}
             onKeyDown={(ev) => handleInputKeyup(ev)}
-            style={{ borderRadius: !borderRadius && 0 }}
+            style={{ borderRadius: !borderRadius && '0px' }}
             onChange={onChange}
          />
       </label>
