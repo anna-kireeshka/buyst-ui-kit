@@ -27,8 +27,9 @@ const CategoryListTemplate: FC<PropsCategoryList> = ({ isOpen }) => {
    if (isOpen) {
       if (isDesktopOrLaptop) {
          node = <CategoryDropDownDesktop />
+      } else {
+         node = <CategoryDropDownMobile />
       }
-      node = <CategoryDropDownMobile />
    }
    return node
 }
