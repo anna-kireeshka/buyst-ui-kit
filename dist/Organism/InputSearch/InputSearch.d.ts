@@ -5,6 +5,7 @@ export interface Props {
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     openCategoryList: boolean;
     onClick: () => void;
+    placeholder: string;
 }
 export interface PropsCategoryList {
     isOpen: boolean;

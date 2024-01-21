@@ -21,6 +21,7 @@ const Input: FC<MyInputProps> = ({
    value,
    borderRadius = true,
    onChange,
+   placeholder = '',
    ...props
 }) => {
    const handleInputKeyup = (ev: KeyboardEvent<HTMLInputElement>) => {
@@ -43,12 +44,13 @@ const Input: FC<MyInputProps> = ({
       <label className={styles.label}>
          {label}
          <input
-            {...props}
             type={type}
             value={value}
             className={inputStyle}
             onKeyDown={(ev) => handleInputKeyup(ev)}
             onChange={onChange}
+            placeholder={placeholder}
+            {...props}
          />
       </label>
    )

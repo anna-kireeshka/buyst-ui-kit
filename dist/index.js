@@ -87,7 +87,7 @@ const me = /* @__PURE__ */ Vt(dr), $n = ({
     [ne[`${i}-withIcon`]]: t,
     [ne[`btn-${i}--outline`]]: c,
     [ne["btn-disabled"]]: e
-  }), g = me([
+  }), v = me([
     {
       [ne["btn-loading"]]: f
     }
@@ -98,7 +98,7 @@ const me = /* @__PURE__ */ Vt(dr), $n = ({
       o,
       " "
     ] }),
-    /* @__PURE__ */ C("div", { className: ne.btnLoadingContainer, children: /* @__PURE__ */ C("span", { className: g }) })
+    /* @__PURE__ */ C("div", { className: ne.btnLoadingContainer, children: /* @__PURE__ */ C("span", { className: v }) })
   ] });
 }, hr = "_label_jtv21_1", pr = "_input_jtv21_6", ye = {
   label: hr,
@@ -115,12 +115,13 @@ const me = /* @__PURE__ */ Vt(dr), $n = ({
   value: d,
   borderRadius: o = !0,
   onChange: a,
-  ...f
+  placeholder: f = "",
+  ...r
 }) => {
-  const r = (n) => {
-    const p = n.code.toLowerCase();
-    i === "number" && p.includes("key") && n.preventDefault();
-  }, t = me(ye.input, {
+  const t = (p) => {
+    const v = p.code.toLowerCase();
+    i === "number" && v.includes("key") && p.preventDefault();
+  }, n = me(ye.input, {
     [ye[`input-${c}`]]: c,
     [ye["input-withoutBorder"]]: !o
   });
@@ -129,12 +130,13 @@ const me = /* @__PURE__ */ Vt(dr), $n = ({
     /* @__PURE__ */ C(
       "input",
       {
-        ...f,
         type: i,
         value: d,
-        className: t,
-        onKeyDown: (n) => r(n),
-        onChange: a
+        className: n,
+        onKeyDown: (p) => t(p),
+        onChange: a,
+        placeholder: f,
+        ...r
       }
     )
   ] });
@@ -317,14 +319,14 @@ function Zt() {
       const r = new URLSearchParams();
       return Object.entries(f).forEach((t) => {
         let [n, p] = t;
-        Array.isArray(p) ? p.forEach((g) => r.append(n, d(g))) : r.set(n, d(p));
+        Array.isArray(p) ? p.forEach((v) => r.append(n, d(v))) : r.set(n, d(p));
       }), r;
     }
     function a(f) {
       for (var r = arguments.length, t = new Array(r > 1 ? r - 1 : 0), n = 1; n < r; n++)
         t[n - 1] = arguments[n];
       return t.forEach((p) => {
-        Array.from(p.keys()).forEach((g) => f.delete(g)), p.forEach((g, _) => f.append(_, g));
+        Array.from(p.keys()).forEach((v) => f.delete(v)), p.forEach((v, _) => f.append(_, v));
       }), f;
     }
   }(De)), De;
@@ -387,10 +389,10 @@ function Jt() {
     });
     const d = /* @__PURE__ */ kr()._(Zt()), o = /https?|ftp|gopher|file/;
     function a(t) {
-      let { auth: n, hostname: p } = t, g = t.protocol || "", _ = t.pathname || "", l = t.hash || "", m = t.query || "", s = !1;
+      let { auth: n, hostname: p } = t, v = t.protocol || "", _ = t.pathname || "", l = t.hash || "", m = t.query || "", s = !1;
       n = n ? encodeURIComponent(n).replace(/%3A/i, ":") + "@" : "", t.host ? s = n + t.host : p && (s = n + (~p.indexOf(":") ? "[" + p + "]" : p), t.port && (s += ":" + t.port)), m && typeof m == "object" && (m = String(d.urlQueryToSearchParams(m)));
-      let v = t.search || m && "?" + m || "";
-      return g && !g.endsWith(":") && (g += ":"), t.slashes || (!g || o.test(g)) && s !== !1 ? (s = "//" + (s || ""), _ && _[0] !== "/" && (_ = "/" + _)) : s || (s = ""), l && l[0] !== "#" && (l = "#" + l), v && v[0] !== "?" && (v = "?" + v), _ = _.replace(/[?#]/g, encodeURIComponent), v = v.replace("#", "%23"), "" + g + s + _ + v + l;
+      let g = t.search || m && "?" + m || "";
+      return v && !v.endsWith(":") && (v += ":"), t.slashes || (!v || o.test(v)) && s !== !1 ? (s = "//" + (s || ""), _ && _[0] !== "/" && (_ = "/" + _)) : s || (s = ""), l && l[0] !== "#" && (l = "#" + l), g && g[0] !== "?" && (g = "?" + g), _ = _.replace(/[?#]/g, encodeURIComponent), g = g.replace("#", "%23"), "" + v + s + _ + g + l;
     }
     const f = [
       "auth",
@@ -471,7 +473,7 @@ function Ne() {
         return p;
       },
       loadGetInitialProps: function() {
-        return g;
+        return v;
       },
       SP: function() {
         return _;
@@ -486,7 +488,7 @@ function Ne() {
         return s;
       },
       PageNotFoundError: function() {
-        return v;
+        return g;
       },
       MissingStaticPage: function() {
         return h;
@@ -533,7 +535,7 @@ function Ne() {
       const P = u.split("?");
       return P[0].replace(/\\/g, "/").replace(/\/\/+/g, "/") + (P[1] ? "?" + P.slice(1).join("?") : "");
     }
-    async function g(u, P) {
+    async function v(u, P) {
       if (process.env.NODE_ENV !== "production") {
         var M;
         if ((M = u.prototype) != null && M.getInitialProps) {
@@ -544,7 +546,7 @@ function Ne() {
       const E = P.res || P.ctx && P.ctx.res;
       if (!u.getInitialProps)
         return P.ctx && P.Component ? {
-          pageProps: await g(P.Component, P.ctx)
+          pageProps: await v(P.Component, P.ctx)
         } : {};
       const O = await u.getInitialProps(P);
       if (E && n(E))
@@ -564,7 +566,7 @@ function Ne() {
     }
     class s extends Error {
     }
-    class v extends Error {
+    class g extends Error {
       constructor(P) {
         super(), this.code = "ENOENT", this.name = "PageNotFoundError", this.message = "Cannot find module for page: " + P;
       }
@@ -755,9 +757,9 @@ function Ur() {
           throw new Error("Catch-all must be the last part of the URL.");
         let r = o[0];
         if (r.startsWith("[") && r.endsWith("]")) {
-          let p = function(g, _) {
-            if (g !== null && g !== _)
-              throw new Error("You cannot use different slug names for the same dynamic path ('" + g + "' !== '" + _ + "').");
+          let p = function(v, _) {
+            if (v !== null && v !== _)
+              throw new Error("You cannot use different slug names for the same dynamic path ('" + v + "' !== '" + _ + "').");
             a.forEach((l) => {
               if (l === _)
                 throw new Error('You cannot have the same slug name "' + _ + '" repeat within a single dynamic path');
@@ -913,7 +915,7 @@ function nr() {
     function a(f) {
       let r, t, n;
       for (const p of f.split("/"))
-        if (t = d.find((g) => p.startsWith(g)), t) {
+        if (t = d.find((v) => p.startsWith(v)), t) {
           [r, n] = f.split(t, 2);
           break;
         }
@@ -1014,8 +1016,8 @@ function Qr() {
           }
         }, n = {};
         return Object.keys(a).forEach((p) => {
-          const g = a[p], _ = r[g.pos];
-          _ !== void 0 && (n[p] = ~_.indexOf("/") ? _.split("/").map((l) => t(l)) : g.repeat ? [
+          const v = a[p], _ = r[v.pos];
+          _ !== void 0 && (n[p] = ~_.indexOf("/") ? _.split("/").map((l) => t(l)) : v.repeat ? [
             t(_)
           ] : t(_));
         }), n;
@@ -1046,11 +1048,11 @@ function Kr() {
     Object.defineProperty(i, "__esModule", {
       value: !0
     });
-    function e(s, v) {
-      for (var h in v)
+    function e(s, g) {
+      for (var h in g)
         Object.defineProperty(s, h, {
           enumerable: !0,
-          get: v[h]
+          get: g[h]
         });
     }
     e(i, {
@@ -1066,20 +1068,20 @@ function Kr() {
     });
     const c = nr(), d = Yr(), o = er(), a = "nxtP", f = "nxtI";
     function r(s) {
-      const v = s.startsWith("[") && s.endsWith("]");
-      v && (s = s.slice(1, -1));
+      const g = s.startsWith("[") && s.endsWith("]");
+      g && (s = s.slice(1, -1));
       const h = s.startsWith("...");
       return h && (s = s.slice(3)), {
         key: s,
         repeat: h,
-        optional: v
+        optional: g
       };
     }
     function t(s) {
-      const v = (0, o.removeTrailingSlash)(s).slice(1).split("/"), h = {};
+      const g = (0, o.removeTrailingSlash)(s).slice(1).split("/"), h = {};
       let b = 1;
       return {
-        parameterizedRoute: v.map((w) => {
+        parameterizedRoute: g.map((w) => {
           const u = c.INTERCEPTION_ROUTE_MARKERS.find((M) => w.startsWith(M)), P = w.match(/\[((?:\[.*\])|.+)\]/);
           if (u && P) {
             const { key: M, optional: E, repeat: O } = r(P[1]);
@@ -1102,66 +1104,66 @@ function Kr() {
       };
     }
     function n(s) {
-      const { parameterizedRoute: v, groups: h } = t(s);
+      const { parameterizedRoute: g, groups: h } = t(s);
       return {
-        re: new RegExp("^" + v + "(?:/)?$"),
+        re: new RegExp("^" + g + "(?:/)?$"),
         groups: h
       };
     }
     function p() {
       let s = 0;
       return () => {
-        let v = "", h = ++s;
+        let g = "", h = ++s;
         for (; h > 0; )
-          v += String.fromCharCode(97 + (h - 1) % 26), h = Math.floor((h - 1) / 26);
-        return v;
+          g += String.fromCharCode(97 + (h - 1) % 26), h = Math.floor((h - 1) / 26);
+        return g;
       };
     }
-    function g(s) {
-      let { interceptionMarker: v, getSafeRouteKey: h, segment: b, routeKeys: w, keyPrefix: u } = s;
+    function v(s) {
+      let { interceptionMarker: g, getSafeRouteKey: h, segment: b, routeKeys: w, keyPrefix: u } = s;
       const { key: P, optional: M, repeat: E } = r(b);
       let O = P.replace(/\W/g, "");
       u && (O = "" + u + O);
       let R = !1;
       (O.length === 0 || O.length > 30) && (R = !0), isNaN(parseInt(O.slice(0, 1))) || (R = !0), R && (O = h()), u ? w[O] = "" + u + P : w[O] = P;
-      const j = v ? (0, d.escapeStringRegexp)(v) : "";
+      const j = g ? (0, d.escapeStringRegexp)(g) : "";
       return E ? M ? "(?:/" + j + "(?<" + O + ">.+?))?" : "/" + j + "(?<" + O + ">.+?)" : "/" + j + "(?<" + O + ">[^/]+?)";
     }
-    function _(s, v) {
+    function _(s, g) {
       const h = (0, o.removeTrailingSlash)(s).slice(1).split("/"), b = p(), w = {};
       return {
         namedParameterizedRoute: h.map((u) => {
           const P = c.INTERCEPTION_ROUTE_MARKERS.some((E) => u.startsWith(E)), M = u.match(/\[((?:\[.*\])|.+)\]/);
           if (P && M) {
             const [E] = u.split(M[0]);
-            return g({
+            return v({
               getSafeRouteKey: b,
               interceptionMarker: E,
               segment: M[1],
               routeKeys: w,
-              keyPrefix: v ? f : void 0
+              keyPrefix: g ? f : void 0
             });
           } else
-            return M ? g({
+            return M ? v({
               getSafeRouteKey: b,
               segment: M[1],
               routeKeys: w,
-              keyPrefix: v ? a : void 0
+              keyPrefix: g ? a : void 0
             }) : "/" + (0, d.escapeStringRegexp)(u);
         }).join(""),
         routeKeys: w
       };
     }
-    function l(s, v) {
-      const h = _(s, v);
+    function l(s, g) {
+      const h = _(s, g);
       return {
         ...n(s),
         namedRegex: "^" + h.namedParameterizedRoute + "(?:/)?$",
         routeKeys: h.routeKeys
       };
     }
-    function m(s, v) {
-      const { parameterizedRoute: h } = t(s), { catchAll: b = !0 } = v;
+    function m(s, g) {
+      const { parameterizedRoute: h } = t(s), { catchAll: b = !0 } = g;
       if (h === "/")
         return {
           namedRegex: "^/" + (b ? ".*" : "") + "$"
@@ -1195,15 +1197,15 @@ function Fr() {
         f
       );
       r = o;
-      const g = Object.keys(n);
-      return g.every((_) => {
+      const v = Object.keys(n);
+      return v.every((_) => {
         let l = p[_] || "";
         const { repeat: m, optional: s } = n[_];
-        let v = "[" + (m ? "..." : "") + _ + "]";
-        return s && (v = (l ? "" : "/") + "[" + v + "]"), m && !Array.isArray(l) && (l = [
+        let g = "[" + (m ? "..." : "") + _ + "]";
+        return s && (g = (l ? "" : "/") + "[" + g + "]"), m && !Array.isArray(l) && (l = [
           l
         ]), (s || _ in p) && // Interpolate group into data URL if present
-        (r = r.replace(v, m ? l.map(
+        (r = r.replace(g, m ? l.map(
           // these values should be fully encoded instead of just
           // path delimiter escaped since they are being inserted
           // into the URL and we expect URL encoded segments
@@ -1211,7 +1213,7 @@ function Fr() {
           (h) => encodeURIComponent(h)
         ).join("/") : encodeURIComponent(l)) || "/");
       }) || (r = ""), {
-        params: g,
+        params: v,
         result: r
       };
     }
@@ -1229,20 +1231,20 @@ function Gr() {
       }
     });
     const c = Zt(), d = Jt(), o = qr(), a = Ne(), f = Ae(), r = rr(), t = Br(), n = Fr();
-    function p(g, _, l) {
+    function p(v, _, l) {
       let m, s = typeof _ == "string" ? _ : (0, d.formatWithValidation)(_);
-      const v = s.match(/^[a-zA-Z]{1,}:\/\//), h = v ? s.slice(v[0].length) : s;
+      const g = s.match(/^[a-zA-Z]{1,}:\/\//), h = g ? s.slice(g[0].length) : s;
       if ((h.split("?", 1)[0] || "").match(/(\/\/|\\)/)) {
-        console.error("Invalid href '" + s + "' passed to next/router in page: '" + g.pathname + "'. Repeated forward-slashes (//) or backslashes \\ are not valid in the href.");
+        console.error("Invalid href '" + s + "' passed to next/router in page: '" + v.pathname + "'. Repeated forward-slashes (//) or backslashes \\ are not valid in the href.");
         const w = (0, a.normalizeRepeatedSlashes)(h);
-        s = (v ? v[0] : "") + w;
+        s = (g ? g[0] : "") + w;
       }
       if (!(0, r.isLocalURL)(s))
         return l ? [
           s
         ] : s;
       try {
-        m = new URL(s.startsWith("#") ? g.asPath : g.pathname, "http://n");
+        m = new URL(s.startsWith("#") ? v.asPath : v.pathname, "http://n");
       } catch {
         m = new URL("/", "http://n");
       }
@@ -1354,10 +1356,10 @@ function Jr() {
       value: !0
     });
     function e(n, p) {
-      for (var g in p)
-        Object.defineProperty(n, g, {
+      for (var v in p)
+        Object.defineProperty(n, v, {
           enumerable: !0,
-          get: p[g]
+          get: p[v]
         });
     }
     e(i, {
@@ -1432,28 +1434,28 @@ function tn() {
     });
     const c = ge, d = en(), o = typeof IntersectionObserver == "function", a = /* @__PURE__ */ new Map(), f = [];
     function r(p) {
-      const g = {
+      const v = {
         root: p.root || null,
         margin: p.rootMargin || ""
-      }, _ = f.find((v) => v.root === g.root && v.margin === g.margin);
+      }, _ = f.find((g) => g.root === v.root && g.margin === v.margin);
       let l;
       if (_ && (l = a.get(_), l))
         return l;
-      const m = /* @__PURE__ */ new Map(), s = new IntersectionObserver((v) => {
-        v.forEach((h) => {
+      const m = /* @__PURE__ */ new Map(), s = new IntersectionObserver((g) => {
+        g.forEach((h) => {
           const b = m.get(h.target), w = h.isIntersecting || h.intersectionRatio > 0;
           b && w && b(w);
         });
       }, p);
       return l = {
-        id: g,
+        id: v,
         observer: s,
         elements: m
-      }, f.push(g), a.set(g, l), l;
+      }, f.push(v), a.set(v, l), l;
     }
-    function t(p, g, _) {
+    function t(p, v, _) {
       const { id: l, observer: m, elements: s } = r(_);
-      return s.set(p, g), m.observe(p), function() {
+      return s.set(p, v), m.observe(p), function() {
         if (s.delete(p), m.unobserve(p), s.size === 0) {
           m.disconnect(), a.delete(l);
           const h = f.findIndex((b) => b.root === l.root && b.margin === l.margin);
@@ -1462,8 +1464,8 @@ function tn() {
       };
     }
     function n(p) {
-      let { rootRef: g, rootMargin: _, disabled: l } = p;
-      const m = l || !o, [s, v] = (0, c.useState)(!1), h = (0, c.useRef)(null), b = (0, c.useCallback)((u) => {
+      let { rootRef: v, rootMargin: _, disabled: l } = p;
+      const m = l || !o, [s, g] = (0, c.useState)(!1), h = (0, c.useRef)(null), b = (0, c.useCallback)((u) => {
         h.current = u;
       }, []);
       (0, c.useEffect)(() => {
@@ -1472,23 +1474,23 @@ function tn() {
             return;
           const u = h.current;
           if (u && u.tagName)
-            return t(u, (M) => M && v(M), {
-              root: g == null ? void 0 : g.current,
+            return t(u, (M) => M && g(M), {
+              root: v == null ? void 0 : v.current,
               rootMargin: _
             });
         } else if (!s) {
-          const u = (0, d.requestIdleCallback)(() => v(!0));
+          const u = (0, d.requestIdleCallback)(() => g(!0));
           return () => (0, d.cancelIdleCallback)(u);
         }
       }, [
         m,
         _,
-        g,
+        v,
         s,
         h.current
       ]);
       const w = (0, c.useCallback)(() => {
-        v(!1);
+        g(!1);
       }, []);
       return [
         b,
@@ -1596,9 +1598,9 @@ function sn() {
     const c = Ae(), d = process.env.__NEXT_ROUTER_BASEPATH || "";
     function o(a, f, r, t) {
       if (process.env.__NEXT_I18N_SUPPORT) {
-        const n = nn().normalizeLocalePath, p = an().detectDomainLocale, g = f || n(a, r).detectedLocale, _ = p(t, void 0, g);
+        const n = nn().normalizeLocalePath, p = an().detectDomainLocale, v = f || n(a, r).detectedLocale, _ = p(t, void 0, v);
         if (_) {
-          const l = "http" + (_.http ? "" : "s") + "://", m = g === _.defaultLocale ? "" : "/" + g;
+          const l = "http" + (_.http ? "" : "s") + "://", m = v === _.defaultLocale ? "" : "/" + v;
           return "" + l + _.domain + (0, c.normalizePathTrailingSlash)("" + d + m + a);
         }
         return !1;
@@ -1665,7 +1667,7 @@ function cn() {
         return n;
       },
       isThenable: function() {
-        return g;
+        return v;
       }
     });
     const d = "refresh", o = "navigate", a = "restore", f = "server-patch", r = "prefetch", t = "fast-refresh", n = "server-action";
@@ -1673,7 +1675,7 @@ function cn() {
     (function(_) {
       _.AUTO = "auto", _.FULL = "full", _.TEMPORARY = "temporary";
     })(p || (p = {}));
-    function g(_) {
+    function v(_) {
       return _ && (typeof _ == "object" || typeof _ == "function") && typeof _.then == "function";
     }
     (typeof e.default == "function" || typeof e.default == "object" && e.default !== null) && typeof e.default.__esModule > "u" && (Object.defineProperty(e.default, "__esModule", { value: !0 }), Object.assign(e.default, e), i.exports = e.default);
@@ -1689,7 +1691,7 @@ function cn() {
       return M;
     }
   });
-  const c = ve, d = ir, o = /* @__PURE__ */ c._(ge), a = Gr(), f = rr(), r = Jt(), t = Ne(), n = Xr(), p = Zr(), g = Jr(), _ = tn(), l = sn(), m = un(), s = cn(), v = /* @__PURE__ */ new Set();
+  const c = ve, d = ir, o = /* @__PURE__ */ c._(ge), a = Gr(), f = rr(), r = Jt(), t = Ne(), n = Xr(), p = Zr(), v = Jr(), _ = tn(), l = sn(), m = un(), s = cn(), g = /* @__PURE__ */ new Set();
   function h(E, O, R, j, x, k) {
     if (typeof window > "u" || !k && !(0, f.isLocalURL)(O))
       return;
@@ -1698,9 +1700,9 @@ function cn() {
         // Let the link's locale prop override the default router locale.
         typeof j.locale < "u" ? j.locale : "locale" in E ? E.locale : void 0
       ), F = O + "%" + R + "%" + Q;
-      if (v.has(F))
+      if (g.has(F))
         return;
-      v.add(F);
+      g.add(F);
     }
     const N = k ? E.prefetch(O, x) : E.prefetch(O, R, j);
     Promise.resolve(N).catch((Q) => {
@@ -1740,7 +1742,7 @@ function cn() {
     j = N, Z && (typeof j == "string" || typeof j == "number") && (j = /* @__PURE__ */ (0, d.jsx)("a", {
       children: j
     }));
-    const Y = o.default.useContext(p.RouterContext), re = o.default.useContext(g.AppRouterContext), V = Y ?? re, te = !Y, ie = Q !== !1, y = Q === null ? s.PrefetchKind.AUTO : s.PrefetchKind.FULL;
+    const Y = o.default.useContext(p.RouterContext), re = o.default.useContext(v.AppRouterContext), V = Y ?? re, te = !Y, ie = Q !== !1, y = Q === null ? s.PrefetchKind.AUTO : s.PrefetchKind.FULL;
     if (process.env.NODE_ENV !== "production") {
       let S = function(B) {
         return new Error("Failed prop type: The prop `" + B.key + "` expects a " + B.expected + " in `<Link>`, but got `" + B.actual + "` instead." + (typeof window < "u" ? `
@@ -1987,7 +1989,7 @@ var ar = { exports: {} };
           /***/
           (r, t) => {
             t.match = m, t.parse = s;
-            var n = /(?:(only|not)?\s*([^\s\(\)]+)(?:\s*and)?\s*)?(.+)?/i, p = /\(\s*([^\s\:\)]+)\s*(?:\:\s*([^\s\)]+))?\s*\)/, g = /^(?:(min|max)-)?(.+)/, _ = /(em|rem|px|cm|mm|in|pt|pc)?$/, l = /(dpi|dpcm|dppx)?$/;
+            var n = /(?:(only|not)?\s*([^\s\(\)]+)(?:\s*and)?\s*)?(.+)?/i, p = /\(\s*([^\s\:\)]+)\s*(?:\:\s*([^\s\)]+))?\s*\)/, v = /^(?:(min|max)-)?(.+)/, _ = /(em|rem|px|cm|mm|in|pt|pc)?$/, l = /(dpi|dpcm|dppx)?$/;
             function m(w, u) {
               return s(w).some(function(P) {
                 var M = P.inverse, E = P.type === "all" || u.type === P.type;
@@ -2014,7 +2016,7 @@ var ar = { exports: {} };
                     case "device-aspect-ratio":
                     case /* Deprecated */
                     "device-pixel-ratio":
-                      k = v(k), N = v(N);
+                      k = g(k), N = g(N);
                       break;
                     case "grid":
                     case "color":
@@ -2040,7 +2042,7 @@ var ar = { exports: {} };
                 u = u.trim();
                 var P = u.match(n), M = P[1], E = P[2], O = P[3] || "", R = {};
                 return R.inverse = !!M && M.toLowerCase() === "not", R.type = E ? E.toLowerCase() : "all", O = O.match(/\([^\)]+\)/g) || [], R.expressions = O.map(function(j) {
-                  var x = j.match(p), k = x[1].toLowerCase().match(g);
+                  var x = j.match(p), k = x[1].toLowerCase().match(v);
                   return {
                     modifier: k[1],
                     feature: k[2],
@@ -2049,7 +2051,7 @@ var ar = { exports: {} };
                 }), R;
               });
             }
-            function v(w) {
+            function g(w) {
               var u = Number(w), P;
               return u || (P = w.match(/^(\d+)\s*\/\s*(\d+)$/), u = P[1] / P[2]), u;
             }
@@ -2099,15 +2101,15 @@ var ar = { exports: {} };
               default: () => s
               /* harmony export */
             });
-            var p = /[A-Z]/g, g = /^ms-/, _ = {};
-            function l(v) {
-              return "-" + v.toLowerCase();
+            var p = /[A-Z]/g, v = /^ms-/, _ = {};
+            function l(g) {
+              return "-" + g.toLowerCase();
             }
-            function m(v) {
-              if (_.hasOwnProperty(v))
-                return _[v];
-              var h = v.replace(p, l);
-              return _[v] = g.test(h) ? "-" + h : h;
+            function m(g) {
+              if (_.hasOwnProperty(g))
+                return _[g];
+              var h = g.replace(p, l);
+              return _[g] = v.test(h) ? "-" + h : h;
             }
             const s = m;
           }
@@ -2122,11 +2124,11 @@ var ar = { exports: {} };
             var p = n(
               /*! css-mediaquery */
               "./node_modules/css-mediaquery/index.js"
-            ).match, g = typeof window < "u" ? window.matchMedia : null;
-            function _(m, s, v) {
+            ).match, v = typeof window < "u" ? window.matchMedia : null;
+            function _(m, s, g) {
               var h = this;
-              if (g && !v) {
-                var b = g.call(window, m);
+              if (v && !g) {
+                var b = v.call(window, m);
                 this.matches = b.matches, this.media = b.media, b.addListener(P);
               } else
                 this.matches = p(m, s), this.media = m;
@@ -2144,8 +2146,8 @@ var ar = { exports: {} };
                 b && b.removeListener(P);
               }
             }
-            function l(m, s, v) {
-              return new _(m, s, v);
+            function l(m, s, g) {
+              return new _(m, s, g);
             }
             r.exports = l;
           }
@@ -2163,7 +2165,7 @@ var ar = { exports: {} };
             @license MIT
             */
             var t = Object.getOwnPropertySymbols, n = Object.prototype.hasOwnProperty, p = Object.prototype.propertyIsEnumerable;
-            function g(l) {
+            function v(l) {
               if (l == null)
                 throw new TypeError("Object.assign cannot be called with null or undefined");
               return Object(l);
@@ -2177,10 +2179,10 @@ var ar = { exports: {} };
                   return !1;
                 for (var m = {}, s = 0; s < 10; s++)
                   m["_" + String.fromCharCode(s)] = s;
-                var v = Object.getOwnPropertyNames(m).map(function(b) {
+                var g = Object.getOwnPropertyNames(m).map(function(b) {
                   return m[b];
                 });
-                if (v.join("") !== "0123456789")
+                if (g.join("") !== "0123456789")
                   return !1;
                 var h = {};
                 return "abcdefghijklmnopqrst".split("").forEach(function(b) {
@@ -2191,17 +2193,17 @@ var ar = { exports: {} };
               }
             }
             r.exports = _() ? Object.assign : function(l, m) {
-              for (var s, v = g(l), h, b = 1; b < arguments.length; b++) {
+              for (var s, g = v(l), h, b = 1; b < arguments.length; b++) {
                 s = Object(arguments[b]);
                 for (var w in s)
-                  n.call(s, w) && (v[w] = s[w]);
+                  n.call(s, w) && (g[w] = s[w]);
                 if (t) {
                   h = t(s);
                   for (var u = 0; u < h.length; u++)
-                    p.call(s, h[u]) && (v[h[u]] = s[h[u]]);
+                    p.call(s, h[u]) && (g[h[u]] = s[h[u]]);
                 }
               }
-              return v;
+              return g;
             };
           }
         ),
@@ -2215,7 +2217,7 @@ var ar = { exports: {} };
             var p = function() {
             };
             {
-              var g = n(
+              var v = n(
                 /*! ./lib/ReactPropTypesSecret */
                 "./node_modules/prop-types/lib/ReactPropTypesSecret.js"
               ), _ = {}, l = n(
@@ -2223,15 +2225,15 @@ var ar = { exports: {} };
                 "./node_modules/prop-types/lib/has.js"
               );
               p = function(s) {
-                var v = "Warning: " + s;
-                typeof console < "u" && console.error(v);
+                var g = "Warning: " + s;
+                typeof console < "u" && console.error(g);
                 try {
-                  throw new Error(v);
+                  throw new Error(g);
                 } catch {
                 }
               };
             }
-            function m(s, v, h, b, w) {
+            function m(s, g, h, b, w) {
               for (var u in s)
                 if (l(s, u)) {
                   var P;
@@ -2242,7 +2244,7 @@ var ar = { exports: {} };
                       );
                       throw M.name = "Invariant Violation", M;
                     }
-                    P = s[u](v, u, b, h, null, g);
+                    P = s[u](g, u, b, h, null, v);
                   } catch (O) {
                     P = O;
                   }
@@ -2272,7 +2274,7 @@ var ar = { exports: {} };
             var p = n(
               /*! react-is */
               "./node_modules/react-is/index.js"
-            ), g = n(
+            ), v = n(
               /*! object-assign */
               "./node_modules/object-assign/index.js"
             ), _ = n(
@@ -2294,7 +2296,7 @@ var ar = { exports: {} };
               } catch {
               }
             };
-            function v() {
+            function g() {
               return null;
             }
             r.exports = function(h, b) {
@@ -2369,7 +2371,7 @@ var ar = { exports: {} };
                 return j(L);
               }
               function k() {
-                return j(v);
+                return j(g);
               }
               function N(y) {
                 function L(A, U, D, I, q) {
@@ -2425,7 +2427,7 @@ var ar = { exports: {} };
                 if (!Array.isArray(y))
                   return arguments.length > 1 ? s(
                     "Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z])."
-                  ) : s("Invalid argument supplied to oneOf, expected an array."), v;
+                  ) : s("Invalid argument supplied to oneOf, expected an array."), g;
                 function L(A, U, D, I, q) {
                   for (var $ = A[U], W = 0; W < y.length; W++)
                     if (O($, y[W]))
@@ -2457,13 +2459,13 @@ var ar = { exports: {} };
               }
               function J(y) {
                 if (!Array.isArray(y))
-                  return s("Invalid argument supplied to oneOfType, expected an instance of array."), v;
+                  return s("Invalid argument supplied to oneOfType, expected an instance of array."), g;
                 for (var L = 0; L < y.length; L++) {
                   var A = y[L];
                   if (typeof A != "function")
                     return s(
                       "Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + te(A) + " at index " + L + "."
-                    ), v;
+                    ), g;
                 }
                 function U(D, I, q, $, W) {
                   for (var H = [], z = 0; z < y.length; z++) {
@@ -2510,7 +2512,7 @@ var ar = { exports: {} };
                   var $ = A[U], W = re($);
                   if (W !== "object")
                     return new R("Invalid " + I + " `" + q + "` of type `" + W + "` " + ("supplied to `" + D + "`, expected `object`."));
-                  var H = g({}, A[U], y);
+                  var H = v({}, A[U], y);
                   for (var z in H) {
                     var T = y[z];
                     if (l(y, z) && typeof T != "function")
@@ -2612,11 +2614,11 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
               var p = n(
                 /*! react-is */
                 "./node_modules/react-is/index.js"
-              ), g = !0;
+              ), v = !0;
               r.exports = n(
                 /*! ./factoryWithTypeCheckers */
                 "./node_modules/prop-types/factoryWithTypeCheckers.js"
-              )(p.isElement, g);
+              )(p.isElement, v);
             }
           }
         ),
@@ -2657,10 +2659,10 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
              * LICENSE file in the root directory of this source tree.
              */
             (function() {
-              var n = typeof Symbol == "function" && Symbol.for, p = n ? Symbol.for("react.element") : 60103, g = n ? Symbol.for("react.portal") : 60106, _ = n ? Symbol.for("react.fragment") : 60107, l = n ? Symbol.for("react.strict_mode") : 60108, m = n ? Symbol.for("react.profiler") : 60114, s = n ? Symbol.for("react.provider") : 60109, v = n ? Symbol.for("react.context") : 60110, h = n ? Symbol.for("react.async_mode") : 60111, b = n ? Symbol.for("react.concurrent_mode") : 60111, w = n ? Symbol.for("react.forward_ref") : 60112, u = n ? Symbol.for("react.suspense") : 60113, P = n ? Symbol.for("react.suspense_list") : 60120, M = n ? Symbol.for("react.memo") : 60115, E = n ? Symbol.for("react.lazy") : 60116, O = n ? Symbol.for("react.block") : 60121, R = n ? Symbol.for("react.fundamental") : 60117, j = n ? Symbol.for("react.responder") : 60118, x = n ? Symbol.for("react.scope") : 60119;
+              var n = typeof Symbol == "function" && Symbol.for, p = n ? Symbol.for("react.element") : 60103, v = n ? Symbol.for("react.portal") : 60106, _ = n ? Symbol.for("react.fragment") : 60107, l = n ? Symbol.for("react.strict_mode") : 60108, m = n ? Symbol.for("react.profiler") : 60114, s = n ? Symbol.for("react.provider") : 60109, g = n ? Symbol.for("react.context") : 60110, h = n ? Symbol.for("react.async_mode") : 60111, b = n ? Symbol.for("react.concurrent_mode") : 60111, w = n ? Symbol.for("react.forward_ref") : 60112, u = n ? Symbol.for("react.suspense") : 60113, P = n ? Symbol.for("react.suspense_list") : 60120, M = n ? Symbol.for("react.memo") : 60115, E = n ? Symbol.for("react.lazy") : 60116, O = n ? Symbol.for("react.block") : 60121, R = n ? Symbol.for("react.fundamental") : 60117, j = n ? Symbol.for("react.responder") : 60118, x = n ? Symbol.for("react.scope") : 60119;
               function k(T) {
                 return typeof T == "string" || typeof T == "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-                T === _ || T === b || T === m || T === l || T === u || T === P || typeof T == "object" && T !== null && (T.$$typeof === E || T.$$typeof === M || T.$$typeof === s || T.$$typeof === v || T.$$typeof === w || T.$$typeof === R || T.$$typeof === j || T.$$typeof === x || T.$$typeof === O);
+                T === _ || T === b || T === m || T === l || T === u || T === P || typeof T == "object" && T !== null && (T.$$typeof === E || T.$$typeof === M || T.$$typeof === s || T.$$typeof === g || T.$$typeof === w || T.$$typeof === R || T.$$typeof === j || T.$$typeof === x || T.$$typeof === O);
               }
               function N(T) {
                 if (typeof T == "object" && T !== null) {
@@ -2679,7 +2681,7 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
                         default:
                           var se = X && X.$$typeof;
                           switch (se) {
-                            case v:
+                            case g:
                             case w:
                             case E:
                             case M:
@@ -2689,12 +2691,12 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
                               return S;
                           }
                       }
-                    case g:
+                    case v:
                       return S;
                   }
                 }
               }
-              var Q = h, F = b, ee = v, he = s, ce = p, J = w, de = _, le = E, pe = M, Z = g, fe = m, Y = l, re = u, V = !1;
+              var Q = h, F = b, ee = g, he = s, ce = p, J = w, de = _, le = E, pe = M, Z = v, fe = m, Y = l, re = u, V = !1;
               function te(T) {
                 return V || (V = !0, console.warn("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.")), ie(T) || N(T) === h;
               }
@@ -2702,7 +2704,7 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
                 return N(T) === b;
               }
               function y(T) {
-                return N(T) === v;
+                return N(T) === g;
               }
               function L(T) {
                 return N(T) === s;
@@ -2723,7 +2725,7 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
                 return N(T) === M;
               }
               function $(T) {
-                return N(T) === g;
+                return N(T) === v;
               }
               function W(T) {
                 return N(T) === m;
@@ -2762,7 +2764,7 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
               /* harmony export */
               shallowEqualArrays: () => (
                 /* binding */
-                g
+                v
               ),
               /* harmony export */
               shallowEqualObjects: () => (
@@ -2776,17 +2778,17 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
                 return !0;
               if (!_ || !l)
                 return !1;
-              var m = Object.keys(_), s = Object.keys(l), v = m.length;
-              if (s.length !== v)
+              var m = Object.keys(_), s = Object.keys(l), g = m.length;
+              if (s.length !== g)
                 return !1;
-              for (var h = 0; h < v; h++) {
+              for (var h = 0; h < g; h++) {
                 var b = m[h];
                 if (_[b] !== l[b] || !Object.prototype.hasOwnProperty.call(l, b))
                   return !1;
               }
               return !0;
             }
-            function g(_, l) {
+            function v(_, l) {
               if (_ === l)
                 return !0;
               if (!_ || !l)
@@ -2809,22 +2811,22 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
           /***/
           function(r, t, n) {
             var p = this && this.__rest || function(m, s) {
-              var v = {};
+              var g = {};
               for (var h in m)
-                Object.prototype.hasOwnProperty.call(m, h) && s.indexOf(h) < 0 && (v[h] = m[h]);
+                Object.prototype.hasOwnProperty.call(m, h) && s.indexOf(h) < 0 && (g[h] = m[h]);
               if (m != null && typeof Object.getOwnPropertySymbols == "function")
                 for (var b = 0, h = Object.getOwnPropertySymbols(m); b < h.length; b++)
-                  s.indexOf(h[b]) < 0 && Object.prototype.propertyIsEnumerable.call(m, h[b]) && (v[h[b]] = m[h[b]]);
-              return v;
-            }, g = this && this.__importDefault || function(m) {
+                  s.indexOf(h[b]) < 0 && Object.prototype.propertyIsEnumerable.call(m, h[b]) && (g[h[b]] = m[h[b]]);
+              return g;
+            }, v = this && this.__importDefault || function(m) {
               return m && m.__esModule ? m : { default: m };
             };
             Object.defineProperty(t, "__esModule", { value: !0 });
-            var _ = g(n(
+            var _ = v(n(
               /*! ./useMediaQuery */
               "./src/useMediaQuery.ts"
             )), l = function(m) {
-              var s = m.children, v = m.device, h = m.onChange, b = p(m, ["children", "device", "onChange"]), w = (0, _.default)(b, v, h);
+              var s = m.children, g = m.device, h = m.onChange, b = p(m, ["children", "device", "onChange"]), w = (0, _.default)(b, g, h);
               return typeof s == "function" ? s(w) : w ? s : null;
             };
             t.default = l;
@@ -2841,8 +2843,8 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
             var p = n(
               /*! react */
               "react"
-            ), g = (0, p.createContext)(void 0);
-            t.default = g;
+            ), v = (0, p.createContext)(void 0);
+            t.default = v;
           }
         ),
         /***/
@@ -2856,11 +2858,11 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
               return s && s.__esModule ? s : { default: s };
             };
             Object.defineProperty(t, "__esModule", { value: !0 }), t.Context = t.toQuery = t.useMediaQuery = t.default = void 0;
-            var g = p(n(
+            var v = p(n(
               /*! ./useMediaQuery */
               "./src/useMediaQuery.ts"
             ));
-            t.useMediaQuery = g.default;
+            t.useMediaQuery = v.default;
             var _ = p(n(
               /*! ./Component */
               "./src/Component.ts"
@@ -2894,7 +2896,7 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
                 }
                 return u;
               }, p.apply(this, arguments);
-            }, g = this && this.__rest || function(u, P) {
+            }, v = this && this.__rest || function(u, P) {
               var M = {};
               for (var E in u)
                 Object.prototype.hasOwnProperty.call(u, E) && P.indexOf(E) < 0 && (M[E] = u[E]);
@@ -2924,7 +2926,7 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
               tty: l.default.bool,
               tv: l.default.bool,
               embossed: l.default.bool
-            }, v = {
+            }, g = {
               orientation: l.default.oneOf([
                 "portrait",
                 "landscape"
@@ -2945,15 +2947,15 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
               resolution: m,
               type: Object.keys(s)
             };
-            v.type;
-            var h = g(
-              v,
+            g.type;
+            var h = v(
+              g,
               ["type"]
             ), b = p({ minAspectRatio: l.default.string, maxAspectRatio: l.default.string, minDeviceAspectRatio: l.default.string, maxDeviceAspectRatio: l.default.string, minHeight: m, maxHeight: m, minDeviceHeight: m, maxDeviceHeight: m, minWidth: m, maxWidth: m, minDeviceWidth: m, maxDeviceWidth: m, minColor: l.default.number, maxColor: l.default.number, minColorIndex: l.default.number, maxColorIndex: l.default.number, minMonochrome: l.default.number, maxMonochrome: l.default.number, minResolution: m, maxResolution: m }, h), w = p(p({}, s), b);
             t.default = {
               all: w,
               types: s,
-              matchers: v,
+              matchers: g,
               features: b
             };
           }
@@ -2969,7 +2971,7 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
               return h && h.__esModule ? h : { default: h };
             };
             Object.defineProperty(t, "__esModule", { value: !0 });
-            var g = p(n(
+            var v = p(n(
               /*! hyphenate-style-name */
               "./node_modules/hyphenate-style-name/index.js"
             )), _ = p(n(
@@ -2978,18 +2980,18 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
             )), l = function(h) {
               return "not ".concat(h);
             }, m = function(h, b) {
-              var w = (0, g.default)(h);
+              var w = (0, v.default)(h);
               return typeof b == "number" && (b = "".concat(b, "px")), b === !0 ? w : b === !1 ? l(w) : "(".concat(w, ": ").concat(b, ")");
             }, s = function(h) {
               return h.join(" and ");
-            }, v = function(h) {
+            }, g = function(h) {
               var b = [];
               return Object.keys(_.default.all).forEach(function(w) {
                 var u = h[w];
                 u != null && b.push(m(w, u));
               }), s(b);
             };
-            t.default = v;
+            t.default = g;
           }
         ),
         /***/
@@ -3003,7 +3005,7 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
               return R && R.__esModule ? R : { default: R };
             };
             Object.defineProperty(t, "__esModule", { value: !0 });
-            var g = n(
+            var v = n(
               /*! react */
               "react"
             ), _ = p(n(
@@ -3018,7 +3020,7 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
             ), s = p(n(
               /*! ./toQuery */
               "./src/toQuery.ts"
-            )), v = p(n(
+            )), g = p(n(
               /*! ./Context */
               "./src/Context.ts"
             )), h = function(R) {
@@ -3031,31 +3033,31 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
                 }, {});
               }
             }, w = function() {
-              var R = (0, g.useRef)(!1);
-              return (0, g.useEffect)(function() {
+              var R = (0, v.useRef)(!1);
+              return (0, v.useEffect)(function() {
                 R.current = !0;
               }, []), R.current;
             }, u = function(R) {
-              var j = (0, g.useContext)(v.default), x = function() {
+              var j = (0, v.useContext)(g.default), x = function() {
                 return b(R) || b(j);
-              }, k = (0, g.useState)(x), N = k[0], Q = k[1];
-              return (0, g.useEffect)(function() {
+              }, k = (0, v.useState)(x), N = k[0], Q = k[1];
+              return (0, v.useEffect)(function() {
                 var F = x();
                 (0, m.shallowEqualObjects)(N, F) || Q(F);
               }, [R, j]), N;
             }, P = function(R) {
               var j = function() {
                 return h(R);
-              }, x = (0, g.useState)(j), k = x[0], N = x[1];
-              return (0, g.useEffect)(function() {
+              }, x = (0, v.useState)(j), k = x[0], N = x[1];
+              return (0, v.useEffect)(function() {
                 var Q = j();
                 k !== Q && N(Q);
               }, [R]), k;
             }, M = function(R, j) {
               var x = function() {
                 return (0, _.default)(R, j || {}, !!j);
-              }, k = (0, g.useState)(x), N = k[0], Q = k[1], F = w();
-              return (0, g.useEffect)(function() {
+              }, k = (0, v.useState)(x), N = k[0], Q = k[1], F = w();
+              return (0, v.useEffect)(function() {
                 if (F) {
                   var ee = x();
                   return Q(ee), function() {
@@ -3064,8 +3066,8 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
                 }
               }, [R, j]), N;
             }, E = function(R) {
-              var j = (0, g.useState)(R.matches), x = j[0], k = j[1];
-              return (0, g.useEffect)(function() {
+              var j = (0, v.useState)(R.matches), x = j[0], k = j[1];
+              return (0, v.useEffect)(function() {
                 var N = function(Q) {
                   k(Q.matches);
                 };
@@ -3078,9 +3080,9 @@ Valid keys: ` + JSON.stringify(Object.keys(y), null, "  ")
               if (!N)
                 throw new Error("Invalid or missing MediaQuery!");
               var Q = M(N, k), F = E(Q), ee = w();
-              return (0, g.useEffect)(function() {
+              return (0, v.useEffect)(function() {
                 ee && x && x(F);
-              }, [F]), (0, g.useEffect)(function() {
+              }, [F]), (0, v.useEffect)(function() {
                 return function() {
                   Q && Q.dispose();
                 };
@@ -3140,20 +3142,22 @@ const Nn = ({ isOpen: i }) => {
   onChange: c,
   openCategoryList: d,
   onClick: o,
-  ...a
+  placeholder: a = "",
+  ...f
 }) => /* @__PURE__ */ G("div", { className: Pe.search, children: [
   /* @__PURE__ */ C("button", { className: Pe.categoryBtn, onClick: o, children: d ? /* @__PURE__ */ C(jr, {}) : /* @__PURE__ */ C(Mr, {}) }),
   /* @__PURE__ */ C(Nn, { isOpen: d }),
   /* @__PURE__ */ C("div", { className: Pe.searchWrapper, children: /* @__PURE__ */ C(
     _r,
     {
-      ...a,
       type: "text",
       label: i,
       state: "default",
       borderRadius: !1,
       value: e,
-      onChange: c
+      onChange: c,
+      placeholder: a,
+      ...f
     }
   ) }),
   /* @__PURE__ */ C("button", { className: Pe.searchBtn, children: /* @__PURE__ */ C(Cr, {}) })

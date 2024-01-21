@@ -12,6 +12,7 @@ export interface Props {
    onChange: (e: ChangeEvent<HTMLInputElement>) => void
    openCategoryList: boolean
    onClick: () => void
+   placeholder: string
 }
 
 export interface PropsCategoryList {
@@ -39,6 +40,7 @@ const InputSearch: FC<Props> = ({
    onChange,
    openCategoryList,
    onClick,
+   placeholder = '',
    ...props
 }) => {
    return (
@@ -49,13 +51,14 @@ const InputSearch: FC<Props> = ({
          <CategoryListTemplate isOpen={openCategoryList} />
          <div className={styles.searchWrapper}>
             <Input
-               {...props}
                type={'text'}
                label={label}
                state={'default'}
                borderRadius={false}
                value={value}
                onChange={onChange}
+               placeholder={placeholder}
+               {...props}
             ></Input>
          </div>
 
