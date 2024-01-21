@@ -15,7 +15,7 @@
   width: 100%;
   height: 100%;
 }
-.input {
+.inputField {
   @include inputStyle;
 
   &[type="number"], &[type="password"] {
@@ -25,20 +25,20 @@
     }
   }
 
-  &-success {
+  &--success {
     border: 1px solid var(--green500);
   }
 
-  &-danger {
+  &--danger {
     border: 1px solid var(--berry1);
   }
 
-  &-disabled {
+  &--disabled {
     background: rgba(208, 219, 224, 0.25);
     pointer-events: none;
   }
 
-  &-outlined {
+  &--outlined {
     background-color: transparent;
     border: 1px solid var(--gray300);
   }

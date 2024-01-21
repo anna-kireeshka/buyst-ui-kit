@@ -44,7 +44,7 @@ const Input: FC<MyInputProps> = ({
          <input
             type={type}
             value={value}
-            className={styles.input`${styles.input}-${state} ${
+            className={` ${styles.inputField} ${styles.input + '--' + state} ${
                !borderRadius && styles.inputWithoutBorder
             }`}
             onKeyDown={(ev) => handleInputKeyup(ev)}

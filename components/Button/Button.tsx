@@ -16,41 +16,49 @@ export interface MyButtonProps {
    outline?: boolean
    disabled?: boolean
 }
-const Button: FC<MyButtonProps> = (
-   {
-      theme = 'green',
-      disabled = false,
-      outline = false,
-      fullWidth = false,
-      children,
-      size = 'small',
-      loading = false,
-      transparent = false,
-      withIcon = false,
-   },
-   props
-) => {
+
+interface ButtonLoadingProps {
+   loading: boolean
+   children: ReactNode
+}
+//@ts-ignore
+const ButtonLoading: FC<ButtonLoadingProps> = ({ loading, children }) => {
+   let node: ReactNode
+   if (loading) {
+      node = (
+         <div className={styles.btnLoadingContainer}>
+            <span className={styles.btnLoading} />
+         </div>
+      )
+   } else {
+      node = children
+   }
+   return node
+}
+const Button: FC<MyButtonProps> = ({
+   theme = 'green',
+   disabled = false,
+   outline = false,
+   fullWidth = false,
+   children,
+   size = 'small',
+   loading = false,
+   transparent = false,
+   withIcon = false,
+   ...props
+}) => {
    const classes = cx(styles[`btn`], styles[`btn-${theme}`], {
       [styles[`btn--fullWidth`]]: fullWidth,
       [styles[`btn-${theme}--transparent`]]: transparent,
       [styles[`btn-${size}`]]: size,
-      [styles[`${theme}-withIcon`]]: withIcon,
       [styles[`btn-${theme}--outline`]]: outline,
       [styles[`btn-disabled`]]: disabled,
+      [styles[`btn-${theme}--withIcon`]]: withIcon,
    })
-
-   const btnLoaderClass = cx([
-      {
-         [styles[`btn-loading`]]: loading,
-      },
-   ])
 
    return (
       <button {...props} className={classes}>
-         <span className={loading ? `${styles.btnLoadingLabel}` : ''}> {children} </span>
-         <div className={styles.btnLoadingContainer}>
-            <span className={btnLoaderClass} />
-         </div>
+         <ButtonLoading loading={loading} children={children} />
       </button>
    )
 }

@@ -15,6 +15,11 @@ export default defineConfig({
          presets: ['@babel/preset-env', '@babel/preset-react'],
       })
    ],
+   css: {
+     modules: {
+        generateScopedName: '[name]__[local]___[hash:base64:5]'
+     }
+   },
    build: {
       lib: {
          entry: resolve(__dirname, 'components/index.ts'),

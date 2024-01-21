@@ -30,6 +30,11 @@ $themeColours: (
       &--transparent {
         @include btnTransparent($value, $hoverColor);
       }
+      &--withIcon {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
   }
 }
@@ -51,16 +56,11 @@ $themeColours: (
     width: 100%;
     min-width: 100%;
   }
-  &--gray {
+  &-gray {
     color: var(--gray700);
     path {
       fill: var(--gray700);
     }
-  }
-  &-withIcon {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
   &-small {
     font-size: 1rem;
@@ -75,13 +75,13 @@ $themeColours: (
     pointer-events: none;
   }
 
+  &Content {
+    width: 100%;
+  }
   &LoadingContainer {
     @include round-loading-container
   }
-  &LoadingLabel {
-    opacity: 0;
-  }
-  &-loading {
+  &Loading {
     width: 20px;
     height: 20px;
     transform: translate(50%, -50%);
