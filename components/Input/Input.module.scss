@@ -9,10 +9,6 @@
   outline: none;
   height: 100%;
   color: var(--gray700);
-
-  &-withoutBorder {
-    border-radius: 0;
-  }
 }
 
 .label {
@@ -42,5 +38,8 @@
   &-outlined {
     background-color: transparent;
     border: 1px solid var(--gray300);
+  }
+  &-withoutBorder {
+    border-radius: 0;
   }
 }

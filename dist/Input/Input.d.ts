@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react';
 import { FC } from 'react';
 export interface MyInputProps {
     type: 'text' | 'password' | 'number';
@@ -8,7 +9,7 @@ export interface MyInputProps {
     max?: number;
     value: string | number;
     borderRadius: boolean;
-    onChange: () => void;
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 declare const Input: FC<MyInputProps>;
 export default Input;
