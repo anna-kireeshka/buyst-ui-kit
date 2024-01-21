@@ -33,7 +33,14 @@ const CategoryListTemplate: FC<PropsCategoryList> = ({ isOpen }) => {
    }
    return node
 }
-const InputSearch: FC<Props> = ({ label, value, onChange, openCategoryList, onClick }, props) => {
+const InputSearch: FC<Props> = ({
+   label,
+   value,
+   onChange,
+   openCategoryList,
+   onClick,
+   ...props
+}) => {
    return (
       <div className={styles.search}>
          <button className={styles.categoryBtn} onClick={onClick}>

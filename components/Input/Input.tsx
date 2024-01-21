@@ -1,4 +1,4 @@
-import React, { KeyboardEvent } from 'react'
+import React, { ChangeEvent, KeyboardEvent } from 'react'
 import { FC } from 'react'
 import styles from './Input.module.scss'
 import cx from 'classnames'
@@ -12,12 +12,17 @@ export interface MyInputProps {
    max?: number
    value: string | number
    borderRadius: boolean
-   onChange: () => void
+   onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
-const Input: FC<MyInputProps> = (
-   { type, label = '', state = 'default', value, borderRadius = true, onChange },
-   props
-) => {
+const Input: FC<MyInputProps> = ({
+   type,
+   label = '',
+   state = 'default',
+   value,
+   borderRadius = true,
+   onChange,
+   ...props
+}) => {
    const handleInputKeyup = (ev: KeyboardEvent<HTMLInputElement>) => {
       const code = ev.code.toLowerCase()
       if (type === 'number') {
@@ -29,7 +34,10 @@ const Input: FC<MyInputProps> = (
 
    const inputStyle = cx(styles['input'], {
       [styles[`input-${state}`]]: state,
+      [styles[`input-withoutBorder`]]: !borderRadius,
    })
+
+   const borderStyle = () => (!borderRadius ? { borderRadius: 0 } : null)
 
    return (
       <label className={styles.label}>
@@ -40,7 +48,6 @@ const Input: FC<MyInputProps> = (
             value={value}
             className={inputStyle}
             onKeyDown={(ev) => handleInputKeyup(ev)}
-            style={{ borderRadius: !borderRadius && '0px' }}
             onChange={onChange}
          />
       </label>
