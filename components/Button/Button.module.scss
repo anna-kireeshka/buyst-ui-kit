@@ -6,7 +6,7 @@ $themeColours: (
                 "orange": var(--orange3),
                 "red": var(--berry3),
                 "primary": var(--blue3),
-                "gray": var(--gray200),
+                "gray": var(--gray300),
         ),
         hovered: (
                 "green-hover": var(--green600),
@@ -51,7 +51,14 @@ $themeColours: (
     width: 100%;
     min-width: 100%;
   }
+  &--gray {
+    color: var(--gray700);
+    path {
+      fill: var(--gray700);
+    }
+  }
   &-withIcon {
+    display: flex;
     justify-content: space-between;
     align-items: center;
   }
