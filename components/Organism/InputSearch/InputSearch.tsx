@@ -13,49 +13,28 @@ export interface Props {
    onChange: (e: ChangeEvent<HTMLInputElement>) => void
    openCategoryList: boolean
    onClick: () => void
-   categoryList: CategoryList[]
-   subCategoriesList: SubCategoryList[]
 }
 
-export interface PropsCategoryList {
-   categoryList: CategoryList[]
-   subCategoriesList: SubCategoryList[]
-}
+export interface PropsCategoryList {}
 
-const CategoryListTemplate: FC<PropsCategoryList> = ({ categoryList, subCategoriesList }) => {
+const CategoryListTemplate: FC<PropsCategoryList> = () => {
    const isDesktopOrLaptop = useMediaQuery({
       query: '(min-width: 1024px)',
    })
-   let node: ReactNode
 
    console.log(isDesktopOrLaptop, 'isDesktopOrLaptop')
    if (isDesktopOrLaptop) {
-      node = (
-         <CategoryDropDownDesktop
-            categoryList={categoryList}
-            subCategoriesList={subCategoriesList}
-         />
-      )
-   } else {
-      node = <CategoryDropDownMobile categoryList={categoryList} />
+      return <CategoryDropDownDesktop />
    }
-   return node
+   return <CategoryDropDownMobile />
 }
-const InputSearch: FC<Props> = (
-   { label, value, onChange, openCategoryList, onClick, subCategoriesList, categoryList },
-   props
-) => {
+const InputSearch: FC<Props> = ({ label, value, onChange, openCategoryList, onClick }, props) => {
    return (
       <div className={styles.search}>
          <button className={styles.categoryBtn} onClick={onClick}>
             {openCategoryList ? <CloseIcon /> : <CategoryIcon />}
          </button>
-         {openCategoryList && (
-            <CategoryListTemplate
-               categoryList={categoryList}
-               subCategoriesList={subCategoriesList}
-            />
-         )}
+         {openCategoryList && <CategoryListTemplate />}
          <div className={styles.searchWrapper}>
             <Input
                {...props}

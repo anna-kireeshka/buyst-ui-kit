@@ -7,8 +7,8 @@
   border: none;
   border-radius: 0.5rem;
   outline: none;
-
-
+  height: 100%;
+  color: var(--gray700)
 }
 
 .label {
@@ -17,6 +17,9 @@
 .input {
   &[type="number"], &[type="password"] {
     @include inputStyle;
+    &::placeholder {
+      color: var(--gray700)
+    }
   }
   @include inputStyle;
   &-success {

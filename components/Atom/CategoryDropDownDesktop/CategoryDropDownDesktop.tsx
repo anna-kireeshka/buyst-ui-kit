@@ -1,58 +1,61 @@
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import Link from 'next/link'
 import { ArrowRightIcon } from '../../svg-sprite/common'
 import styles from './CategoryDropDownDesctop.module.scss'
-import { CategoryList, SubCategoryList } from '../../types/types'
 
-export interface Props {
-   categoryList: CategoryList[]
-   subCategoriesList: SubCategoryList[]
-}
+export interface Props {}
 
-const CategoryDropDownDesktop: FC<Props> = ({ categoryList, subCategoriesList }) => {
-   const [activeCategory, setActiveCategory] = useState('')
+const CategoryDropDownDesktop: FC<Props> = () => {
    return (
       <div className={styles.categories}>
          <div className={styles.categoriesContainer}>
             <div className={styles.categoriesMain}>
                <ul className={styles.categoriesMainList}>
-                  {categoryList.map((el) => (
-                     <li
-                        key={el.id}
-                        className={styles.categoriesMainListItem}
-                        onMouseOver={() => setActiveCategory(el.name)}
-                     >
-                        <Link href={el.uri} className={styles.categoriesLink}>
-                           {el.name}
-                        </Link>
-                        <ArrowRightIcon />
-                     </li>
-                  ))}
+                  <li className={styles.categoriesMainListItem}>
+                     <Link href={'/'} className={styles.categoriesLink}>
+                        main category
+                     </Link>
+                     <ArrowRightIcon />
+                  </li>
+                  <li className={styles.categoriesMainListItem}>
+                     <Link href={'/'} className={styles.categoriesLink}>
+                        main category 2
+                     </Link>
+                     <ArrowRightIcon />
+                  </li>
+                  <li className={styles.categoriesMainListItem}>
+                     <Link href={'/'} className={styles.categoriesLink}>
+                        main category 3
+                     </Link>
+                     <ArrowRightIcon />
+                  </li>
+                  <li className={styles.categoriesMainListItem}>
+                     <Link href={'/'} className={styles.categoriesLink}>
+                        main category 4
+                     </Link>
+                     <ArrowRightIcon />
+                  </li>
+                  <li className={styles.categoriesMainListItem}>
+                     <Link href={'/'} className={styles.categoriesLink}>
+                        main category 5
+                     </Link>
+                     <ArrowRightIcon />
+                  </li>
                </ul>
             </div>
             <div className={styles.categoriesChildren}>
-               <strong className={styles.categoriesChildrenTitle}>{activeCategory}</strong>
+               <strong className={styles.categoriesChildrenTitle}>Main Category Active</strong>
                <div className={styles.categoriesChildrenGrid}>
-                  {subCategoriesList.map((el) =>
-                     el.secondLevelCategories.map((second) => (
-                        <ul className={styles.categoriesChildrenList} key={second.id}>
-                           <li className={styles.categoriesChildrenListItem}>
-                              <Link className={styles.categoriesLink} href={second.uri}>
-                                 <strong>{second.name}</strong>
-                              </Link>
-                              {second.thirdLevelCategories.map((third) => (
-                                 <Link
-                                    className={styles.categoriesLink}
-                                    href={third.uri}
-                                    key={third.id}
-                                 >
-                                    {third.name}
-                                 </Link>
-                              ))}
-                           </li>
-                        </ul>
-                     ))
-                  )}
+                  <ul className={styles.categoriesChildrenList}>
+                     <li className={styles.categoriesChildrenListItem}>
+                        <Link className={styles.categoriesLink} href={'/'}>
+                           <strong>sub_menu_category</strong>
+                        </Link>
+                        <Link className={styles.categoriesLink} href={'/'}>
+                           sub_menu_second_category
+                        </Link>
+                     </li>
+                  </ul>
                </div>
             </div>
          </div>

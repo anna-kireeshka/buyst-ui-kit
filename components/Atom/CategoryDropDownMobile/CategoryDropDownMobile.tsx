@@ -2,51 +2,48 @@ import React, { FC, useState } from 'react'
 import Link from 'next/link'
 import { ArrowIconDown, ArrowRightIcon } from '../../svg-sprite/common'
 import styles from './CategoryDropDownMobile.module.scss'
-import { CategoryList } from '../../types/types'
 
-export interface Props {
-   categoryList: CategoryList[]
-}
+export interface Props {}
 
-const CategoryDropDownMobile: FC<Props> = ({ categoryList }) => {
-   const [activeCategory, setActiveCategory] = useState('')
-   const openCategory = (name: string) => {
-      activeCategory.length ? setActiveCategory('') : setActiveCategory(name)
-   }
+const CategoryDropDownMobile: FC<Props> = () => {
    return (
       <div className={styles.categories}>
          <div>
             <div className={styles.categoriesList}>
                <div className={styles.categoriesListContainer}>
-                  {categoryList.map((el) => (
-                     <div key={el.id} onClick={() => openCategory(el.name)}>
-                        <div className={styles.categoriesListMainLink}>
-                           <div>
-                              <img
-                                 className={styles.categoriesListMainLinkIcon}
-                                 src={el.icon}
-                                 alt="category icon"
-                                 width={30}
-                                 height={30}
-                              ></img>
-                              <span>{el.name}</span>
-                           </div>
-
-                           {activeCategory !== el.name ? <ArrowRightIcon /> : <ArrowIconDown />}
+                  <div>
+                     <div className={styles.categoriesListMainLink}>
+                        <div>
+                           {/*<img*/}
+                           {/*   className={styles.categoriesListMainLinkIcon}*/}
+                           {/*   src={'/'}*/}
+                           {/*   alt="category icon"*/}
+                           {/*   width={30}*/}
+                           {/*   height={30}*/}
+                           {/*></img>*/}
+                           <span>MainCategory</span>
                         </div>
-                        {activeCategory === el.name && el.secondLevelCategories?.length ? (
-                           <ul className={styles.categoriesChildrenList}>
-                              {el.secondLevelCategories.map((second) => (
-                                 <li key={second.id} className={styles.categoriesChildrenListItem}>
-                                    <Link href={second.uri} className={styles.categoriesLink}>
-                                       {second.name}
-                                    </Link>
-                                 </li>
-                              ))}
-                           </ul>
-                        ) : null}
+                        <ArrowRightIcon />
+                        {/*{activeCategory ? <ArrowRightIcon /> : <ArrowIconDown />}*/}
                      </div>
-                  ))}
+                     <ul className={styles.categoriesChildrenList}>
+                        <li className={styles.categoriesChildrenListItem}>
+                           <Link href={'/'} className={styles.categoriesLink}>
+                              sub_menu_category
+                           </Link>
+                        </li>
+                        <li className={styles.categoriesChildrenListItem}>
+                           <Link href={'/'} className={styles.categoriesLink}>
+                              sub_menu_category_2
+                           </Link>
+                        </li>
+                        <li className={styles.categoriesChildrenListItem}>
+                           <Link href={'/'} className={styles.categoriesLink}>
+                              sub_menu_category_3
+                           </Link>
+                        </li>
+                     </ul>
+                  </div>
                </div>
             </div>
          </div>
