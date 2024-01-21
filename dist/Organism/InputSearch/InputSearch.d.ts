@@ -7,6 +7,7 @@ export interface Props {
     onClick: () => void;
 }
 export interface PropsCategoryList {
+    isOpen: boolean;
 }
 declare const InputSearch: FC<Props>;
 export default InputSearch;

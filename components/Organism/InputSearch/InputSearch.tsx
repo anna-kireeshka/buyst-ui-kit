@@ -3,7 +3,6 @@ import Input from '../../Input/Input'
 import { CategoryIcon, CloseIcon, SearchIcon } from '../../svg-sprite/common'
 import styles from './InputSearch.module.scss'
 import CategoryDropDownDesktop from '../../Atom/CategoryDropDownDesktop/CategoryDropDownDesktop'
-import { CategoryList, SubCategoryList } from '../../types/types'
 import CategoryDropDownMobile from '../../Atom/CategoryDropDownMobile/CategoryDropDownMobile'
 import { useMediaQuery } from 'react-responsive'
 
@@ -15,18 +14,23 @@ export interface Props {
    onClick: () => void
 }
 
-export interface PropsCategoryList {}
+export interface PropsCategoryList {
+   isOpen: boolean
+}
 
-const CategoryListTemplate: FC<PropsCategoryList> = () => {
+const CategoryListTemplate: FC<PropsCategoryList> = ({ isOpen }) => {
    const isDesktopOrLaptop = useMediaQuery({
       query: '(min-width: 1024px)',
    })
 
-   console.log(isDesktopOrLaptop, 'isDesktopOrLaptop')
-   if (isDesktopOrLaptop) {
-      return <CategoryDropDownDesktop />
+   let node: ReactNode = null
+   if (isOpen) {
+      if (isDesktopOrLaptop) {
+         node = <CategoryDropDownDesktop />
+      }
+      node = <CategoryDropDownMobile />
    }
-   return <CategoryDropDownMobile />
+   return node
 }
 const InputSearch: FC<Props> = ({ label, value, onChange, openCategoryList, onClick }, props) => {
    return (
@@ -34,8 +38,7 @@ const InputSearch: FC<Props> = ({ label, value, onChange, openCategoryList, onCl
          <button className={styles.categoryBtn} onClick={onClick}>
             {openCategoryList ? <CloseIcon /> : <CategoryIcon />}
          </button>
-         {/*{openCategoryList && <CategoryListTemplate />}*/}
-         <CategoryListTemplate />
+         <CategoryListTemplate isOpen={openCategoryList} />
          <div className={styles.searchWrapper}>
             <Input
                {...props}
