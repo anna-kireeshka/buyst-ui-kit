@@ -16,24 +16,12 @@ export interface MyButtonProps {
    outline?: boolean
    disabled?: boolean
 }
-
-interface ButtonLoadingProps {
-   loading: boolean
-   children: ReactNode
-}
-//@ts-ignore
-const ButtonLoading: FC<ButtonLoadingProps> = ({ loading, children }) => {
-   let node: ReactNode
-   if (loading) {
-      node = (
-         <div className={styles.btnLoadingContainer}>
-            <span className={styles.btnLoading} />
-         </div>
-      )
-   } else {
-      node = children
-   }
-   return node
+const ButtonLoading: FC = () => {
+   return (
+      <div className={styles.btnLoadingContainer}>
+         <span className={styles.btnLoading} />
+      </div>
+   )
 }
 const Button: FC<MyButtonProps> = ({
    theme = 'green',
@@ -56,9 +44,17 @@ const Button: FC<MyButtonProps> = ({
       [styles[`btn-${theme}--withIcon`]]: withIcon,
    })
 
+   if (loading) {
+      return (
+         <button {...props} className={classes} disabled={true}>
+            <ButtonLoading />
+         </button>
+      )
+   }
+
    return (
       <button {...props} className={classes}>
-         <ButtonLoading loading={loading} children={children} />
+         {children}
       </button>
    )
 }
