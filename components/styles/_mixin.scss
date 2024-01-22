@@ -67,11 +67,6 @@
   &:hover {
     background: $hoverColor;
   }
-
-  & > span, & > path {
-    color: #fff;
-    fill: #fff;
-  }
 }
 
 @mixin btnOutline($color, $hoverColor) {
@@ -82,10 +77,6 @@
     color: $hoverColor;
     border: 2px solid $hoverColor;
     background: transparent;
-  }
-  & > span, & > path {
-    color: $color;
-    fill: $color;
   }
 }
 

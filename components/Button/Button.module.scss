@@ -24,11 +24,23 @@ $themeColours: (
 
     &-#{$color} {
       @include btnColor($value, $hoverColor);
+      span, path {
+        color: $value;
+        fill: $value;
+      }
       &--outline {
         @include btnOutline($value, $hoverColor);
+        span, path {
+          color: $value;
+          fill: $value;
+        }
       }
       &--transparent {
         @include btnTransparent($value, $hoverColor);
+        span, path {
+          color: $value;
+          fill: $value;
+        }
       }
       &--withIcon {
         display: flex;
