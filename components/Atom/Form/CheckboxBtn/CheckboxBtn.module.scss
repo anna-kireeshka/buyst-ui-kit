@@ -1,0 +1,31 @@
+@import '../../../styles/variable';
+@import '../../../styles/mixin';
+
+.container {
+  @include check-control-container;
+  padding: 0;
+}
+.checkbox {
+  @include input-check-control;
+}
+
+.buttonCheckmark {
+  display: block;
+  width: auto;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.5rem;
+  background-color: var(--gray100);
+  color: var(--gray700);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.checkbox:checked ~ .buttonCheckmark {
+  background: var(--green500);
+  color: #fff;
+}
+.checkbox:checked ~ .buttonCheckmark::after {
+  display: block;
+}
+

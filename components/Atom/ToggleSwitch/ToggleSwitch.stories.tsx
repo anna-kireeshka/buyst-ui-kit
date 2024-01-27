@@ -8,7 +8,7 @@ export default {
 } as StoryObj<typeof ToggleSwitch>
 
 const Template: StoryFn<typeof ToggleSwitch> = (args) => (
-   <div style={{ width: '280px' }}>
+   <div style={{ width: '300px' }}>
       <ToggleSwitch {...args} />
    </div>
 )
