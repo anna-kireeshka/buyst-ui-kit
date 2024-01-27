@@ -1,0 +1,40 @@
+.toggleSwitch {
+  position: relative;
+  display: flex;
+  background-color: var(--green500);
+  border-radius: 24px;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background-color: #fff;
+  border-radius: 20px;
+  transition: left 0.3s ease; // Анимация перемещения фона
+  z-index: 0;
+  height: calc(100% - 7px);
+}
+
+.toggleOption {
+  position: relative;
+  flex: 1;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 1; // Убедитесь, что кнопки находятся выше анимированного фона
+
+  &.selected {
+    font-weight: 600;
+    color: var(--green500);
+  }
+}

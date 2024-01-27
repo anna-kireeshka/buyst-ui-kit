@@ -1,0 +1,70 @@
+@import "../../styles/mixin";
+
+$themeColours: (
+        base: (
+                "green": var(--green800),
+                "orange": var(--orange1),
+                "red": var(--berry3),
+                "primary": var(--blue3),
+                "gray": var(--gray500),
+        ),
+        hovered: (
+                "green-hover": var(--green100),
+                "orange-hover": var(--orange6),
+                "red-hover": var(--berry8),
+                "primary-hover": var(--blue7),
+                "gray-hover": var(--gray100),
+        )
+);
+
+
+@mixin setThemeBtn {
+  @each $color, $value in map-get($themeColours, base) {
+    $hoverColor: map-get(map-get($themeColours, hovered), #{$color + "-hover"});
+
+    &-#{$color} {
+        @include btnTransparent($value, $hoverColor);
+        span, path {
+          color: $value;
+          fill: $value;
+        }
+        &:hover {
+          color: $value;
+          background-color: $hoverColor;
+        }
+      }
+  }
+}
+.btn {
+  @include setThemeBtn;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0.1rem;
+
+  &-sm {
+    width: 1.7rem;
+    height: 1.7rem;
+
+    span, svg {
+      width: 1.4rem;
+      height: 1.4rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  &-lg {
+    width: 2rem;
+    height: 2rem;
+
+    span, svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      font-size: 1.6rem;
+    }
+  }
+}

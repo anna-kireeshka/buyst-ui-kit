@@ -1,0 +1,49 @@
+@import '../../../styles/variable';
+@mixin inputStyle {
+  width: 100%;
+  background-color: var(--gray150);
+  padding: 0.7rem 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  height: 100%;
+  color: var(--gray700);
+}
+
+.label {
+  width: 100%;
+  height: 100%;
+}
+.input {
+  @include inputStyle;
+
+  &[type="number"], &[type="password"] {
+    @include inputStyle;
+    &::placeholder {
+      color: var(--gray700)
+    }
+  }
+
+  &--success {
+    border: 1px solid var(--green500);
+  }
+
+  &--danger {
+    border: 1px solid var(--berry1);
+  }
+
+  &--disabled {
+    background: rgba(208, 219, 224, 0.25);
+    pointer-events: none;
+  }
+
+  &--outlined {
+    background-color: transparent;
+    border: 1px solid var(--gray300);
+  }
+
+  &WithoutBorder {
+    border-radius: 0;
+  }
+}

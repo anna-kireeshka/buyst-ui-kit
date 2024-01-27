@@ -1,0 +1,37 @@
+@import "../../styles/mixin";
+$themeColours: (
+        base: (
+                "instagram": #e1306c,
+                "whatsapp": #00af01,
+                "facebook":#316FF6,
+                "telegram": #0088cc,
+        ),
+        hovered: (
+                "instagram-hover": #ea417a,
+                "whatsapp-hover": #05cc06,
+                "facebook-hover":  #44619b,
+                "telegram-hover": #22a5e6,
+        )
+);
+
+@mixin setThemeBtn {
+        @each $color, $value in map-get($themeColours, base) {
+                $hoverColor: map-get(map-get($themeColours, hovered), #{$color + "-hover"});
+
+                &-#{$color} {
+                        @include btnColor($value, $hoverColor);
+                }
+        }
+}
+.btn {
+        @include baseBtn;
+        justify-content: space-between;
+        min-width: 150px;
+        width: 100%;
+        gap: 1rem;
+        @include setThemeBtn;
+
+        path {
+                fill: #fff
+        }
+}

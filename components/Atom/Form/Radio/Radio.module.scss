@@ -1,0 +1,28 @@
+@import '../../../styles/variable';
+@import '../../../styles/mixin';
+.container {
+  @include check-control-container;
+}
+.radio {
+  @include input-check-control
+}
+
+.radio:checked ~ .radioMark {
+  background: var(--green500)
+}
+.radio:checked ~ .radioMark::after {
+  display: block;
+}
+.radioMark::after {
+  @include input-checkmark-background;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 0;
+}
+
+.radioMark {
+  @include input-checkmark;
+  border-radius: 50%;
+}

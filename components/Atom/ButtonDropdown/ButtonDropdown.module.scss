@@ -1,0 +1,42 @@
+.selectContainer {
+  width: 100%;
+
+  &Label {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    background-color: var(--gray100);
+    cursor: pointer;
+    padding: 0.8rem .5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--gray700);
+
+    path {
+      fill: var(--gray700);
+    }
+    &:not([aria-expanded=true]) + .selectList {
+      display: none;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+  }
+}
+
+.selectList {
+  width: 100%;
+  border: 1px solid var(--gray300);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0.5rem;
+  box-shadow: 1px 1px 7px 1px var(--gray300);
+  height: 100%;
+  max-height: 200px;
+  min-height: auto;
+  overflow: scroll;
+}

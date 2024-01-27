@@ -1,0 +1,28 @@
+@import '../../../styles/variable';
+@import '../../../styles/mixin';
+
+.container {
+ @include check-control-container;
+}
+.checkbox {
+  @include input-check-control;
+}
+
+.checkbox:checked ~ .checkmark {
+  background: var(--green500);
+}
+.checkbox:checked ~ .checkmark::after {
+  display: block;
+}
+.checkmark::after {
+  @include input-checkmark-background;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  top: 40%;
+}
+
+.checkmark {
+  @include input-checkmark;
+}
