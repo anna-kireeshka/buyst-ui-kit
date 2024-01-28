@@ -1,13 +1,7 @@
-import React, { FC } from 'react';
+import { FC, ReactNode } from 'react';
 export interface Props {
-    valueMin: string | number;
-    valueMax: string | number;
-    min: number;
-    max: number;
     label: string;
-    listLength?: number;
-    onchangeMin: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    onchangeMax: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    children: ReactNode;
 }
 declare const SelectRange: FC<Props>;
 export default SelectRange;
