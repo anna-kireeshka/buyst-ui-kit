@@ -1,5 +1,6 @@
 .selectContainer {
   width: 100%;
+  position: relative;
 
   &Label {
     width: 100%;
@@ -8,7 +9,7 @@
     align-items: center;
     border: 1px solid transparent;
     border-radius: 0.5rem;
-    background-color: var(--gray100);
+    background-color: rgba(255, 255, 255, 0.93);
     cursor: pointer;
     padding: 0.8rem .5rem;
     font-size: 1.1rem;
@@ -28,6 +29,9 @@
 }
 
 .selectList {
+  position: absolute;
+  z-index: 100;
+  top: 2rem;
   width: 100%;
   border: 1px solid var(--gray300);
   border-radius: 0.5rem;
@@ -35,8 +39,9 @@
   list-style: none;
   padding: 0.5rem;
   box-shadow: 1px 1px 7px 1px var(--gray300);
-  height: 100%;
-  max-height: 200px;
-  min-height: auto;
+  height: auto;
+  //max-height: 200px;
+  //min-height: 200px;
   overflow: scroll;
+  background-color: #fff;
 }
