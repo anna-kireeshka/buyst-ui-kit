@@ -107,7 +107,7 @@ const Re = /* @__PURE__ */ an(En), Cn = () => /* @__PURE__ */ y("div", { classNa
   label: e = "",
   state: i = "",
   value: l = "",
-  borderRadius: o = !0,
+  borderRadius: o,
   onChange: a,
   placeholder: f = "",
   ...n

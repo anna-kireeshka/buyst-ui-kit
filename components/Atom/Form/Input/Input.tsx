@@ -19,7 +19,7 @@ const Input: FC<MyInputProps> = ({
    label = '',
    state = '',
    value = '',
-   borderRadius = true,
+   borderRadius,
    onChange,
    placeholder = '',
    ...props
