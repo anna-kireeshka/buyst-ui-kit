@@ -2,10 +2,8 @@ import React, { ChangeEvent, FC, ReactNode, useState } from 'react'
 import Input from '../../../Atom/Form/Input/Input'
 import { CategoryIcon, CloseIcon, SearchIcon } from '../../../svg-sprite/common'
 import CategoryDropDownDesktop from '../../../Atom/CategoryDropDownDesktop/CategoryDropDownDesktop'
-import CategoryDropDownMobile from '../../../Atom/CategoryDropDownMobile/CategoryDropDownMobile'
-import { useMediaQuery } from 'react-responsive'
 
-import styles from './InputSearch.module.scss'
+import styles from './InputSerach.module.scss'
 
 export interface Props {
    label: string
@@ -14,34 +12,16 @@ export interface Props {
    openCategoryList: boolean
    onClick: () => void
    placeholder: string
+   borderRadius: boolean
 }
-
-export interface PropsCategoryList {
-   isOpen: boolean
-}
-
-const CategoryListTemplate: FC<PropsCategoryList> = ({ isOpen }) => {
-   const isDesktopOrLaptop = useMediaQuery({
-      query: '(min-width: 1024px)',
-   })
-
-   let node: ReactNode = null
-   if (isOpen) {
-      if (isDesktopOrLaptop) {
-         node = <CategoryDropDownDesktop />
-      } else {
-         node = <CategoryDropDownMobile />
-      }
-   }
-   return node
-}
-const InputSearch: FC<Props> = ({
+const InputSerach: FC<Props> = ({
    label = '',
    value = '',
    onChange,
    openCategoryList = false,
    onClick,
    placeholder = '',
+   borderRadius = false,
    ...props
 }) => {
    return (
@@ -49,13 +29,13 @@ const InputSearch: FC<Props> = ({
          <button className={styles.categoryBtn} onClick={onClick}>
             {openCategoryList ? <CloseIcon /> : <CategoryIcon />}
          </button>
-         <CategoryListTemplate isOpen={openCategoryList} />
+         {openCategoryList && <CategoryDropDownDesktop />}
          <div className={styles.searchWrapper}>
             <Input
                type={'text'}
                label={label}
                state={''}
-               borderRadius={false}
+               borderRadius={borderRadius}
                value={value}
                onChange={onChange}
                placeholder={placeholder}
@@ -70,4 +50,4 @@ const InputSearch: FC<Props> = ({
    )
 }
 
-export default InputSearch
+export default InputSerach

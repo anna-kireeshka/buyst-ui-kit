@@ -68,9 +68,9 @@ $themeColours: (
     min-width: 100%;
   }
   &-gray {
-    color: var(--gray700);
+    color: var(--gray700) !important;
     path {
-      fill: var(--gray700);
+      fill: var(--gray700) !important;
     }
   }
   &-small {
