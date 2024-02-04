@@ -1,25 +1,15 @@
 .categories {
   position: absolute;
   background: #fff;
-  border-radius: 0.7rem;
   z-index: 150;
-  box-shadow: 0 1px 16px rgb(0 0 0 / 35%);
   padding: 2rem;
-  width: calc(100% - 1rem);
-  top: 4.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-
-  @media screen and (min-width: 768px) {
-    width: 100%;
-    left: 0;
-    transform: translateX(0);
-  }
-
+  width: 100%;
+  top: 0;
+  left: 0;
 
   &Link {
     padding: 0.3rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: var(--gray600);
     text-decoration: none;
     font-weight: 500;
@@ -35,7 +25,7 @@
 
       &MainLink {
         cursor: pointer;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         color: var(--gray600);
         padding: 0.5rem;
         font-weight: 500;
