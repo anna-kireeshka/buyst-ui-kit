@@ -12,6 +12,7 @@ import Tag from './Atom/Tag/Tag'
 import CheckboxBtn from './Atom/Form/CheckboxBtn/CheckboxBtn'
 import Rating from './Atom/Rating/Rating'
 import InputSearchMobile from './Organism/Form/InputSerachMobile/InputSearchMobile'
+import CategoryDropDownMobile from './Atom/CategoryDropDownMobile/CategoryDropDownMobile'
 
 export {
    Button,
@@ -28,4 +29,5 @@ export {
    CheckboxBtn,
    Rating,
    InputSearchMobile,
+   CategoryDropDownMobile,
 }
