@@ -5,32 +5,19 @@ import { SearchIcon } from '../../../svg-sprite/common'
 import styles from './InputSearchMobile.module.scss'
 
 export interface Props {
-   label: string
    value: string
    onChange: (e: ChangeEvent<HTMLInputElement>) => void
-   openCategoryList: boolean
-   onClick: () => void
    placeholder: string
-   borderRadius: boolean
 }
-const InputSearchMobile: FC<Props> = ({
-   label = '',
-   value = '',
-   onChange,
-   openCategoryList = false,
-   onClick,
-   placeholder = '',
-   borderRadius = true,
-   ...props
-}) => {
+const InputSearchMobile: FC<Props> = ({ value = '', onChange, placeholder = '', ...props }) => {
    return (
       <div className={styles.search}>
          <div className={styles.searchWrapper}>
             <Input
                type={'text'}
-               label={label}
+               label={''}
                state={''}
-               borderRadius={borderRadius}
+               borderRadius={true}
                value={value}
                onChange={onChange}
                placeholder={placeholder}

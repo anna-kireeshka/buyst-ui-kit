@@ -44,7 +44,7 @@ var nn = { exports: {} };
 (function(t) {
   (function() {
     var e = {}.hasOwnProperty;
-    function i() {
+    function o() {
       for (var a = [], n = 0; n < arguments.length; n++) {
         var r = arguments[n];
         if (r) {
@@ -53,8 +53,8 @@ var nn = { exports: {} };
             a.push(r);
           else if (Array.isArray(r)) {
             if (r.length) {
-              var o = i.apply(null, r);
-              o && a.push(o);
+              var i = o.apply(null, r);
+              i && a.push(i);
             }
           } else if (s === "object") {
             if (r.toString !== Object.prototype.toString && !r.toString.toString().includes("[native code]")) {
@@ -68,31 +68,31 @@ var nn = { exports: {} };
       }
       return a.join(" ");
     }
-    t.exports ? (i.default = i, t.exports = i) : window.classNames = i;
+    t.exports ? (o.default = o, t.exports = o) : window.classNames = o;
   })();
 })(nn);
-var Cn = nn.exports;
-const re = /* @__PURE__ */ tn(Cn), Nn = () => /* @__PURE__ */ u("div", { className: $.btnLoadingContainer, children: /* @__PURE__ */ u("span", { className: $.btnLoading }) }), Po = ({
+var Nn = nn.exports;
+const re = /* @__PURE__ */ tn(Nn), Cn = () => /* @__PURE__ */ u("div", { className: $.btnLoadingContainer, children: /* @__PURE__ */ u("span", { className: $.btnLoading }) }), Po = ({
   theme: t = "green",
   disabled: e = !1,
-  outline: i = !1,
+  outline: o = !1,
   fullWidth: a = !1,
   children: n,
   size: r = "small",
   loading: s = !1,
-  transparent: o = !1,
+  transparent: i = !1,
   withIcon: c = !1,
   ...l
 }) => {
   const f = re($.btn, $[`btn-${t}`], {
     [$["btn--fullWidth"]]: a,
-    [$[`btn-${t}--transparent`]]: o,
+    [$[`btn-${t}--transparent`]]: i,
     [$[`btn-${r}`]]: r,
-    [$[`btn-${t}--outline`]]: i,
+    [$[`btn-${t}--outline`]]: o,
     [$["btn-disabled"]]: e,
     [$[`btn-${t}--withIcon`]]: c
   });
-  return s ? /* @__PURE__ */ u("button", { ...l, className: f, disabled: !0, children: /* @__PURE__ */ u(Nn, {}) }) : /* @__PURE__ */ u("button", { ...l, className: f, children: n });
+  return s ? /* @__PURE__ */ u("button", { ...l, className: f, disabled: !0, children: /* @__PURE__ */ u(Cn, {}) }) : /* @__PURE__ */ u("button", { ...l, className: f, children: n });
 }, En = "Input-module__label___bIkDx", On = "Input-module__input___jhteC", In = "Input-module__inputWithoutBorder___yoplm", ce = {
   label: En,
   input: On,
@@ -104,18 +104,18 @@ const re = /* @__PURE__ */ tn(Cn), Nn = () => /* @__PURE__ */ u("div", { classNa
 }, rn = ({
   type: t = "text",
   label: e = "",
-  state: i = "",
+  state: o = "",
   value: a = "",
   borderRadius: n,
   onChange: r,
   placeholder: s = "",
-  ...o
+  ...i
 }) => {
   const c = (f) => {
     const m = f.code.toLowerCase();
     t === "number" && m.includes("key") && f.preventDefault();
   }, l = re(ce.input, {
-    [ce[`input--${i}`]]: i !== "",
+    [ce[`input--${o}`]]: o !== "",
     [ce.inputWithoutBorder]: !n
   });
   return /* @__PURE__ */ O("label", { className: ce.label, children: [
@@ -129,7 +129,7 @@ const re = /* @__PURE__ */ tn(Cn), Nn = () => /* @__PURE__ */ u("div", { classNa
         onKeyDown: (f) => c(f),
         onChange: r,
         placeholder: s,
-        ...o
+        ...i
       }
     )
   ] });
@@ -145,7 +145,7 @@ const re = /* @__PURE__ */ tn(Cn), Nn = () => /* @__PURE__ */ u("div", { classNa
   container: kn,
   radio: jn,
   radioMark: Dn
-}, Co = ({ disabled: t }, e) => /* @__PURE__ */ O("label", { className: Se.container, children: [
+}, No = ({ disabled: t }, e) => /* @__PURE__ */ O("label", { className: Se.container, children: [
   /* @__PURE__ */ u("input", { type: "radio", ...e, className: Se.radio }),
   /* @__PURE__ */ u("span", { className: Se.radioMark }),
   e.label
@@ -158,10 +158,10 @@ const re = /* @__PURE__ */ tn(Cn), Nn = () => /* @__PURE__ */ u("div", { classNa
   "btn-gray": "ButtonIcon-module__btn-gray___zzgI0",
   "btn-sm": "ButtonIcon-module__btn-sm___1Ts5I",
   "btn-lg": "ButtonIcon-module__btn-lg___zCLLo"
-}, No = ({ theme: t, size: e, fill: i = !1, children: a }, n) => {
+}, Co = ({ theme: t, size: e, fill: o = !1, children: a }, n) => {
   const r = re(ue.btn, ue[`btn-${t}`], {
     [ue[`btn-${e}`]]: e,
-    [ue["btn-fill"]]: i
+    [ue["btn-fill"]]: o
   });
   return /* @__PURE__ */ u("button", { ...n, className: r, children: a });
 }, qn = "ButtonSocialNetwork-module__btn___JDtC2", mt = {
@@ -230,9 +230,9 @@ const re = /* @__PURE__ */ tn(Cn), Nn = () => /* @__PURE__ */ u("div", { classNa
     height: "20",
     children: /* @__PURE__ */ u("path", { d: "M373.295 307.064c-6.37-3.188-37.687-18.596-43.526-20.724-5.838-2.126-10.084-3.187-14.331 3.188-4.246 6.376-16.454 20.725-20.17 24.976-3.715 4.251-7.431 4.785-13.8 1.594-6.37-3.187-26.895-9.913-51.225-31.616-18.935-16.89-31.72-37.749-35.435-44.126-3.716-6.377-.397-9.824 2.792-13 2.867-2.854 6.371-7.44 9.555-11.16 3.186-3.718 4.247-6.377 6.37-10.626 2.123-4.252 1.062-7.971-.532-11.159-1.591-3.188-14.33-34.542-19.638-47.298-5.171-12.419-10.422-10.737-14.332-10.934-3.711-.184-7.963-.223-12.208-.223-4.246 0-11.148 1.594-16.987 7.969-5.838 6.377-22.293 21.789-22.293 53.14 0 31.355 22.824 61.642 26.009 65.894 3.185 4.252 44.916 68.59 108.816 96.181 15.196 6.564 27.062 10.483 36.312 13.418 15.259 4.849 29.145 4.165 40.121 2.524 12.238-1.827 37.686-15.408 42.995-30.286 5.307-14.882 5.307-27.635 3.715-30.292-1.592-2.657-5.838-4.251-12.208-7.44M257.071 465.757h-.086c-38.022-.015-75.313-10.23-107.845-29.535l-7.738-4.592-80.194 21.037 21.405-78.19-5.037-8.017c-21.211-33.735-32.414-72.726-32.397-112.763.047-116.825 95.1-211.87 211.976-211.87 56.595.019 109.795 22.088 149.801 62.139 40.005 40.05 62.023 93.286 62.001 149.902-.048 116.834-95.1 211.889-211.886 211.889M437.403 73.533C389.272 25.347 325.265-1.202 257.068-1.23 116.554-1.23 2.193 113.124 2.136 253.681c-.018 44.932 11.72 88.786 34.03 127.448L0 513.231l135.141-35.45c37.236 20.31 79.159 31.015 121.826 31.029h.105c140.499 0 254.87-114.366 254.928-254.925.026-68.117-26.467-132.166-74.597-180.352" })
   }
-), Eo = ({ theme: t = "whatsapp", children: e, ...i }) => {
+), Eo = ({ theme: t = "whatsapp", children: e, ...o }) => {
   const a = re(mt.btn, mt[`btn-${t}`]);
-  return /* @__PURE__ */ O("button", { ...i, className: a, children: [
+  return /* @__PURE__ */ O("button", { ...o, className: a, children: [
     e,
     t === "whatsapp" ? /* @__PURE__ */ u(Un, {}) : t === "instagram" ? /* @__PURE__ */ u(An, {}) : t === "telegram" ? /* @__PURE__ */ u(Bn, {}) : /* @__PURE__ */ u($n, {})
   ] });
@@ -296,16 +296,16 @@ function an() {
     Object.defineProperty(t, "__esModule", {
       value: !0
     });
-    function e(s, o) {
-      for (var c in o)
+    function e(s, i) {
+      for (var c in i)
         Object.defineProperty(s, c, {
           enumerable: !0,
-          get: o[c]
+          get: i[c]
         });
     }
     e(t, {
       searchParamsToUrlQuery: function() {
-        return i;
+        return o;
       },
       urlQueryToSearchParams: function() {
         return n;
@@ -314,27 +314,27 @@ function an() {
         return r;
       }
     });
-    function i(s) {
-      const o = {};
+    function o(s) {
+      const i = {};
       return s.forEach((c, l) => {
-        typeof o[l] > "u" ? o[l] = c : Array.isArray(o[l]) ? o[l].push(c) : o[l] = [
-          o[l],
+        typeof i[l] > "u" ? i[l] = c : Array.isArray(i[l]) ? i[l].push(c) : i[l] = [
+          i[l],
           c
         ];
-      }), o;
+      }), i;
     }
     function a(s) {
       return typeof s == "string" || typeof s == "number" && !isNaN(s) || typeof s == "boolean" ? String(s) : "";
     }
     function n(s) {
-      const o = new URLSearchParams();
+      const i = new URLSearchParams();
       return Object.entries(s).forEach((c) => {
         let [l, f] = c;
-        Array.isArray(f) ? f.forEach((m) => o.append(l, a(m))) : o.set(l, a(f));
-      }), o;
+        Array.isArray(f) ? f.forEach((m) => i.append(l, a(m))) : i.set(l, a(f));
+      }), i;
     }
     function r(s) {
-      for (var o = arguments.length, c = new Array(o > 1 ? o - 1 : 0), l = 1; l < o; l++)
+      for (var i = arguments.length, c = new Array(i > 1 ? i - 1 : 0), l = 1; l < i; l++)
         c[l - 1] = arguments[l];
       return c.forEach((f) => {
         Array.from(f.keys()).forEach((m) => s.delete(m)), f.forEach((m, h) => s.append(h, m));
@@ -347,30 +347,30 @@ function Gn() {
   if (bt)
     return de;
   bt = 1;
-  function t(i) {
+  function t(o) {
     if (typeof WeakMap != "function")
       return null;
     var a = /* @__PURE__ */ new WeakMap(), n = /* @__PURE__ */ new WeakMap();
     return (t = function(r) {
       return r ? n : a;
-    })(i);
+    })(o);
   }
   de._ = de._interop_require_wildcard = e;
-  function e(i, a) {
-    if (!a && i && i.__esModule)
-      return i;
-    if (i === null || typeof i != "object" && typeof i != "function")
-      return { default: i };
+  function e(o, a) {
+    if (!a && o && o.__esModule)
+      return o;
+    if (o === null || typeof o != "object" && typeof o != "function")
+      return { default: o };
     var n = t(a);
-    if (n && n.has(i))
-      return n.get(i);
+    if (n && n.has(o))
+      return n.get(o);
     var r = {}, s = Object.defineProperty && Object.getOwnPropertyDescriptor;
-    for (var o in i)
-      if (o !== "default" && Object.prototype.hasOwnProperty.call(i, o)) {
-        var c = s ? Object.getOwnPropertyDescriptor(i, o) : null;
-        c && (c.get || c.set) ? Object.defineProperty(r, o, c) : r[o] = i[o];
+    for (var i in o)
+      if (i !== "default" && Object.prototype.hasOwnProperty.call(o, i)) {
+        var c = s ? Object.getOwnPropertyDescriptor(o, i) : null;
+        c && (c.get || c.set) ? Object.defineProperty(r, i, c) : r[i] = o[i];
       }
-    return r.default = i, n && n.set(i, r), r;
+    return r.default = o, n && n.set(o, r), r;
   }
   return de;
 }
@@ -395,7 +395,7 @@ function sn() {
         return s;
       },
       formatWithValidation: function() {
-        return o;
+        return i;
       }
     });
     const a = /* @__PURE__ */ Gn()._(an()), n = /https?|ftp|gopher|file/;
@@ -419,7 +419,7 @@ function sn() {
       "search",
       "slashes"
     ];
-    function o(c) {
+    function i(c) {
       return process.env.NODE_ENV === "development" && c !== null && typeof c == "object" && Object.keys(c).forEach((l) => {
         s.includes(l) || console.warn("Unknown key passed via urlObject into url.format: " + l);
       }), r(c);
@@ -437,16 +437,16 @@ function Kn() {
         return e;
       }
     });
-    function e(i, a) {
+    function e(o, a) {
       const n = {};
-      return Object.keys(i).forEach((r) => {
-        a.includes(r) || (n[r] = i[r]);
+      return Object.keys(o).forEach((r) => {
+        a.includes(r) || (n[r] = o[r]);
       }), n;
     }
   }(je)), je;
 }
 var De = {}, wt;
-function Ce() {
+function Ne() {
   return wt || (wt = 1, function(t) {
     Object.defineProperty(t, "__esModule", {
       value: !0
@@ -460,7 +460,7 @@ function Ce() {
     }
     e(t, {
       WEB_VITALS: function() {
-        return i;
+        return o;
       },
       execOnce: function() {
         return a;
@@ -472,7 +472,7 @@ function Ce() {
         return s;
       },
       getURL: function() {
-        return o;
+        return i;
       },
       getDisplayName: function() {
         return c;
@@ -511,7 +511,7 @@ function Ce() {
         return R;
       }
     });
-    const i = [
+    const o = [
       "CLS",
       "FCP",
       "FID",
@@ -532,7 +532,7 @@ function Ce() {
       const { protocol: _, hostname: v, port: L } = window.location;
       return _ + "//" + v + (L ? ":" + L : "");
     }
-    function o() {
+    function i() {
       const { href: _ } = window.location, v = s();
       return _.substring(v.length);
     }
@@ -611,8 +611,8 @@ function cn() {
         return e;
       }
     });
-    function e(i) {
-      return i.replace(/\/$/, "") || "/";
+    function e(o) {
+      return o.replace(/\/$/, "") || "/";
     }
   }(xe)), xe;
 }
@@ -627,14 +627,14 @@ function st() {
         return e;
       }
     });
-    function e(i) {
-      const a = i.indexOf("#"), n = i.indexOf("?"), r = n > -1 && (a < 0 || n < a);
+    function e(o) {
+      const a = o.indexOf("#"), n = o.indexOf("?"), r = n > -1 && (a < 0 || n < a);
       return r || a > -1 ? {
-        pathname: i.substring(0, r ? n : a),
-        query: r ? i.substring(n, a > -1 ? a : void 0) : "",
-        hash: a > -1 ? i.slice(a) : ""
+        pathname: o.substring(0, r ? n : a),
+        query: r ? o.substring(n, a > -1 ? a : void 0) : "",
+        hash: a > -1 ? o.slice(a) : ""
       } : {
-        pathname: i,
+        pathname: o,
         query: "",
         hash: ""
       };
@@ -642,7 +642,7 @@ function st() {
   }(qe)), qe;
 }
 var Lt;
-function Ne() {
+function Ce() {
   return Lt || (Lt = 1, function(t, e) {
     Object.defineProperty(e, "__esModule", {
       value: !0
@@ -652,28 +652,28 @@ function Ne() {
         return n;
       }
     });
-    const i = cn(), a = st(), n = (r) => {
+    const o = cn(), a = st(), n = (r) => {
       if (!r.startsWith("/") || process.env.__NEXT_MANUAL_TRAILING_SLASH)
         return r;
-      const { pathname: s, query: o, hash: c } = (0, a.parsePath)(r);
-      return process.env.__NEXT_TRAILING_SLASH ? /\.[^/]+\/?$/.test(s) ? "" + (0, i.removeTrailingSlash)(s) + o + c : s.endsWith("/") ? "" + s + o + c : s + "/" + o + c : "" + (0, i.removeTrailingSlash)(s) + o + c;
+      const { pathname: s, query: i, hash: c } = (0, a.parsePath)(r);
+      return process.env.__NEXT_TRAILING_SLASH ? /\.[^/]+\/?$/.test(s) ? "" + (0, o.removeTrailingSlash)(s) + i + c : s.endsWith("/") ? "" + s + i + c : s + "/" + i + c : "" + (0, o.removeTrailingSlash)(s) + i + c;
     };
     (typeof e.default == "function" || typeof e.default == "object" && e.default !== null) && typeof e.default.__esModule > "u" && (Object.defineProperty(e.default, "__esModule", { value: !0 }), Object.assign(e.default, e), t.exports = e.default);
   }(fe, fe.exports)), fe.exports;
 }
-var Ae = {}, _e = { exports: {} }, Be = {}, Ct;
+var Ae = {}, _e = { exports: {} }, Be = {}, Nt;
 function un() {
-  return Ct || (Ct = 1, function(t) {
+  return Nt || (Nt = 1, function(t) {
     Object.defineProperty(t, "__esModule", {
       value: !0
     }), Object.defineProperty(t, "pathHasPrefix", {
       enumerable: !0,
       get: function() {
-        return i;
+        return o;
       }
     });
     const e = st();
-    function i(a, n) {
+    function o(a, n) {
       if (typeof a != "string")
         return !1;
       const { pathname: r } = (0, e.parsePath)(a);
@@ -681,9 +681,9 @@ function un() {
     }
   }(Be)), Be;
 }
-var Nt;
+var Ct;
 function Xn() {
-  return Nt || (Nt = 1, function(t, e) {
+  return Ct || (Ct = 1, function(t, e) {
     Object.defineProperty(e, "__esModule", {
       value: !0
     }), Object.defineProperty(e, "hasBasePath", {
@@ -692,9 +692,9 @@ function Xn() {
         return n;
       }
     });
-    const i = un(), a = process.env.__NEXT_ROUTER_BASEPATH || "";
+    const o = un(), a = process.env.__NEXT_ROUTER_BASEPATH || "";
     function n(r) {
-      return (0, i.pathHasPrefix)(r, a);
+      return (0, o.pathHasPrefix)(r, a);
     }
     (typeof e.default == "function" || typeof e.default == "object" && e.default !== null) && typeof e.default.__esModule > "u" && (Object.defineProperty(e.default, "__esModule", { value: !0 }), Object.assign(e.default, e), t.exports = e.default);
   }(_e, _e.exports)), _e.exports;
@@ -710,13 +710,13 @@ function ln() {
         return a;
       }
     });
-    const e = Ce(), i = Xn();
+    const e = Ne(), o = Xn();
     function a(n) {
       if (!(0, e.isAbsoluteUrl)(n))
         return !0;
       try {
         const r = (0, e.getLocationOrigin)(), s = new URL(n, r);
-        return s.origin === r && (0, i.hasBasePath)(s.pathname);
+        return s.origin === r && (0, o.hasBasePath)(s.pathname);
       } catch {
         return !1;
       }
@@ -731,7 +731,7 @@ function Qn() {
     }), Object.defineProperty(t, "getSortedRoutes", {
       enumerable: !0,
       get: function() {
-        return i;
+        return o;
       }
     });
     class e {
@@ -747,15 +747,15 @@ function Qn() {
           ...this.children.keys()
         ].sort();
         this.slugName !== null && r.splice(r.indexOf("[]"), 1), this.restSlugName !== null && r.splice(r.indexOf("[...]"), 1), this.optionalRestSlugName !== null && r.splice(r.indexOf("[[...]]"), 1);
-        const s = r.map((o) => this.children.get(o)._smoosh("" + n + o + "/")).reduce((o, c) => [
-          ...o,
+        const s = r.map((i) => this.children.get(i)._smoosh("" + n + i + "/")).reduce((i, c) => [
+          ...i,
           ...c
         ], []);
         if (this.slugName !== null && s.push(...this.children.get("[]")._smoosh(n + "[" + this.slugName + "]/")), !this.placeholder) {
-          const o = n === "/" ? "/" : n.slice(0, -1);
+          const i = n === "/" ? "/" : n.slice(0, -1);
           if (this.optionalRestSlugName != null)
-            throw new Error('You cannot define a route with the same specificity as a optional catch-all route ("' + o + '" and "' + o + "[[..." + this.optionalRestSlugName + ']]").');
-          s.unshift(o);
+            throw new Error('You cannot define a route with the same specificity as a optional catch-all route ("' + i + '" and "' + i + "[[..." + this.optionalRestSlugName + ']]").');
+          s.unshift(i);
         }
         return this.restSlugName !== null && s.push(...this.children.get("[...]")._smoosh(n + "[..." + this.restSlugName + "]/")), this.optionalRestSlugName !== null && s.push(...this.children.get("[[...]]")._smoosh(n + "[[..." + this.optionalRestSlugName + "]]/")), s;
       }
@@ -766,18 +766,18 @@ function Qn() {
         }
         if (s)
           throw new Error("Catch-all must be the last part of the URL.");
-        let o = n[0];
-        if (o.startsWith("[") && o.endsWith("]")) {
+        let i = n[0];
+        if (i.startsWith("[") && i.endsWith("]")) {
           let f = function(m, h) {
             if (m !== null && m !== h)
               throw new Error("You cannot use different slug names for the same dynamic path ('" + m + "' !== '" + h + "').");
             r.forEach((y) => {
               if (y === h)
                 throw new Error('You cannot have the same slug name "' + h + '" repeat within a single dynamic path');
-              if (y.replace(/\W/g, "") === o.replace(/\W/g, ""))
+              if (y.replace(/\W/g, "") === i.replace(/\W/g, ""))
                 throw new Error('You cannot have the slug names "' + y + '" and "' + h + '" differ only by non-word symbols within a single dynamic path');
             }), r.push(h);
-          }, c = o.slice(1, -1), l = !1;
+          }, c = i.slice(1, -1), l = !1;
           if (c.startsWith("[") && c.endsWith("]") && (c = c.slice(1, -1), l = !0), c.startsWith("...") && (c = c.substring(3), s = !0), c.startsWith("[") || c.endsWith("]"))
             throw new Error("Segment names may not start or end with extra brackets ('" + c + "').");
           if (c.startsWith("."))
@@ -786,25 +786,25 @@ function Qn() {
             if (l) {
               if (this.restSlugName != null)
                 throw new Error('You cannot use both an required and optional catch-all route at the same level ("[...' + this.restSlugName + ']" and "' + n[0] + '" ).');
-              f(this.optionalRestSlugName, c), this.optionalRestSlugName = c, o = "[[...]]";
+              f(this.optionalRestSlugName, c), this.optionalRestSlugName = c, i = "[[...]]";
             } else {
               if (this.optionalRestSlugName != null)
                 throw new Error('You cannot use both an optional and required catch-all route at the same level ("[[...' + this.optionalRestSlugName + ']]" and "' + n[0] + '").');
-              f(this.restSlugName, c), this.restSlugName = c, o = "[...]";
+              f(this.restSlugName, c), this.restSlugName = c, i = "[...]";
             }
           else {
             if (l)
               throw new Error('Optional route parameters are not yet supported ("' + n[0] + '").');
-            f(this.slugName, c), this.slugName = c, o = "[]";
+            f(this.slugName, c), this.slugName = c, i = "[]";
           }
         }
-        this.children.has(o) || this.children.set(o, new e()), this.children.get(o)._insert(n.slice(1), r, s);
+        this.children.has(i) || this.children.set(i, new e()), this.children.get(i)._insert(n.slice(1), r, s);
       }
       constructor() {
         this.placeholder = !0, this.children = /* @__PURE__ */ new Map(), this.slugName = null, this.restSlugName = null, this.optionalRestSlugName = null;
       }
     }
-    function i(a) {
+    function o(a) {
       const n = new e();
       return a.forEach((r) => n.insert(r)), n.smoosh();
     }
@@ -821,8 +821,8 @@ function Yn() {
         return e;
       }
     });
-    function e(i) {
-      return i.startsWith("/") ? i : "/" + i;
+    function e(o) {
+      return o.startsWith("/") ? o : "/" + o;
     }
   }(Ve)), Ve;
 }
@@ -833,15 +833,15 @@ function Zn() {
       value: !0
     });
     function e(r, s) {
-      for (var o in s)
-        Object.defineProperty(r, o, {
+      for (var i in s)
+        Object.defineProperty(r, i, {
           enumerable: !0,
-          get: s[o]
+          get: s[i]
         });
     }
     e(t, {
       isGroupSegment: function() {
-        return i;
+        return o;
       },
       PAGE_SEGMENT_KEY: function() {
         return a;
@@ -850,7 +850,7 @@ function Zn() {
         return n;
       }
     });
-    function i(r) {
+    function o(r) {
       return r[0] === "(" && r.endsWith(")");
     }
     const a = "__PAGE__", n = "__DEFAULT__";
@@ -862,11 +862,11 @@ function Jn() {
     Object.defineProperty(t, "__esModule", {
       value: !0
     });
-    function e(s, o) {
-      for (var c in o)
+    function e(s, i) {
+      for (var c in i)
         Object.defineProperty(s, c, {
           enumerable: !0,
-          get: o[c]
+          get: i[c]
         });
     }
     e(t, {
@@ -877,9 +877,9 @@ function Jn() {
         return r;
       }
     });
-    const i = Yn(), a = Zn();
+    const o = Yn(), a = Zn();
     function n(s) {
-      return (0, i.ensureLeadingSlash)(s.split("/").reduce((o, c, l, f) => !c || (0, a.isGroupSegment)(c) || c[0] === "@" || (c === "page" || c === "route") && l === f.length - 1 ? o : o + "/" + c, ""));
+      return (0, o.ensureLeadingSlash)(s.split("/").reduce((i, c, l, f) => !c || (0, a.isGroupSegment)(c) || c[0] === "@" || (c === "page" || c === "route") && l === f.length - 1 ? i : i + "/" + c, ""));
     }
     function r(s) {
       return s.replace(
@@ -896,11 +896,11 @@ function dn() {
     Object.defineProperty(t, "__esModule", {
       value: !0
     });
-    function e(s, o) {
-      for (var c in o)
+    function e(s, i) {
+      for (var c in i)
         Object.defineProperty(s, c, {
           enumerable: !0,
-          get: o[c]
+          get: i[c]
         });
     }
     e(t, {
@@ -914,38 +914,38 @@ function dn() {
         return r;
       }
     });
-    const i = Jn(), a = [
+    const o = Jn(), a = [
       "(..)(..)",
       "(.)",
       "(..)",
       "(...)"
     ];
     function n(s) {
-      return s.split("/").find((o) => a.find((c) => o.startsWith(c))) !== void 0;
+      return s.split("/").find((i) => a.find((c) => i.startsWith(c))) !== void 0;
     }
     function r(s) {
-      let o, c, l;
+      let i, c, l;
       for (const f of s.split("/"))
         if (c = a.find((m) => f.startsWith(m)), c) {
-          [o, l] = s.split(c, 2);
+          [i, l] = s.split(c, 2);
           break;
         }
-      if (!o || !c || !l)
+      if (!i || !c || !l)
         throw new Error(`Invalid interception route: ${s}. Must be in the format /<intercepting route>/(..|...|..)(..)/<intercepted route>`);
-      switch (o = (0, i.normalizeAppPath)(o), c) {
+      switch (i = (0, o.normalizeAppPath)(i), c) {
         case "(.)":
-          o === "/" ? l = `/${l}` : l = o + "/" + l;
+          i === "/" ? l = `/${l}` : l = i + "/" + l;
           break;
         case "(..)":
-          if (o === "/")
+          if (i === "/")
             throw new Error(`Invalid interception route: ${s}. Cannot use (..) marker at the root level, use (.) instead.`);
-          l = o.split("/").slice(0, -1).concat(l).join("/");
+          l = i.split("/").slice(0, -1).concat(l).join("/");
           break;
         case "(...)":
           l = "/" + l;
           break;
         case "(..)(..)":
-          const f = o.split("/");
+          const f = i.split("/");
           if (f.length <= 2)
             throw new Error(`Invalid interception route: ${s}. Cannot use (..)(..) marker at the root level or one level up.`);
           l = f.slice(0, -2).concat(l).join("/");
@@ -954,7 +954,7 @@ function dn() {
           throw new Error("Invariant: unexpected marker");
       }
       return {
-        interceptingRoute: o,
+        interceptingRoute: i,
         interceptedRoute: l
       };
     }
@@ -971,9 +971,9 @@ function er() {
         return a;
       }
     });
-    const e = dn(), i = /\/\[[^/]+?\](?=\/|$)/;
+    const e = dn(), o = /\/\[[^/]+?\](?=\/|$)/;
     function a(n) {
-      return (0, e.isInterceptionRouteAppPath)(n) && (n = (0, e.extractInterceptionRouteInformation)(n).interceptedRoute), i.test(n);
+      return (0, e.isInterceptionRouteAppPath)(n) && (n = (0, e.extractInterceptionRouteInformation)(n).interceptedRoute), o.test(n);
     }
   }(We)), We;
 }
@@ -992,13 +992,13 @@ function tr() {
     }
     e(t, {
       getSortedRoutes: function() {
-        return i.getSortedRoutes;
+        return o.getSortedRoutes;
       },
       isDynamicRoute: function() {
         return a.isDynamicRoute;
       }
     });
-    const i = Qn(), a = er();
+    const o = Qn(), a = er();
   }($e)), $e;
 }
 var Ge = {}, Ke = {}, Dt;
@@ -1009,15 +1009,15 @@ function nr() {
     }), Object.defineProperty(t, "getRouteMatcher", {
       enumerable: !0,
       get: function() {
-        return i;
+        return o;
       }
     });
-    const e = Ce();
-    function i(a) {
+    const e = Ne();
+    function o(a) {
       let { re: n, groups: r } = a;
       return (s) => {
-        const o = n.exec(s);
-        if (!o)
+        const i = n.exec(s);
+        if (!i)
           return !1;
         const c = (f) => {
           try {
@@ -1027,7 +1027,7 @@ function nr() {
           }
         }, l = {};
         return Object.keys(r).forEach((f) => {
-          const m = r[f], h = o[m.pos];
+          const m = r[f], h = i[m.pos];
           h !== void 0 && (l[f] = ~h.indexOf("/") ? h.split("/").map((y) => c(y)) : m.repeat ? [
             c(h)
           ] : c(h));
@@ -1047,9 +1047,9 @@ function rr() {
         return a;
       }
     });
-    const e = /[|\\{}()[\]^$+*?.-]/, i = /[|\\{}()[\]^$+*?.-]/g;
+    const e = /[|\\{}()[\]^$+*?.-]/, o = /[|\\{}()[\]^$+*?.-]/g;
     function a(n) {
-      return e.test(n) ? n.replace(i, "\\$&") : n;
+      return e.test(n) ? n.replace(o, "\\$&") : n;
     }
   }(Qe)), Qe;
 }
@@ -1077,8 +1077,8 @@ function or() {
         return P;
       }
     });
-    const i = dn(), a = rr(), n = cn(), r = "nxtP", s = "nxtI";
-    function o(d) {
+    const o = dn(), a = rr(), n = cn(), r = "nxtP", s = "nxtI";
+    function i(d) {
       const p = d.startsWith("[") && d.endsWith("]");
       p && (d = d.slice(1, -1));
       const g = d.startsWith("...");
@@ -1093,16 +1093,16 @@ function or() {
       let E = 1;
       return {
         parameterizedRoute: p.map((R) => {
-          const _ = i.INTERCEPTION_ROUTE_MARKERS.find((L) => R.startsWith(L)), v = R.match(/\[((?:\[.*\])|.+)\]/);
+          const _ = o.INTERCEPTION_ROUTE_MARKERS.find((L) => R.startsWith(L)), v = R.match(/\[((?:\[.*\])|.+)\]/);
           if (_ && v) {
-            const { key: L, optional: w, repeat: b } = o(v[1]);
+            const { key: L, optional: w, repeat: b } = i(v[1]);
             return g[L] = {
               pos: E++,
               repeat: b,
               optional: w
             }, "/" + (0, a.escapeStringRegexp)(_) + "([^/]+?)";
           } else if (v) {
-            const { key: L, repeat: w, optional: b } = o(v[1]);
+            const { key: L, repeat: w, optional: b } = i(v[1]);
             return g[L] = {
               pos: E++,
               repeat: w,
@@ -1132,7 +1132,7 @@ function or() {
     }
     function m(d) {
       let { interceptionMarker: p, getSafeRouteKey: g, segment: E, routeKeys: R, keyPrefix: _ } = d;
-      const { key: v, optional: L, repeat: w } = o(E);
+      const { key: v, optional: L, repeat: w } = i(E);
       let b = v.replace(/\W/g, "");
       _ && (b = "" + _ + b);
       let I = !1;
@@ -1144,7 +1144,7 @@ function or() {
       const g = (0, n.removeTrailingSlash)(d).slice(1).split("/"), E = f(), R = {};
       return {
         namedParameterizedRoute: g.map((_) => {
-          const v = i.INTERCEPTION_ROUTE_MARKERS.some((w) => _.startsWith(w)), L = _.match(/\[((?:\[.*\])|.+)\]/);
+          const v = o.INTERCEPTION_ROUTE_MARKERS.some((w) => _.startsWith(w)), L = _.match(/\[((?:\[.*\])|.+)\]/);
           if (v && L) {
             const [w] = _.split(L[0]);
             return m({
@@ -1198,16 +1198,16 @@ function ir() {
         return a;
       }
     });
-    const e = nr(), i = or();
+    const e = nr(), o = or();
     function a(n, r, s) {
-      let o = "";
-      const c = (0, i.getRouteRegex)(n), l = c.groups, f = (
+      let i = "";
+      const c = (0, o.getRouteRegex)(n), l = c.groups, f = (
         // Try to match the dynamic route against the asPath
         (r !== n ? (0, e.getRouteMatcher)(c)(r) : "") || // Fall back to reading the values from the href
         // TODO: should this take priority; also need to change in the router.
         s
       );
-      o = n;
+      i = n;
       const m = Object.keys(l);
       return m.every((h) => {
         let y = f[h] || "";
@@ -1216,16 +1216,16 @@ function ir() {
         return d && (p = (y ? "" : "/") + "[" + p + "]"), P && !Array.isArray(y) && (y = [
           y
         ]), (d || h in f) && // Interpolate group into data URL if present
-        (o = o.replace(p, P ? y.map(
+        (i = i.replace(p, P ? y.map(
           // these values should be fully encoded instead of just
           // path delimiter escaped since they are being inserted
           // into the URL and we expect URL encoded segments
           // when parsing dynamic route params
           (g) => encodeURIComponent(g)
         ).join("/") : encodeURIComponent(y)) || "/");
-      }) || (o = ""), {
+      }) || (i = ""), {
         params: m,
-        result: o
+        result: i
       };
     }
   }(Ge)), Ge;
@@ -1241,7 +1241,7 @@ function ar() {
         return f;
       }
     });
-    const i = an(), a = sn(), n = Kn(), r = Ce(), s = Ne(), o = ln(), c = tr(), l = ir();
+    const o = an(), a = sn(), n = Kn(), r = Ne(), s = Ce(), i = ln(), c = tr(), l = ir();
     function f(m, h, y) {
       let P, d = typeof h == "string" ? h : (0, a.formatWithValidation)(h);
       const p = d.match(/^[a-zA-Z]{1,}:\/\//), g = p ? d.slice(p[0].length) : d;
@@ -1250,7 +1250,7 @@ function ar() {
         const R = (0, r.normalizeRepeatedSlashes)(g);
         d = (p ? p[0] : "") + R;
       }
-      if (!(0, o.isLocalURL)(d))
+      if (!(0, i.isLocalURL)(d))
         return y ? [
           d
         ] : d;
@@ -1264,7 +1264,7 @@ function ar() {
         R.pathname = (0, s.normalizePathTrailingSlash)(R.pathname);
         let _ = "";
         if ((0, c.isDynamicRoute)(R.pathname) && R.searchParams && y) {
-          const L = (0, i.searchParamsToUrlQuery)(R.searchParams), { result: w, params: b } = (0, l.interpolateAs)(R.pathname, R.pathname, L);
+          const L = (0, o.searchParamsToUrlQuery)(R.searchParams), { result: w, params: b } = (0, l.interpolateAs)(R.pathname, R.pathname, L);
           w && (_ = (0, a.formatWithValidation)({
             pathname: w,
             hash: R.hash,
@@ -1293,15 +1293,15 @@ function fn() {
     }), Object.defineProperty(t, "addPathPrefix", {
       enumerable: !0,
       get: function() {
-        return i;
+        return o;
       }
     });
     const e = st();
-    function i(a, n) {
+    function o(a, n) {
       if (!a.startsWith("/") || !n)
         return a;
-      const { pathname: r, query: s, hash: o } = (0, e.parsePath)(a);
-      return "" + n + r + s + o;
+      const { pathname: r, query: s, hash: i } = (0, e.parsePath)(a);
+      return "" + n + r + s + i;
     }
   }(Ze)), Ze;
 }
@@ -1316,12 +1316,12 @@ function sr() {
         return a;
       }
     });
-    const e = fn(), i = un();
-    function a(n, r, s, o) {
+    const e = fn(), o = un();
+    function a(n, r, s, i) {
       if (!r || r === s)
         return n;
       const c = n.toLowerCase();
-      return !o && ((0, i.pathHasPrefix)(c, "/api") || (0, i.pathHasPrefix)(c, "/" + r.toLowerCase())) ? n : (0, e.addPathPrefix)(n, "/" + r);
+      return !i && ((0, o.pathHasPrefix)(c, "/api") || (0, o.pathHasPrefix)(c, "/" + r.toLowerCase())) ? n : (0, e.addPathPrefix)(n, "/" + r);
     }
   }(Ye)), Ye;
 }
@@ -1336,10 +1336,10 @@ function cr() {
         return a;
       }
     });
-    const i = Ne(), a = function(n) {
-      for (var r = arguments.length, s = new Array(r > 1 ? r - 1 : 0), o = 1; o < r; o++)
-        s[o - 1] = arguments[o];
-      return process.env.__NEXT_I18N_SUPPORT ? (0, i.normalizePathTrailingSlash)(sr().addLocale(n, ...s)) : n;
+    const o = Ce(), a = function(n) {
+      for (var r = arguments.length, s = new Array(r > 1 ? r - 1 : 0), i = 1; i < r; i++)
+        s[i - 1] = arguments[i];
+      return process.env.__NEXT_I18N_SUPPORT ? (0, o.normalizePathTrailingSlash)(sr().addLocale(n, ...s)) : n;
     };
     (typeof e.default == "function" || typeof e.default == "object" && e.default !== null) && typeof e.default.__esModule > "u" && (Object.defineProperty(e.default, "__esModule", { value: !0 }), Object.assign(e.default, e), t.exports = e.default);
   }(he, he.exports)), he.exports;
@@ -1384,14 +1384,14 @@ function lr() {
         return s;
       },
       TemplateContext: function() {
-        return o;
+        return i;
       },
       MissingSlotContext: function() {
         return c;
       }
     });
-    const a = /* @__PURE__ */ ne._(Le), n = a.default.createContext(null), r = a.default.createContext(null), s = a.default.createContext(null), o = a.default.createContext(null);
-    process.env.NODE_ENV !== "production" && (n.displayName = "AppRouterContext", r.displayName = "LayoutRouterContext", s.displayName = "GlobalLayoutRouterContext", o.displayName = "TemplateContext");
+    const a = /* @__PURE__ */ ne._(Le), n = a.default.createContext(null), r = a.default.createContext(null), s = a.default.createContext(null), i = a.default.createContext(null);
+    process.env.NODE_ENV !== "production" && (n.displayName = "AppRouterContext", r.displayName = "LayoutRouterContext", s.displayName = "GlobalLayoutRouterContext", i.displayName = "TemplateContext");
     const c = a.default.createContext(/* @__PURE__ */ new Set());
   }(et)), et;
 }
@@ -1401,14 +1401,14 @@ function dr() {
     Object.defineProperty(e, "__esModule", {
       value: !0
     });
-    function i(r, s) {
-      for (var o in s)
-        Object.defineProperty(r, o, {
+    function o(r, s) {
+      for (var i in s)
+        Object.defineProperty(r, i, {
           enumerable: !0,
-          get: s[o]
+          get: s[i]
         });
     }
-    i(e, {
+    o(e, {
       requestIdleCallback: function() {
         return a;
       },
@@ -1443,8 +1443,8 @@ function fr() {
         return l;
       }
     });
-    const i = Le, a = dr(), n = typeof IntersectionObserver == "function", r = /* @__PURE__ */ new Map(), s = [];
-    function o(f) {
+    const o = Le, a = dr(), n = typeof IntersectionObserver == "function", r = /* @__PURE__ */ new Map(), s = [];
+    function i(f) {
       const m = {
         root: f.root || null,
         margin: f.rootMargin || ""
@@ -1465,7 +1465,7 @@ function fr() {
       }, s.push(m), r.set(m, y), y;
     }
     function c(f, m, h) {
-      const { id: y, observer: P, elements: d } = o(h);
+      const { id: y, observer: P, elements: d } = i(h);
       return d.set(f, m), P.observe(f), function() {
         if (d.delete(f), P.unobserve(f), d.size === 0) {
           P.disconnect(), r.delete(y);
@@ -1476,10 +1476,10 @@ function fr() {
     }
     function l(f) {
       let { rootRef: m, rootMargin: h, disabled: y } = f;
-      const P = y || !n, [d, p] = (0, i.useState)(!1), g = (0, i.useRef)(null), E = (0, i.useCallback)((_) => {
+      const P = y || !n, [d, p] = (0, o.useState)(!1), g = (0, o.useRef)(null), E = (0, o.useCallback)((_) => {
         g.current = _;
       }, []);
-      (0, i.useEffect)(() => {
+      (0, o.useEffect)(() => {
         if (n) {
           if (P || d)
             return;
@@ -1500,7 +1500,7 @@ function fr() {
         d,
         g.current
       ]);
-      const R = (0, i.useCallback)(() => {
+      const R = (0, o.useCallback)(() => {
         p(!1);
       }, []);
       return [
@@ -1523,11 +1523,11 @@ function _r() {
         return e;
       }
     });
-    function e(i, a) {
+    function e(o, a) {
       let n;
-      const r = i.split("/");
-      return (a || []).some((s) => r[1] && r[1].toLowerCase() === s.toLowerCase() ? (n = s, r.splice(1, 1), i = r.join("/") || "/", !0) : !1), {
-        pathname: i,
+      const r = o.split("/");
+      return (a || []).some((s) => r[1] && r[1].toLowerCase() === s.toLowerCase() ? (n = s, r.splice(1, 1), o = r.join("/") || "/", !0) : !1), {
+        pathname: o,
         detectedLocale: n
       };
     }
@@ -1541,10 +1541,10 @@ function hr() {
     }), Object.defineProperty(e, "normalizeLocalePath", {
       enumerable: !0,
       get: function() {
-        return i;
+        return o;
       }
     });
-    const i = (a, n) => process.env.__NEXT_I18N_SUPPORT ? _r().normalizeLocalePath(a, n) : {
+    const o = (a, n) => process.env.__NEXT_I18N_SUPPORT ? _r().normalizeLocalePath(a, n) : {
       pathname: a,
       detectedLocale: void 0
     };
@@ -1562,14 +1562,14 @@ function pr() {
         return e;
       }
     });
-    function e(i, a, n) {
-      if (i) {
+    function e(o, a, n) {
+      if (o) {
         n && (n = n.toLowerCase());
-        for (const o of i) {
+        for (const i of o) {
           var r, s;
-          const c = (r = o.domain) == null ? void 0 : r.split(":", 1)[0].toLowerCase();
-          if (a === c || n === o.defaultLocale.toLowerCase() || (s = o.locales) != null && s.some((l) => l.toLowerCase() === n))
-            return o;
+          const c = (r = i.domain) == null ? void 0 : r.split(":", 1)[0].toLowerCase();
+          if (a === c || n === i.defaultLocale.toLowerCase() || (s = i.locales) != null && s.some((l) => l.toLowerCase() === n))
+            return i;
         }
       }
     }
@@ -1583,10 +1583,10 @@ function mr() {
     }), Object.defineProperty(e, "detectDomainLocale", {
       enumerable: !0,
       get: function() {
-        return i;
+        return o;
       }
     });
-    const i = function() {
+    const o = function() {
       for (var a = arguments.length, n = new Array(a), r = 0; r < a; r++)
         n[r] = arguments[r];
       if (process.env.__NEXT_I18N_SUPPORT)
@@ -1606,13 +1606,13 @@ function gr() {
         return n;
       }
     });
-    const i = Ne(), a = process.env.__NEXT_ROUTER_BASEPATH || "";
-    function n(r, s, o, c) {
+    const o = Ce(), a = process.env.__NEXT_ROUTER_BASEPATH || "";
+    function n(r, s, i, c) {
       if (process.env.__NEXT_I18N_SUPPORT) {
-        const l = hr().normalizeLocalePath, f = mr().detectDomainLocale, m = s || l(r, o).detectedLocale, h = f(c, void 0, m);
+        const l = hr().normalizeLocalePath, f = mr().detectDomainLocale, m = s || l(r, i).detectedLocale, h = f(c, void 0, m);
         if (h) {
           const y = "http" + (h.http ? "" : "s") + "://", P = m === h.defaultLocale ? "" : "/" + m;
-          return "" + y + h.domain + (0, i.normalizePathTrailingSlash)("" + a + P + r);
+          return "" + y + h.domain + (0, o.normalizePathTrailingSlash)("" + a + P + r);
         }
         return !1;
       } else
@@ -1632,9 +1632,9 @@ function br() {
         return r;
       }
     });
-    const i = fn(), a = Ne(), n = process.env.__NEXT_ROUTER_BASEPATH || "";
-    function r(s, o) {
-      return (0, a.normalizePathTrailingSlash)(process.env.__NEXT_MANUAL_CLIENT_BASE_PATH && !o ? s : (0, i.addPathPrefix)(s, n));
+    const o = fn(), a = Ce(), n = process.env.__NEXT_ROUTER_BASEPATH || "";
+    function r(s, i) {
+      return (0, a.normalizePathTrailingSlash)(process.env.__NEXT_MANUAL_CLIENT_BASE_PATH && !i ? s : (0, o.addPathPrefix)(s, n));
     }
     (typeof e.default == "function" || typeof e.default == "object" && e.default !== null) && typeof e.default.__esModule > "u" && (Object.defineProperty(e.default, "__esModule", { value: !0 }), Object.assign(e.default, e), t.exports = e.default);
   }(ve, ve.exports)), ve.exports;
@@ -1645,14 +1645,14 @@ function yr() {
     Object.defineProperty(e, "__esModule", {
       value: !0
     });
-    function i(h, y) {
+    function o(h, y) {
       for (var P in y)
         Object.defineProperty(h, P, {
           enumerable: !0,
           get: y[P]
         });
     }
-    i(e, {
+    o(e, {
       PrefetchKind: function() {
         return f;
       },
@@ -1669,7 +1669,7 @@ function yr() {
         return s;
       },
       ACTION_PREFETCH: function() {
-        return o;
+        return i;
       },
       ACTION_FAST_REFRESH: function() {
         return c;
@@ -1681,7 +1681,7 @@ function yr() {
         return m;
       }
     });
-    const a = "refresh", n = "navigate", r = "restore", s = "server-patch", o = "prefetch", c = "fast-refresh", l = "server-action";
+    const a = "refresh", n = "navigate", r = "restore", s = "server-patch", i = "prefetch", c = "fast-refresh", l = "server-action";
     var f;
     (function(h) {
       h.AUTO = "auto", h.FULL = "full", h.TEMPORARY = "temporary";
@@ -1702,7 +1702,7 @@ function yr() {
       return L;
     }
   });
-  const i = ne, a = gn, n = /* @__PURE__ */ i._(Le), r = ar(), s = ln(), o = sn(), c = Ce(), l = cr(), f = ur(), m = lr(), h = fr(), y = gr(), P = br(), d = yr(), p = /* @__PURE__ */ new Set();
+  const o = ne, a = gn, n = /* @__PURE__ */ o._(Le), r = ar(), s = ln(), i = sn(), c = Ne(), l = cr(), f = ur(), m = lr(), h = fr(), y = gr(), P = br(), d = yr(), p = /* @__PURE__ */ new Set();
   function g(w, b, I, M, k, x) {
     if (typeof window > "u" || !x && !(0, s.isLocalURL)(b))
       return;
@@ -1745,7 +1745,7 @@ function yr() {
     X ? n.default.startTransition(oe) : oe();
   }
   function _(w) {
-    return typeof w == "string" ? w : (0, o.formatUrl)(w);
+    return typeof w == "string" ? w : (0, i.formatUrl)(w);
   }
   const L = /* @__PURE__ */ n.default.forwardRef(function(b, I) {
     let M;
@@ -1755,18 +1755,18 @@ function yr() {
     }));
     const T = n.default.useContext(f.RouterContext), pn = n.default.useContext(m.AppRouterContext), W = T ?? pn, z = !T, ie = G !== !1, ae = G === null ? d.PrefetchKind.AUTO : d.PrefetchKind.FULL;
     if (process.env.NODE_ENV !== "production") {
-      let C = function(N) {
-        return new Error("Failed prop type: The prop `" + N.key + "` expects a " + N.expected + " in `<Link>`, but got `" + N.actual + "` instead." + (typeof window < "u" ? `
+      let N = function(C) {
+        return new Error("Failed prop type: The prop `" + C.key + "` expects a " + C.expected + " in `<Link>`, but got `" + C.actual + "` instead." + (typeof window < "u" ? `
 Open your browser's console to view the Component stack trace.` : ""));
       };
       Object.keys({
         href: !0
-      }).forEach((N) => {
-        if (N === "href" && (b[N] == null || typeof b[N] != "string" && typeof b[N] != "object"))
-          throw C({
-            key: N,
+      }).forEach((C) => {
+        if (C === "href" && (b[C] == null || typeof b[C] != "string" && typeof b[C] != "object"))
+          throw N({
+            key: C,
             expected: "`string` or `object`",
-            actual: b[N] === null ? "null" : typeof b[N]
+            actual: b[C] === null ? "null" : typeof b[C]
           });
       }), Object.keys({
         as: !0,
@@ -1780,32 +1780,32 @@ Open your browser's console to view the Component stack trace.` : ""));
         onMouseEnter: !0,
         onTouchStart: !0,
         legacyBehavior: !0
-      }).forEach((N) => {
-        const V = typeof b[N];
-        if (N === "as") {
-          if (b[N] && V !== "string" && V !== "object")
-            throw C({
-              key: N,
+      }).forEach((C) => {
+        const V = typeof b[C];
+        if (C === "as") {
+          if (b[C] && V !== "string" && V !== "object")
+            throw N({
+              key: C,
               expected: "`string` or `object`",
               actual: V
             });
-        } else if (N === "locale") {
-          if (b[N] && V !== "string")
-            throw C({
-              key: N,
+        } else if (C === "locale") {
+          if (b[C] && V !== "string")
+            throw N({
+              key: C,
               expected: "`string`",
               actual: V
             });
-        } else if (N === "onClick" || N === "onMouseEnter" || N === "onTouchStart") {
-          if (b[N] && V !== "function")
-            throw C({
-              key: N,
+        } else if (C === "onClick" || C === "onMouseEnter" || C === "onTouchStart") {
+          if (b[C] && V !== "function")
+            throw N({
+              key: C,
               expected: "`function`",
               actual: V
             });
-        } else if ((N === "replace" || N === "scroll" || N === "shallow" || N === "passHref" || N === "prefetch" || N === "legacyBehavior") && b[N] != null && V !== "boolean")
-          throw C({
-            key: N,
+        } else if ((C === "replace" || C === "scroll" || C === "shallow" || C === "passHref" || C === "prefetch" || C === "legacyBehavior") && b[C] != null && V !== "boolean")
+          throw N({
+            key: C,
             expected: "`boolean`",
             actual: V
           });
@@ -1814,9 +1814,9 @@ Open your browser's console to view the Component stack trace.` : ""));
       b.prefetch && !pt.current && !z && (pt.current = !0, console.warn("Next.js auto-prefetches automatically based on viewport. The prefetch attribute is no longer needed. More: https://nextjs.org/docs/messages/prefetch-true-deprecated"));
     }
     if (process.env.NODE_ENV !== "production" && z && !x) {
-      let C;
-      if (typeof k == "string" ? C = k : typeof k == "object" && typeof k.pathname == "string" && (C = k.pathname), C && C.split("/").some((Z) => Z.startsWith("[") && Z.endsWith("]")))
-        throw new Error("Dynamic href `" + C + "` found in <Link> while using the `/app` router, this is not supported. Read more: https://nextjs.org/docs/messages/app-dir-dynamic-href");
+      let N;
+      if (typeof k == "string" ? N = k : typeof k == "object" && typeof k.pathname == "string" && (N = k.pathname), N && N.split("/").some((Z) => Z.startsWith("[") && Z.endsWith("]")))
+        throw new Error("Dynamic href `" + N + "` found in <Link> while using the `/app` router, this is not supported. Read more: https://nextjs.org/docs/messages/app-dir-dynamic-href");
     }
     const { href: H, as: D } = n.default.useMemo(() => {
       if (!T) {
@@ -1826,10 +1826,10 @@ Open your browser's console to view the Component stack trace.` : ""));
           as: x ? _(x) : Z
         };
       }
-      const [C, te] = (0, r.resolveHref)(T, k, !0);
+      const [N, te] = (0, r.resolveHref)(T, k, !0);
       return {
-        href: C,
-        as: x ? (0, r.resolveHref)(T, x) : te || C
+        href: N,
+        as: x ? (0, r.resolveHref)(T, x) : te || N
       };
     }, [
       T,
@@ -1853,8 +1853,8 @@ Open your browser's console to view the Component stack trace.` : "")) : new Err
 Learn more: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor`);
     const Y = q ? j && typeof j == "object" && j.ref : I, [ft, _t, ht] = (0, h.useIntersection)({
       rootMargin: "200px"
-    }), mn = n.default.useCallback((C) => {
-      (dt.current !== D || lt.current !== H) && (ht(), dt.current = D, lt.current = H), ft(C), Y && (typeof Y == "function" ? Y(C) : typeof Y == "object" && (Y.current = C));
+    }), mn = n.default.useCallback((N) => {
+      (dt.current !== D || lt.current !== H) && (ht(), dt.current = D, lt.current = H), ft(N), Y && (typeof Y == "function" ? Y(N) : typeof Y == "object" && (Y.current = N));
     }, [
       D,
       Y,
@@ -1881,13 +1881,13 @@ Learn more: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor`
     ]);
     const se = {
       ref: mn,
-      onClick(C) {
-        if (process.env.NODE_ENV !== "production" && !C)
+      onClick(N) {
+        if (process.env.NODE_ENV !== "production" && !N)
           throw new Error('Component rendered inside next/link has to pass click event to "onClick" prop.');
-        !q && typeof Oe == "function" && Oe(C), q && j.props && typeof j.props.onClick == "function" && j.props.onClick(C), W && (C.defaultPrevented || R(C, W, H, D, Ee, ct, oe, B, z));
+        !q && typeof Oe == "function" && Oe(N), q && j.props && typeof j.props.onClick == "function" && j.props.onClick(N), W && (N.defaultPrevented || R(N, W, H, D, Ee, ct, oe, B, z));
       },
-      onMouseEnter(C) {
-        !q && typeof Ie == "function" && Ie(C), q && j.props && typeof j.props.onMouseEnter == "function" && j.props.onMouseEnter(C), W && ((!ie || process.env.NODE_ENV === "development") && z || g(W, H, D, {
+      onMouseEnter(N) {
+        !q && typeof Ie == "function" && Ie(N), q && j.props && typeof j.props.onMouseEnter == "function" && j.props.onMouseEnter(N), W && ((!ie || process.env.NODE_ENV === "development") && z || g(W, H, D, {
           locale: B,
           priority: !0,
           // @see {https://github.com/vercel/next.js/discussions/40268?sort=top#discussioncomment-3572642}
@@ -1896,8 +1896,8 @@ Learn more: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor`
           kind: ae
         }, z));
       },
-      onTouchStart(C) {
-        !q && typeof ut == "function" && ut(C), q && j.props && typeof j.props.onTouchStart == "function" && j.props.onTouchStart(C), W && (!ie && z || g(W, H, D, {
+      onTouchStart(N) {
+        !q && typeof ut == "function" && ut(N), q && j.props && typeof j.props.onTouchStart == "function" && j.props.onTouchStart(N), W && (!ie && z || g(W, H, D, {
           locale: B,
           priority: !0,
           // @see {https://github.com/vercel/next.js/discussions/40268?sort=top#discussioncomment-3572642}
@@ -1910,8 +1910,8 @@ Learn more: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor`
     if ((0, c.isAbsoluteUrl)(D))
       se.href = D;
     else if (!q || X || j.type === "a" && !("href" in j.props)) {
-      const C = typeof B < "u" ? B : T == null ? void 0 : T.locale, te = (T == null ? void 0 : T.isLocaleDomain) && (0, y.getDomainLocale)(D, C, T == null ? void 0 : T.locales, T == null ? void 0 : T.domainLocales);
-      se.href = te || (0, P.addBasePath)((0, l.addLocale)(D, C, T == null ? void 0 : T.defaultLocale));
+      const N = typeof B < "u" ? B : T == null ? void 0 : T.locale, te = (T == null ? void 0 : T.isLocaleDomain) && (0, y.getDomainLocale)(D, N, T == null ? void 0 : T.locales, T == null ? void 0 : T.domainLocales);
+      se.href = te || (0, P.addBasePath)((0, l.addLocale)(D, N, T == null ? void 0 : T.defaultLocale));
     }
     return q ? /* @__PURE__ */ n.default.cloneElement(j, se) : /* @__PURE__ */ (0, a.jsx)("a", {
       ...hn,
@@ -1922,12 +1922,12 @@ Learn more: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor`
   (typeof e.default == "function" || typeof e.default == "object" && e.default !== null) && typeof e.default.__esModule > "u" && (Object.defineProperty(e.default, "__esModule", { value: !0 }), Object.assign(e.default, e), t.exports = e.default);
 })(at, at.exports);
 var vr = at.exports, wr = vr;
-const U = /* @__PURE__ */ tn(wr), Rr = "CategoryDropDownDesctop-module__categories___1N8Xb", Pr = "CategoryDropDownDesctop-module__categoriesLink___c0QCi", Lr = "CategoryDropDownDesctop-module__categoriesContainer___H-Ys3", Cr = "CategoryDropDownDesctop-module__categoriesMain___3B4Wi", Nr = "CategoryDropDownDesctop-module__categoriesMainList___u2Mwj", Er = "CategoryDropDownDesctop-module__categoriesMainListItem___xTF38", Or = "CategoryDropDownDesctop-module__categoriesChildren___HTbXB", Ir = "CategoryDropDownDesctop-module__categoriesChildrenTitle___X6FIv", Mr = "CategoryDropDownDesctop-module__categoriesChildrenGrid___WfORI", Sr = "CategoryDropDownDesctop-module__categoriesChildrenList___yBfpZ", Tr = "CategoryDropDownDesctop-module__categoriesChildrenListItem___m-2Il", S = {
+const U = /* @__PURE__ */ tn(wr), Rr = "CategoryDropDownDesctop-module__categories___1N8Xb", Pr = "CategoryDropDownDesctop-module__categoriesLink___c0QCi", Lr = "CategoryDropDownDesctop-module__categoriesContainer___H-Ys3", Nr = "CategoryDropDownDesctop-module__categoriesMain___3B4Wi", Cr = "CategoryDropDownDesctop-module__categoriesMainList___u2Mwj", Er = "CategoryDropDownDesctop-module__categoriesMainListItem___xTF38", Or = "CategoryDropDownDesctop-module__categoriesChildren___HTbXB", Ir = "CategoryDropDownDesctop-module__categoriesChildrenTitle___X6FIv", Mr = "CategoryDropDownDesctop-module__categoriesChildrenGrid___WfORI", Sr = "CategoryDropDownDesctop-module__categoriesChildrenList___yBfpZ", Tr = "CategoryDropDownDesctop-module__categoriesChildrenListItem___m-2Il", S = {
   categories: Rr,
   categoriesLink: Pr,
   categoriesContainer: Lr,
-  categoriesMain: Cr,
-  categoriesMainList: Nr,
+  categoriesMain: Nr,
+  categoriesMainList: Cr,
   categoriesMainListItem: Er,
   categoriesChildren: Or,
   categoriesChildrenTitle: Ir,
@@ -1972,12 +1972,12 @@ const U = /* @__PURE__ */ tn(wr), Rr = "CategoryDropDownDesctop-module__categori
 }, Oo = ({
   label: t = "",
   value: e = "",
-  onChange: i,
+  onChange: o,
   openCategoryList: a = !1,
   onClick: n,
   placeholder: r = "",
   borderRadius: s = !1,
-  ...o
+  ...i
 }) => /* @__PURE__ */ O("div", { className: Re.search, children: [
   /* @__PURE__ */ u("button", { className: Re.categoryBtn, onClick: n, children: a ? /* @__PURE__ */ u(Vn, {}) : /* @__PURE__ */ u(Hn, {}) }),
   a && /* @__PURE__ */ u(kr, {}),
@@ -1989,9 +1989,9 @@ const U = /* @__PURE__ */ tn(wr), Rr = "CategoryDropDownDesctop-module__categori
       state: "",
       borderRadius: s,
       value: e,
-      onChange: i,
+      onChange: o,
       placeholder: r,
-      ...o
+      ...i
     }
   ) }),
   /* @__PURE__ */ u("button", { className: Re.searchBtn, children: /* @__PURE__ */ u(on, {}) })
@@ -2003,7 +2003,7 @@ const U = /* @__PURE__ */ tn(wr), Rr = "CategoryDropDownDesctop-module__categori
   selectContainer: Ur,
   selectContainerLabel: Wr,
   selectList: zr
-}, _n = ({ label: t = "select", children: e, isOpen: i, value: a, onClick: n }) => /* @__PURE__ */ O("div", { className: rt.selectContainer, children: [
+}, _n = ({ label: t = "select", children: e, isOpen: o, value: a, onClick: n }) => /* @__PURE__ */ O("div", { className: rt.selectContainer, children: [
   /* @__PURE__ */ O(
     "button",
     {
@@ -2012,12 +2012,12 @@ const U = /* @__PURE__ */ tn(wr), Rr = "CategoryDropDownDesctop-module__categori
       "aria-haspopup": "listbox",
       "aria-controls": `${t}_dropdown`,
       "aria-labelledby": `${t}_label`,
-      "aria-expanded": i,
+      "aria-expanded": o,
       "aria-activedescendant": `${t}_element_${a}`,
       onClick: n,
       children: [
         a || "Label",
-        i ? /* @__PURE__ */ u(Wn, {}) : /* @__PURE__ */ u(zn, {})
+        o ? /* @__PURE__ */ u(Wn, {}) : /* @__PURE__ */ u(zn, {})
       ]
     }
   ),
@@ -2035,12 +2035,12 @@ const U = /* @__PURE__ */ tn(wr), Rr = "CategoryDropDownDesctop-module__categori
 ] }), Io = ({
   label: t = "",
   listLength: e = 5,
-  value: i = "",
+  value: o = "",
   isOpen: a = !1,
   selectValue: n,
   onHandleDropdown: r
 }) => {
-  const s = bn(null), [o, c] = Pe("");
+  const s = bn(null), [i, c] = Pe("");
   let [l, f] = Pe(0);
   const m = 38, h = 40;
   yn(() => {
@@ -2050,23 +2050,23 @@ const U = /* @__PURE__ */ tn(wr), Rr = "CategoryDropDownDesctop-module__categori
     return a && document.addEventListener("keydown", d), () => document.removeEventListener("keydown", d);
   }, [a, l]);
   const y = (d) => {
-    d.keyCode === m && l > 0 ? f((p) => p - 1) : d.keyCode === h ? f(e === l ? 0 : (p) => p + 1) : d.key === "Enter" && n(o), P();
+    d.keyCode === m && l > 0 ? f((p) => p - 1) : d.keyCode === h ? f(e === l ? 0 : (p) => p + 1) : d.key === "Enter" && n(i), P();
   }, P = () => {
     var g;
     const d = (g = s == null ? void 0 : s.current) == null ? void 0 : g.children;
     let p = 0;
     d && Array.from(d).map((E, R) => {
       const _ = E.textContent || "";
-      i = _, R === l && (c(_), p = E.clientHeight);
+      o = _, R === l && (c(_), p = E.clientHeight);
     }), s.current && (s.current.scrollTop = p * l);
   };
-  return /* @__PURE__ */ u(_n, { label: t, isOpen: a, value: i, onClick: r, children: /* @__PURE__ */ O("div", { className: F.selectList, ref: s, children: [
+  return /* @__PURE__ */ u(_n, { label: t, isOpen: a, value: o, onClick: r, children: /* @__PURE__ */ O("div", { className: F.selectList, ref: s, children: [
     /* @__PURE__ */ u(
       "li",
       {
-        className: `${F.selectListItem} ${i === "Option 1" && F.selectListItemActive}`,
+        className: `${F.selectListItem} ${o === "Option 1" && F.selectListItemActive}`,
         id: `${t}_element_option1`,
-        "aria-selected": i === "Option 1",
+        "aria-selected": o === "Option 1",
         role: "option",
         onClick: () => n("Option 2"),
         children: "Option 1"
@@ -2075,9 +2075,9 @@ const U = /* @__PURE__ */ tn(wr), Rr = "CategoryDropDownDesctop-module__categori
     /* @__PURE__ */ u(
       "li",
       {
-        className: `${F.selectListItem} ${i === "Option 2" && F.selectListItemActive}`,
+        className: `${F.selectListItem} ${o === "Option 2" && F.selectListItemActive}`,
         id: `${t}_element_option1}`,
-        "aria-selected": i === "Option 2",
+        "aria-selected": o === "Option 2",
         role: "option",
         onClick: () => n("Option 2"),
         children: "Option 2"
@@ -2086,9 +2086,9 @@ const U = /* @__PURE__ */ tn(wr), Rr = "CategoryDropDownDesctop-module__categori
     /* @__PURE__ */ u(
       "li",
       {
-        className: `${F.selectListItem} ${i === "Option 3" && F.selectListItemActive}`,
+        className: `${F.selectListItem} ${o === "Option 3" && F.selectListItemActive}`,
         id: `${t}_element_option1}`,
-        "aria-selected": i === "Option 3",
+        "aria-selected": o === "Option 3",
         role: "option",
         onClick: () => n("Option 3"),
         children: "Option 3"
@@ -2097,9 +2097,9 @@ const U = /* @__PURE__ */ tn(wr), Rr = "CategoryDropDownDesctop-module__categori
     /* @__PURE__ */ u(
       "li",
       {
-        className: `${F.selectListItem} ${i === "Option 4" && F.selectListItemActive}`,
+        className: `${F.selectListItem} ${o === "Option 4" && F.selectListItemActive}`,
         id: `${t}_element_option1}`,
-        "aria-selected": i === "Option 4",
+        "aria-selected": o === "Option 4",
         role: "option",
         onClick: () => n("Option 4"),
         children: "Option 4"
@@ -2108,15 +2108,15 @@ const U = /* @__PURE__ */ tn(wr), Rr = "CategoryDropDownDesctop-module__categori
   ] }) });
 }, Hr = "SelectRange-module__selectRange___TFKDM", Vr = {
   selectRange: Hr
-}, Mo = ({ label: t = "select", children: e, id: i, onHandleDropdown: a, isOpen: n }) => /* @__PURE__ */ u(_n, { label: t, isOpen: n, value: "", onClick: a, children: /* @__PURE__ */ u("div", { className: Vr.selectRange, children: e }) }), Fr = "ToggleSwitch-module__toggleSwitch___q9-bP", Gr = "ToggleSwitch-module__background___LtBzR", Kr = "ToggleSwitch-module__toggleOption___MigHk", Xr = "ToggleSwitch-module__selected___-sbPH", K = {
+}, Mo = ({ label: t = "select", children: e, id: o, onHandleDropdown: a, isOpen: n }) => /* @__PURE__ */ u(_n, { label: t, isOpen: n, value: "", onClick: a, children: /* @__PURE__ */ u("div", { className: Vr.selectRange, children: e }) }), Fr = "ToggleSwitch-module__toggleSwitch___q9-bP", Gr = "ToggleSwitch-module__background___LtBzR", Kr = "ToggleSwitch-module__toggleOption___MigHk", Xr = "ToggleSwitch-module__selected___-sbPH", K = {
   toggleSwitch: Fr,
   background: Gr,
   toggleOption: Kr,
   selected: Xr
 }, So = () => {
-  const [t, e] = Pe("value 1"), [i, a] = Pe(0), n = (o, c) => {
-    e(o), a(c);
-  }, r = `calc(${100 / 3 * i}% + 4px)`, s = `calc(${100 / 3}% - 7px)`;
+  const [t, e] = Pe("value 1"), [o, a] = Pe(0), n = (i, c) => {
+    e(i), a(c);
+  }, r = `calc(${100 / 3 * o}% + 4px)`, s = `calc(${100 / 3}% - 7px)`;
   return /* @__PURE__ */ O("div", { className: K.toggleSwitch, children: [
     /* @__PURE__ */ u("div", { className: K.background, style: { left: r, width: s } }),
     /* @__PURE__ */ u(
@@ -2148,9 +2148,9 @@ const U = /* @__PURE__ */ tn(wr), Rr = "CategoryDropDownDesctop-module__categori
   tag: Qr,
   "tag-big": "Tag-module__tag-big___-Ddhg",
   "tag-small": "Tag-module__tag-small___uygaA"
-}, To = ({ children: t, bgColor: e = "#eee", size: i = "" }) => {
+}, To = ({ children: t, bgColor: e = "#eee", size: o = "" }) => {
   const a = re(en.tag, {
-    [en[`tag-${i}`]]: i
+    [en[`tag-${o}`]]: o
   });
   return /* @__PURE__ */ u("p", { className: a, style: { background: e }, children: t });
 }, Yr = "CheckboxBtn-module__container___63Szq", Zr = "CheckboxBtn-module__checkbox___cNrS2", Jr = "CheckboxBtn-module__buttonCheckmark___pyVLr", ot = {
@@ -2170,50 +2170,41 @@ const U = /* @__PURE__ */ tn(wr), Rr = "CategoryDropDownDesctop-module__categori
 }, jo = ({
   fontSize: t = 1,
   rating: e = 0,
-  setRating: i,
+  setRating: o,
   hover: a,
   setHover: n,
   isClickable: r = !1
 }) => /* @__PURE__ */ O("div", { className: J.rating, children: [
   /* @__PURE__ */ u("strong", { className: J.ratingCount, style: { fontSize: t + "rem" }, children: e }),
-  [...Array(5)].map((s, o) => (o += 1, /* @__PURE__ */ u(
+  [...Array(5)].map((s, i) => (i += 1, /* @__PURE__ */ u(
     "button",
     {
       type: "button",
       style: { fontSize: t + "rem" },
-      className: `${J.button} ${o <= (a || e) ? J.buttonOn : J.buttonOff}`,
-      onClick: r ? () => i(o) : void 0,
-      onMouseEnter: r ? () => n(o) : void 0,
+      className: `${J.button} ${i <= (a || e) ? J.buttonOn : J.buttonOff}`,
+      onClick: r ? () => o(i) : void 0,
+      onMouseEnter: r ? () => n(i) : void 0,
       onMouseLeave: r ? () => n(e) : void 0,
       children: /* @__PURE__ */ u("span", { className: J.star, children: "★" })
     },
-    o
+    i
   )))
 ] }), ao = "InputSearchMobile-module__search___EyYLo", so = "InputSearchMobile-module__searchWrapper___8-AVv", co = "InputSearchMobile-module__searchWrapperIcon___R6cD6", it = {
   search: ao,
   searchWrapper: so,
   searchWrapperIcon: co
-}, Do = ({
-  label: t = "",
-  value: e = "",
-  onChange: i,
-  openCategoryList: a = !1,
-  onClick: n,
-  placeholder: r = "",
-  borderRadius: s = !0,
-  ...o
-}) => /* @__PURE__ */ u("div", { className: it.search, children: /* @__PURE__ */ O("div", { className: it.searchWrapper, children: [
+}, Do = ({ value: t = "", onChange: e, placeholder: o = "", ...a }) => /* @__PURE__ */ u("div", { className: it.search, children: /* @__PURE__ */ O("div", { className: it.searchWrapper, children: [
   /* @__PURE__ */ u(
     rn,
     {
       type: "text",
-      label: t,
+      label: "",
       state: "",
-      borderRadius: s,
-      value: e,
-      onChange: i,
-      placeholder: r,
-      ...o
+      borderRadius: !0,
+      value: t,
+      onChange: e,
+      placeholder: o,
+      ...a
     }
   ),
   /* @__PURE__ */ u("div", { className: it.searchWrapperIcon, children: /* @__PURE__ */ u(on, {}) })
@@ -2239,7 +2230,7 @@ const U = /* @__PURE__ */ tn(wr), Rr = "CategoryDropDownDesctop-module__categori
 ] }) }) }) }) });
 export {
   Po as Button,
-  No as ButtonIcon,
+  Co as ButtonIcon,
   Eo as ButtonSocialNetwork,
   xo as CategoryDropDownMobile,
   Lo as Checkbox,
@@ -2247,7 +2238,7 @@ export {
   rn as Input,
   Oo as InputSearch,
   Do as InputSearchMobile,
-  Co as Radio,
+  No as Radio,
   jo as Rating,
   Io as Select,
   Mo as SelectRange,
