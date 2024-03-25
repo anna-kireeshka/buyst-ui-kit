@@ -11,8 +11,8 @@
     border-radius: 0.5rem;
     background-color: rgba(255, 255, 255, 0.93);
     cursor: pointer;
-    padding: 0.8rem .5rem;
-    font-size: 1.1rem;
+    padding: 0.3rem .5rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--gray700);
 
@@ -24,6 +24,11 @@
       width: 0;
       height: 0;
       overflow: hidden;
+    }
+
+    @media screen and (min-width: 768px) {
+      padding: 0.8rem 1rem;
+      font-size: 1.1rem;
     }
   }
 }

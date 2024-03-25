@@ -12,31 +12,31 @@ const CategoryDropDownDesktop: FC<Props> = () => {
             <div className={styles.categoriesMain}>
                <ul className={styles.categoriesMainList}>
                   <li className={styles.categoriesMainListItem}>
-                     <Link href={'/'} className={styles.categoriesLink}>
+                     <Link prefetch={false} href={'/'} className={styles.categoriesLink}>
                         main category
                      </Link>
                      <ArrowRightIcon />
                   </li>
                   <li className={styles.categoriesMainListItem}>
-                     <Link href={'/'} className={styles.categoriesLink}>
+                     <Link prefetch={false} href={'/'} className={styles.categoriesLink}>
                         main category 2
                      </Link>
                      <ArrowRightIcon />
                   </li>
                   <li className={styles.categoriesMainListItem}>
-                     <Link href={'/'} className={styles.categoriesLink}>
+                     <Link prefetch={false} href={'/'} className={styles.categoriesLink}>
                         main category 3
                      </Link>
                      <ArrowRightIcon />
                   </li>
                   <li className={styles.categoriesMainListItem}>
-                     <Link href={'/'} className={styles.categoriesLink}>
+                     <Link prefetch={false} href={'/'} className={styles.categoriesLink}>
                         main category 4
                      </Link>
                      <ArrowRightIcon />
                   </li>
                   <li className={styles.categoriesMainListItem}>
-                     <Link href={'/'} className={styles.categoriesLink}>
+                     <Link prefetch={false} href={'/'} className={styles.categoriesLink}>
                         main category 5
                      </Link>
                      <ArrowRightIcon />
@@ -48,10 +48,10 @@ const CategoryDropDownDesktop: FC<Props> = () => {
                <div className={styles.categoriesChildrenGrid}>
                   <ul className={styles.categoriesChildrenList}>
                      <li className={styles.categoriesChildrenListItem}>
-                        <Link className={styles.categoriesLink} href={'/'}>
+                        <Link prefetch={false} className={styles.categoriesLink} href={'/'}>
                            <strong>sub_menu_category</strong>
                         </Link>
-                        <Link className={styles.categoriesLink} href={'/'}>
+                        <Link prefetch={false} className={styles.categoriesLink} href={'/'}>
                            sub_menu_second_category
                         </Link>
                      </li>

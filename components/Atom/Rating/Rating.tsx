@@ -8,6 +8,7 @@ export interface Props {
    setRating: (index: number) => void
    hover: number
    setHover: (index: number) => void
+   isShowRatingCount: boolean
 }
 const Rating: FC<Props> = ({
    fontSize = 1,
@@ -16,12 +17,13 @@ const Rating: FC<Props> = ({
    hover,
    setHover,
    isClickable = false,
+   isShowRatingCount = true,
 }) => {
    return (
       <div className={styles.rating}>
-         <strong className={styles.ratingCount} style={{ fontSize: fontSize + 'rem' }}>
-            {rating}
-         </strong>
+         {isShowRatingCount && (
+            <strong className={styles.ratingCount} style={{ fontSize: fontSize + 'rem' }}></strong>
+         )}
          {[...Array(5)].map((star, index) => {
             index += 1
             return (

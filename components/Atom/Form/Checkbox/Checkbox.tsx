@@ -7,6 +7,9 @@ export interface MyInputProps {
    disabled?: boolean
    defaultChecked?: boolean
    label?: string
+   id: string
+   value: string | number
+   onInput: () => void
 }
 const Checkbox: FC<MyInputProps> = (props) => {
    return (

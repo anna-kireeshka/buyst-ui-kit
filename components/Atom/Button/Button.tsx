@@ -1,7 +1,7 @@
 import React from 'react'
 import { FC, ReactNode } from 'react'
 import styles from './Button.module.scss'
-// import '../index.scss'
+// import '../catalog-card.module.scss'
 import cx from 'classnames'
 type Color = 'green' | 'gray' | 'orange' | 'red' | 'primary'
 
@@ -15,6 +15,7 @@ export interface MyButtonProps {
    withIcon?: boolean
    outline?: boolean
    disabled?: boolean
+   onClick?: () => void
 }
 const ButtonLoading: FC = () => {
    return (

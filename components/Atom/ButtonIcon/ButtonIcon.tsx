@@ -8,9 +8,10 @@ export interface Props {
    size: 'xs' | 'sm' | 'lg'
    fill?: boolean
    children: ReactNode
+   onClick?: () => void
 }
 
-const ButtonIcon: FC<Props> = ({ theme, size, fill = false, children }, props) => {
+const ButtonIcon: FC<Props> = ({ theme, size, fill = false, children, ...props }) => {
    const classes = cn(styles[`btn`], styles[`btn-${theme}`], {
       [styles[`btn-${size}`]]: size,
       [styles[`btn-fill`]]: fill,

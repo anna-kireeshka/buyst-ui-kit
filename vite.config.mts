@@ -22,7 +22,7 @@ export default defineConfig({
    },
    build: {
       lib: {
-         entry: resolve(__dirname, 'components/index.ts'),
+         entry: resolve(__dirname, 'components/catalog-card.tsx'),
          formats: ['es'],
       },
       rollupOptions: {

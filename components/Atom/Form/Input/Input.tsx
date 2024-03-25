@@ -39,8 +39,8 @@ const Input: FC<MyInputProps> = ({
    })
 
    return (
-      <label className={styles.label}>
-         {label}
+      <div className={styles.field}>
+         <label className={styles.label}> {label} </label>
          <input
             type={type}
             value={value}
@@ -50,7 +50,7 @@ const Input: FC<MyInputProps> = ({
             placeholder={placeholder}
             {...props}
          />
-      </label>
+      </div>
    )
 }
 
