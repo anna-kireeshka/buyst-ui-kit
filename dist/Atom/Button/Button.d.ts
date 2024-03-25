@@ -10,6 +10,7 @@ export interface MyButtonProps {
     withIcon?: boolean;
     outline?: boolean;
     disabled?: boolean;
+    onClick?: () => void;
 }
 declare const Button: FC<MyButtonProps>;
 export default Button;

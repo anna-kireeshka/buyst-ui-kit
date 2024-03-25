@@ -4,6 +4,7 @@ export interface Props {
     size: 'xs' | 'sm' | 'lg';
     fill?: boolean;
     children: ReactNode;
+    onClick?: () => void;
 }
 declare const ButtonIcon: FC<Props>;
 export default ButtonIcon;

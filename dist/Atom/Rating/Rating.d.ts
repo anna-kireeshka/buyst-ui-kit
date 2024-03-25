@@ -6,6 +6,7 @@ export interface Props {
     setRating: (index: number) => void;
     hover: number;
     setHover: (index: number) => void;
+    isShowRatingCount: boolean;
 }
 declare const Rating: FC<Props>;
 export default Rating;
