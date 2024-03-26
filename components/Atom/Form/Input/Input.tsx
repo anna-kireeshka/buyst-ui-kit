@@ -40,7 +40,8 @@ const Input: FC<MyInputProps> = ({
 
    return (
       <div className={styles.field}>
-         <label className={styles.label}> {label} </label>
+         {!!label.length && <label className={styles.label}> {label} </label>}
+
          <input
             type={type}
             value={value}

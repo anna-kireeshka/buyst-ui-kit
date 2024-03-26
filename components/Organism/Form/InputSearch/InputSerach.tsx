@@ -30,18 +30,16 @@ const InputSerach: FC<Props> = ({
             {openCategoryList ? <CloseIcon /> : <CategoryIcon />}
          </button>
          {openCategoryList && <CategoryDropDownDesktop />}
-         <div className={styles.searchWrapper}>
-            <Input
-               type={'text'}
-               label={label}
-               state={''}
-               borderRadius={borderRadius}
-               value={value}
-               onChange={onChange}
-               placeholder={placeholder}
-               {...props}
-            ></Input>
-         </div>
+         <Input
+            type={'text'}
+            label={label}
+            state={''}
+            borderRadius={borderRadius}
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder}
+            {...props}
+         ></Input>
 
          <button className={styles.searchBtn}>
             <SearchIcon />
