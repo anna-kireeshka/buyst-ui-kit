@@ -1,7 +1,7 @@
 import React from 'react'
 import { FC, ReactNode } from 'react'
 import styles from './Button.module.scss'
-// import '../catalog-card.module.scss'
+// import '../product-item-card.module.scss'
 import cx from 'classnames'
 type Color = 'green' | 'gray' | 'orange' | 'red' | 'primary'
 

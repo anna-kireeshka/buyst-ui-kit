@@ -6,14 +6,16 @@ import '../../../index.scss'
 export interface MyInputProps {
    disabled?: boolean
    defaultChecked?: boolean
-   label?: string
+   label: string
+   id: string
+   value: string
 }
-const Radio: FC<MyInputProps> = ({ disabled }, props) => {
+const Radio: FC<MyInputProps> = ({ id, label, value }) => {
    return (
       <label className={styles.container}>
-         <input type="radio" {...props} className={styles.radio} />
+         <input type="radio" id={id} name={id} value={value} className={styles.radio} />
          <span className={styles.radioMark} />
-         {props.label}
+         {label}
       </label>
    )
 }

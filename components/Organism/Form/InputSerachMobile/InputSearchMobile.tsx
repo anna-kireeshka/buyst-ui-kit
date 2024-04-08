@@ -21,6 +21,7 @@ const InputSearchMobile: FC<Props> = ({ value = '', onChange, placeholder = '', 
                value={value}
                onChange={onChange}
                placeholder={placeholder}
+               size={'sm'}
                {...props}
             ></Input>
             <div className={styles.searchWrapperIcon}>

@@ -9,6 +9,8 @@ export interface Props {
    hover: number
    setHover: (index: number) => void
    isShowRatingCount: boolean
+   isShowReviewCount: boolean
+   reviewCount: string
 }
 const Rating: FC<Props> = ({
    fontSize = 1,
@@ -18,11 +20,15 @@ const Rating: FC<Props> = ({
    setHover,
    isClickable = false,
    isShowRatingCount = true,
+   isShowReviewCount = true,
+   reviewCount = '',
 }) => {
    return (
       <div className={styles.rating}>
          {isShowRatingCount && (
-            <strong className={styles.ratingCount} style={{ fontSize: fontSize + 'rem' }}></strong>
+            <strong className={styles.ratingCount} style={{ fontSize: fontSize + 'rem' }}>
+               {rating}
+            </strong>
          )}
          {[...Array(5)].map((star, index) => {
             index += 1
@@ -42,6 +48,11 @@ const Rating: FC<Props> = ({
                </button>
             )
          })}
+         {isShowReviewCount && (
+            <strong className={styles.ratingCount} style={{ fontSize: fontSize + 'rem' }}>
+               {reviewCount}
+            </strong>
+         )}
       </div>
    )
 }

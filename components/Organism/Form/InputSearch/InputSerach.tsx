@@ -38,6 +38,7 @@ const InputSerach: FC<Props> = ({
             value={value}
             onChange={onChange}
             placeholder={placeholder}
+            size={'sm'}
             {...props}
          ></Input>
 

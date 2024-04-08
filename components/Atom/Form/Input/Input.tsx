@@ -13,6 +13,7 @@ export interface MyInputProps {
    value: string | number
    borderRadius: boolean
    onChange: (e: ChangeEvent<HTMLInputElement>) => void
+   size: 'xs' | 'sm'
 }
 const Input: FC<MyInputProps> = ({
    type = 'text',
@@ -22,6 +23,7 @@ const Input: FC<MyInputProps> = ({
    borderRadius,
    onChange,
    placeholder = '',
+   size = 'sm',
    ...props
 }) => {
    const handleInputKeyup = (ev: KeyboardEvent<HTMLInputElement>) => {
@@ -33,7 +35,7 @@ const Input: FC<MyInputProps> = ({
       }
    }
 
-   const classes = cn(styles['input'], {
+   const classes = cn(styles['input'], [styles[`input--${size}`]], {
       [styles[`input--${state}`]]: state !== '',
       [styles.inputWithoutBorder]: !borderRadius,
    })
