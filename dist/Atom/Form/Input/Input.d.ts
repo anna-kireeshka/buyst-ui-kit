@@ -10,6 +10,7 @@ export interface MyInputProps {
     value: string | number;
     borderRadius: boolean;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    size: 'xs' | 'sm';
 }
 declare const Input: FC<MyInputProps>;
 export default Input;
