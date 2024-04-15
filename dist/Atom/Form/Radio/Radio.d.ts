@@ -5,6 +5,7 @@ export interface MyInputProps {
     label: string;
     id: string;
     value: string;
+    name: string;
 }
 declare const Radio: FC<MyInputProps>;
 export default Radio;
