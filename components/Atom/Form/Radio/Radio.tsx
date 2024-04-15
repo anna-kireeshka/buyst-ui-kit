@@ -9,11 +9,12 @@ export interface MyInputProps {
    label: string
    id: string
    value: string
+   name: string
 }
-const Radio: FC<MyInputProps> = ({ id, label, value }) => {
+const Radio: FC<MyInputProps> = ({ id, label, value, name }) => {
    return (
       <label className={styles.container}>
-         <input type="radio" id={id} name={id} value={value} className={styles.radio} />
+         <input type="radio" id={id} name={name} value={value} className={styles.radio} />
          <span className={styles.radioMark} />
          {label}
       </label>
